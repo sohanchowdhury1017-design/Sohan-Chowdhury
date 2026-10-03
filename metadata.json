@@ -2,5 +2,7 @@
   "name": "N B N Sohan Chowdhury - Personal Website",
   "description": "Personal website of N B N Sohan Chowdhury, Founder of Sifri (sifribd.com) and East West University English Department graduate. Exploring entrepreneurship, literature, and digital innovation.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
