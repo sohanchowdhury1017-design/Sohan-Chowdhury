@@ -19,34 +19,34 @@ export const DeployModal: React.FC<DeployModalProps> = ({ isOpen, onClose }) => 
 
   const steps = [
     {
-      title: 'পদ্ধতি ১ (সবচেয়ে সহজ): GitHub Actions অটো-ডিপ্লয় (রেকমেন্ডেড)',
-      badge: 'স্বয়ংক্রিয়',
-      desc: 'আমরা আপনার রিপোজিটরিতে .github/workflows/deploy.yml এবং .nojekyll ফাইল যুক্ত করে দিয়েছি। আপনার GitHub রিপোজিটরিতে গিয়ে শুধু এই ১টি সেটিং পরিবর্তন করুন:',
+      title: 'ধাপ ১: কোড পুশ করুন (স্বয়ংক্রিয় gh-pages তৈরি হবে)',
+      badge: 'অটোমেটেড',
+      desc: 'আমরা আপনার রিপোজিটরিতে নতুন অ্যাকশন দিয়েছি যা কোড পুশ করলেই tự động "gh-pages" নামের প্রোডাকশন ব্রাঞ্চ তৈরি করে দেবে:',
       actionDetails: [
-        '১. আপনার GitHub রিপোজিটরিতে যান (যেমন github.com/your-username/sohan-site)।',
-        '২. উপরে Settings ট্যাবে ক্লিক করুন -> বাম পাশের মেনু থেকে Pages-এ ক্লিক করুন।',
-        '৩. "Build and deployment" সেকশনের Source ড্রপডাউনে "Deploy from a branch" এর বদলে "GitHub Actions" সিলেক্ট করুন।',
-        '৪. এবার কোড পুশ করলেই GitHub Actions স্বয়ংক্রিয়ভাবে সাইট বিল্ড করে sohans.site-এ লাইভ করে দেবে!',
+        'টার্মিনালে নিচের কমান্ডগুলো রান করে কোড পুশ করুন:',
       ],
-      code: `git add .\ngit commit -m "fix: setup GitHub Actions and .nojekyll for deployment"\ngit push origin main`,
+      code: `git add .\ngit commit -m "fix: build and deploy to gh-pages branch"\ngit push origin main`,
     },
     {
-      title: 'পদ্ধতি ২: ১-ক্লিক "npm run deploy" কমান্ড',
-      badge: 'টার্মিনাল',
-      desc: 'আপনি চাইলে আপনার লোকাল কম্পিউটার থেকেই মাত্র একটি কমান্ড দিয়ে সরাসরি ডিপ্লয় করতে পারেন। gh-pages প্যাকেজ ইতিমধ্যে কনফিগার করা হয়েছে:',
+      title: 'ধাপ ২: GitHub Settings-এ "gh-pages" ব্রাঞ্চ সিলেক্ট করুন',
+      badge: 'Deploy from a branch',
+      desc: 'আপনার "Deploy from a branch" অপশনই থাকবে, শুধু ব্রাঞ্চটি সিলেক্ট করুন:',
       actionDetails: [
-        'টার্মিনালে এই কমান্ডটি রান করুন। এটি নিজে নিজেই `dist` বিল্ড তৈরি করবে এবং GitHub-এ `gh-pages` ব্রাঞ্চ তৈরি করে লাইভ করে দেবে।',
+        '১. আপনার GitHub রিপোজিটরিতে যান (যেমন github.com/sohanchowdhury/...)',
+        '২. Settings ট্যাবে ক্লিক করুন -> বাম পাশের Pages মেনুতে যান।',
+        '৩. Source থাকবে: "Deploy from a branch"',
+        '৪. Branch ড্রপডাউনে "main"-এর জায়গায় "gh-pages" সিলেক্ট করুন এবং Save বাটনে ক্লিক করুন!',
       ],
-      code: `npm run deploy`,
+      code: `# টার্মিনাল থেকেও চাইলে সরাসরি gh-pages ব্রাঞ্চে পুশ করতে পারেন:\nnpm run deploy`,
     },
     {
-      title: 'কাস্টম ডোমেইন (sohans.site) DNS রেকর্ড',
-      badge: 'DNS সেটআপ',
-      desc: 'আপনার ডোমেইন প্রোভাইডার (যেখান থেকে sohans.site কিনেছেন) ড্যাশবোর্ডে গিয়ে এই রেকর্ডগুলো যুক্ত করুন:',
+      title: 'ধাপ ৩: কাস্টম ডোমেইন (sohans.site) চেক',
+      badge: 'DNS',
+      desc: 'আপনার ডোমেইন প্রোভাইডারে DNS ঠিকঠাক সেট থাকলে মুহূর্তের মধ্যে sohans.site লাইভ হবে:',
       actionDetails: [
-        'public/CNAME ফাইলে "sohans.site" ইতিমধ্যে সেট করা আছে, তাই বিল্ড দিলে GitHub Pages স্বয়ংক্রিয়ভাবে ডোমেইন চিনে নিবে।',
+        'public/CNAME ও রুট CNAME ফাইলে "sohans.site" সংরক্ষিত আছে।',
       ],
-      code: `# A Records for apex domain @ (sohans.site):\n185.199.108.153\n185.199.109.153\n185.199.110.153\n185.199.111.153\n\n# CNAME Record for www:\nwww  ->  <YOUR-GITHUB-USERNAME>.github.io`,
+      code: `# Apex domain @ A Records:\n185.199.108.153\n185.199.109.153\n185.199.110.153\n185.199.111.153\n\n# www CNAME Record:\nwww  ->  <YOUR-GITHUB-USERNAME>.github.io`,
     },
   ];
 
@@ -73,23 +73,24 @@ export const DeployModal: React.FC<DeployModalProps> = ({ isOpen, onClose }) => 
           </div>
           <div>
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-stone-900">
-              GitHub Pages & <span className="text-[#FA812F]">sohans.site</span> সমাধান গাইড
+              &ldquo;Deploy from a branch&rdquo; সেটআপ গাইড (<span className="text-[#FA812F]">sohans.site</span>)
             </h2>
           </div>
         </div>
 
-        {/* Alert explaining why it was blank */}
-        <div className="mb-6 p-4 rounded-lg bg-amber-50/80 border border-amber-200 text-xs text-amber-900 flex items-start gap-3">
-          <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-          <div className="space-y-1">
-            <div className="font-bold text-sm text-amber-950">সাইট কেন ব্ল্যাঙ্ক (Blank White) দেখাচ্ছিল?</div>
-            <p className="leading-relaxed">
-              GitHub Pages সাধারণত সরাসরি রুট ফোল্ডারের <code className="bg-amber-100 px-1 py-0.5 rounded font-mono">index.html</code> রান করতে চায়। কিন্তু সেখানে <code className="bg-amber-100 px-1 py-0.5 rounded font-mono">main.tsx</code> থাকে যা ব্রাউজার সরাসরি চেনে না। ব্রাউজার শুধু কম্পাইল হওয়া জাভাস্ক্রিপ্ট (<code className="bg-amber-100 px-1 py-0.5 rounded font-mono">dist/</code>) চালাতে পারে।
-            </p>
-            <p className="font-medium text-amber-950 pt-0.5">
-              ✅ আমরা আপনার জন্য <code className="bg-amber-100 px-1 py-0.5 rounded font-mono">.github/workflows/deploy.yml</code> এবং <code className="bg-amber-100 px-1 py-0.5 rounded font-mono">.nojekyll</code> রেডি করে দিয়েছি। নিচের যেকোনো একটি নিয়মে ডিপ্লয় করলেই সম্পূর্ণ সাইট লাইভ হয়ে যাবে!
-            </p>
+        {/* Info Box */}
+        <div className="mb-6 p-4 rounded-lg bg-sky-50 border border-sky-200 text-xs text-sky-950 space-y-1.5">
+          <div className="font-bold text-sm text-sky-900 flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-sky-600" />
+            <span>&ldquo;Deploy from a branch&rdquo; দিয়ে যেভাবে সমাধান হলো:</span>
           </div>
+          <p className="leading-relaxed">
+            <code className="bg-sky-100 px-1 py-0.5 rounded font-mono">main</code> ব্রাঞ্চে থাকে আনকম্পাইল্ড TypeScript কোড, যা ব্রাউজার সরাসরি চালাতে পারে না (এজন্য সাইট সাদা দেখায়)। 
+            আমরা নতুন অ্যাকশন কনফিগার করেছি যা স্বয়ংক্রিয়ভাবে কম্পাইল করা বিল্ড ফাইলগুলোকে <code className="bg-sky-100 px-1 py-0.5 rounded font-mono">gh-pages</code> ব্রাঞ্চে পুশ করে দেবে।
+          </p>
+          <p className="font-semibold text-sky-900">
+            👉 ফলে আপনার GitHub Settings-এ &ldquo;Deploy from a branch&rdquo; অপশন রেখেই শুধু Branch-এ <code className="bg-sky-200 px-1 py-0.5 rounded font-mono">gh-pages</code> সিলেক্ট করলেই সাইট সম্পূর্ণ সচল হয়ে যাবে!
+          </p>
         </div>
 
         {/* Steps */}
@@ -148,7 +149,7 @@ export const DeployModal: React.FC<DeployModalProps> = ({ isOpen, onClose }) => 
         <div className="mt-8 pt-5 border-t border-stone-200 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-xs font-mono text-emerald-700">
             <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-            <span>সব ফাইল ও কনফিগারেশন রেডি করা সম্পন্ন</span>
+            <span>&ldquo;Deploy from a branch&rdquo; মোড সম্পূর্ণ কনফিগার করা হয়েছে</span>
           </div>
 
           <button
