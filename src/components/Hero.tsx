@@ -53,6 +53,45 @@ export const Hero: React.FC<HeroProps> = ({ onSearchSelect }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* ================= TOP HERO COVER PHOTO (sohans.site) ================= */}
+        <div className="mb-8 sm:mb-10 rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm relative group bg-stone-900">
+          <div className="relative aspect-[16/7] sm:aspect-[21/8] md:aspect-[24/8] max-h-[360px] w-full overflow-hidden">
+            <img
+              src={PERSONAL_INFO.coverPhoto}
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = PERSONAL_INFO.coverPhotoLocal;
+              }}
+              alt="Sohan Chowdhury - Founder of Sifri & Sifri BD"
+              className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-700 ease-out"
+            />
+            {/* Subtle Gradient & Information Vignette */}
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/20 to-transparent flex flex-col justify-end p-4 sm:p-6 md:p-8">
+              <div className="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                  <div className="flex items-center gap-2 text-white/90 text-[11px] sm:text-xs font-mono uppercase tracking-widest mb-1 font-semibold">
+                    <span className="w-2 h-2 rounded-full bg-[#FA812F] animate-pulse" />
+                    <span>Official Profile · Sohan Chowdhury (NBN Sohan)</span>
+                  </div>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-white tracking-tight drop-shadow-xs">
+                    Sohan Chowdhury
+                  </h2>
+                </div>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="https://sifribd.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/25 text-white text-xs font-medium transition-all shadow-xs"
+                  >
+                    <span>Explore Sifri (sifribd.com)</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#FA812F]" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Main 3-Column Editorial Grid matching Reference */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">
           
