@@ -41,15 +41,15 @@ export const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         {/* ================= OFFICIAL CLOUDINARY BRAND BANNER ================= */}
-        <div className="mb-10 sm:mb-12 rounded-2xl sm:rounded-3xl overflow-hidden border border-stone-200 shadow-md relative group bg-white">
-          <div className="relative aspect-[16/9] sm:aspect-[21/9] md:aspect-[24/9] w-full overflow-hidden">
+        <div className="mb-8 sm:mb-12 rounded-2xl sm:rounded-3xl overflow-hidden border border-stone-200/90 shadow-md relative group bg-stone-900/5">
+          <div className="relative aspect-[1024/346] w-full overflow-hidden flex items-center justify-center">
             <img
               src={PERSONAL_INFO.coverPhoto}
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).src = sohanBannerImg;
               }}
-              alt="N.B.N Sohan Chowdhury - Professional Website & Digital Solutions"
-              className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-700 ease-out"
+              alt="N.B.N Sohan Chowdhury - Official Brand Banner"
+              className="w-full h-full object-contain sm:object-cover object-center group-hover:scale-[1.01] transition-transform duration-700 ease-out"
             />
             {/* Direct interactive click to explore */}
             <a
