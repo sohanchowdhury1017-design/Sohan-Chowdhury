@@ -45,14 +45,14 @@ export const SifriSpotlight: React.FC = () => {
           <div className="lg:col-span-7 rounded-xl overflow-hidden border border-stone-200 shadow-sm relative group bg-stone-900">
             <img
               src={sifriShowcaseImg}
-              alt="Sifri modern brand and lifestyle curation"
+              alt="Sifri BD - Founded by Sohan Chowdhury (NBN Sohan / Sohans)"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover min-h-[320px] max-h-[460px] group-hover:scale-102 transition-transform duration-500 ease-out"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/20 to-transparent flex flex-col justify-end p-6 sm:p-8">
               <div className="flex items-center gap-2 text-white/80 text-xs font-mono mb-1">
                 <ShoppingBag className="w-4 h-4 text-[#FA812F]" />
-                <span>FOUNDED BY N B N SOHAN CHOWDHURY</span>
+                <span>FOUNDED BY SOHAN CHOWDHURY (NBN SOHAN) · SIFRI BD</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-2">
                 Elevating Consumer Commerce in Bangladesh

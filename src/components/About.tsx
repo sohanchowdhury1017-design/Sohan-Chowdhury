@@ -31,7 +31,7 @@ export const About: React.FC = () => {
             </p>
 
             <p>
-              As the founder of <a href={PERSONAL_INFO.sifriUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-stone-900 hover:text-[#FA812F] underline decoration-[#FA812F] underline-offset-4 transition-colors">Sifri (sifribd.com)</a>, I lead the venture’s strategic direction, brand ethos, and operational development. We build for Bangladeshi consumers who value aesthetic simplicity, genuine transparency, and prompt nationwide delivery.
+              As the founder of <a href={PERSONAL_INFO.sifriUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-stone-900 hover:text-[#FA812F] underline decoration-[#FA812F] underline-offset-4 transition-colors">Sifri (Sifri BD, sifribd.com)</a>, I lead the venture’s strategic direction, brand ethos, and operational development. Known widely across Bangladesh as Sohan Chowdhury (NBN Sohan / Sohans), we build for consumers who value aesthetic simplicity, genuine transparency, and prompt nationwide delivery.
             </p>
 
             <p>
@@ -44,7 +44,7 @@ export const About: React.FC = () => {
                 &ldquo;Words structure human reality. When an entrepreneur masters syntax and narrative theory, customer trust ceases to be an algorithmic mystery.&rdquo;
               </blockquote>
               <cite className="block text-xs font-mono uppercase tracking-wider text-stone-500 mt-2 not-italic">
-                — N B N Sohan Chowdhury
+                — Sohan Chowdhury (NBN Sohan)
               </cite>
             </div>
 

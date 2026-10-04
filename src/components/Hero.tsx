@@ -63,7 +63,7 @@ export const Hero: React.FC<HeroProps> = ({ onSearchSelect }) => {
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[#FA812F]" />
               <span className="text-xs font-mono tracking-widest uppercase text-stone-500 font-semibold">
-                N B N Sohan Chowdhury
+                Sohan Chowdhury · NBN Sohan
               </span>
             </div>
 
@@ -73,9 +73,9 @@ export const Hero: React.FC<HeroProps> = ({ onSearchSelect }) => {
               <span className="text-[#FA812F]">BUILDER</span>
             </h1>
 
-            {/* Narrative Subtitle */}
+            {/* Narrative Subtitle with natural SEO phrases */}
             <p className="text-sm sm:text-base text-stone-600 leading-relaxed mb-4 max-w-sm">
-              Founder of <span className="font-semibold text-stone-900 underline decoration-[#FA812F]/40 underline-offset-2">Sifri</span> and East West University Department of English scholar. Blending narrative theory, brand strategy, and modern digital commerce.
+              Founder of <a href="https://sifribd.com" target="_blank" rel="noopener noreferrer" className="font-semibold text-stone-900 underline decoration-[#FA812F]/40 underline-offset-2 hover:text-[#FA812F]">Sifri (Sifri BD)</a> and East West University Department of English scholar. Official website (<span className="font-medium text-stone-900 font-mono text-xs">sohans.site</span>) showcasing entrepreneurship, literature, and essays by Sohans.
             </p>
 
             {/* Prominent Animated Facebook PP & WhatsApp Badges */}
