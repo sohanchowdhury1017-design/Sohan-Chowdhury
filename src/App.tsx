@@ -23,7 +23,7 @@ export default function App() {
 
     // Instant redirect for /fb shortlink
     if (currentPath === '/fb' || window.location.pathname.startsWith('/fb') || window.location.hash === '#fb') {
-      window.location.replace('https://facebook.com/nbn.sohan');
+      window.location.replace('https://www.facebook.com/nbn.sohan');
       return;
     }
 

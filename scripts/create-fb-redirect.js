@@ -5,16 +5,19 @@ const htmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://facebook.com/nbn.sohan">
-  <link rel="canonical" href="https://facebook.com/nbn.sohan">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0; url=https://www.facebook.com/nbn.sohan">
+  <link rel="canonical" href="https://www.facebook.com/nbn.sohan">
   <title>Redirecting to Facebook - Sohan Chowdhury</title>
   <meta name="robots" content="noindex, follow">
   <script>
-    window.location.replace("https://facebook.com/nbn.sohan");
+    // Immediate JavaScript redirection
+    window.location.replace("https://www.facebook.com/nbn.sohan");
   </script>
   <style>
+    * { box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -25,31 +28,30 @@ const htmlContent = `<!DOCTYPE html>
       color: #1c1917;
       text-align: center;
       padding: 24px;
-      box-sizing: border-box;
     }
     .card {
       background: #ffffff;
-      padding: 36px 28px;
-      border-radius: 16px;
+      padding: 40px 32px;
+      border-radius: 20px;
       border: 1px solid #e7e5e4;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
       max-width: 420px;
       width: 100%;
     }
     .logo-badge {
-      width: 52px;
-      height: 52px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       background: #1877F2;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 18px;
-      box-shadow: 0 4px 14px rgba(24, 119, 242, 0.35);
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 16px rgba(24, 119, 242, 0.35);
     }
     .logo-badge svg {
-      width: 26px;
-      height: 26px;
+      width: 28px;
+      height: 28px;
       fill: #ffffff;
     }
     h1 {
@@ -61,22 +63,23 @@ const htmlContent = `<!DOCTYPE html>
     p {
       font-size: 14px;
       color: #78716c;
-      margin: 0 0 20px;
+      margin: 0 0 24px;
       line-height: 1.5;
     }
     a.btn {
       display: inline-block;
-      padding: 10px 24px;
+      padding: 12px 28px;
       background: #1877F2;
       color: #ffffff;
       font-weight: 600;
-      font-size: 14px;
+      font-size: 15px;
       border-radius: 9999px;
       text-decoration: none;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.1s;
     }
     a.btn:hover {
       background: #166fe5;
+      transform: translateY(-1px);
     }
   </style>
 </head>
@@ -89,10 +92,16 @@ const htmlContent = `<!DOCTYPE html>
     </div>
     <h1>Redirecting to Facebook...</h1>
     <p>
-      Taking you to <strong>N B N Sohan Chowdhury</strong>'s official Facebook profile (<span style="color: #1877F2;">@nbn.sohan</span>).
+      Taking you to <strong>N B N Sohan Chowdhury</strong>'s official Facebook profile (<span style="color: #1877F2; font-weight: 600;">@nbn.sohan</span>).
     </p>
-    <a href="https://facebook.com/nbn.sohan" class="btn">Click here if not redirected</a>
+    <a href="https://www.facebook.com/nbn.sohan" class="btn">Click here if not redirected</a>
   </div>
+  <script>
+    // Fallback trigger in case head script was delayed
+    if (window.location.href.indexOf("facebook.com") === -1) {
+      window.location.href = "https://www.facebook.com/nbn.sohan";
+    }
+  </script>
 </body>
 </html>`;
 
@@ -106,4 +115,4 @@ for (const target of targets) {
   fs.writeFileSync(target, htmlContent, 'utf-8');
 }
 
-console.log('Successfully created clean fb redirect pages.');
+console.log('Successfully created clean fb redirect pages in fb/, public/fb/, dist/fb/.');
