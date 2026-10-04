@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Copy, Check, Terminal, Globe, Github, CheckCircle2, AlertTriangle, Sparkles } from 'lucide-react';
+import { X, Copy, Check, Terminal, Globe, Github, CheckCircle2, Sparkles } from 'lucide-react';
 
 interface DeployModalProps {
   isOpen: boolean;
@@ -19,41 +19,34 @@ export const DeployModal: React.FC<DeployModalProps> = ({ isOpen, onClose }) => 
 
   const steps = [
     {
-      title: 'ধাপ ১: কোড পুশ করুন (স্বয়ংক্রিয় gh-pages তৈরি হবে)',
-      badge: 'অটোমেটেড',
-      desc: 'আমরা আপনার রিপোজিটরিতে নতুন অ্যাকশন দিয়েছি যা কোড পুশ করলেই tự động "gh-pages" নামের প্রোডাকশন ব্রাঞ্চ তৈরি করে দেবে:',
-      actionDetails: [
-        'টার্মিনালে নিচের কমান্ডগুলো রান করে কোড পুশ করুন:',
-      ],
-      code: `git add .\ngit commit -m "fix: build and deploy to gh-pages branch"\ngit push origin main`,
+      title: 'ধাপ ১: এই ৩টি কমান্ড রান করে কোড পুশ করুন',
+      badge: 'মেইন ব্রাঞ্চ',
+      desc: 'আমরা সরাসরি রুট ফোল্ডারে কম্পাইল্ড প্রোডাকশন কোড ও অ্যাসেটস যুক্ত করে দিয়েছি। টার্মিনালে শুধু এই ৩টি কমান্ড দিয়ে পুশ করুন:',
+      code: `git add .\ngit commit -m "fix: static assets for main root deployment"\ngit push origin main`,
     },
     {
-      title: 'ধাপ ২: GitHub Settings-এ "gh-pages" ব্রাঞ্চ সিলেক্ট করুন',
-      badge: 'Deploy from a branch',
-      desc: 'আপনার "Deploy from a branch" অপশনই থাকবে, শুধু ব্রাঞ্চটি সিলেক্ট করুন:',
+      title: 'ধাপ ২: GitHub Settings নিশ্চিতকরণ',
+      badge: 'সেটিংস',
+      desc: 'আপনার স্ক্রিনশটের সেটিংস হুবহু থাকবে—কোনো কিছু পরিবর্তন করার প্রয়োজন নেই:',
       actionDetails: [
-        '১. আপনার GitHub রিপোজিটরিতে যান (যেমন github.com/sohanchowdhury/...)',
-        '২. Settings ট্যাবে ক্লিক করুন -> বাম পাশের Pages মেনুতে যান।',
-        '৩. Source থাকবে: "Deploy from a branch"',
-        '৪. Branch ড্রপডাউনে "main"-এর জায়গায় "gh-pages" সিলেক্ট করুন এবং Save বাটনে ক্লিক করুন!',
+        '✔ Branch: "main" থাকবে',
+        '✔ Folder: "/ (root)" থাকবে',
+        '✔ Save বাটনে প্রেস করা থাকলেই হবে',
       ],
-      code: `# টার্মিনাল থেকেও চাইলে সরাসরি gh-pages ব্রাঞ্চে পুশ করতে পারেন:\nnpm run deploy`,
+      code: `# আর কোনো অতিরিক্ত সেটিংস পরিবর্তনের প্রয়োজন নেই`,
     },
     {
-      title: 'ধাপ ৩: কাস্টম ডোমেইন (sohans.site) চেক',
-      badge: 'DNS',
-      desc: 'আপনার ডোমেইন প্রোভাইডারে DNS ঠিকঠাক সেট থাকলে মুহূর্তের মধ্যে sohans.site লাইভ হবে:',
-      actionDetails: [
-        'public/CNAME ও রুট CNAME ফাইলে "sohans.site" সংরক্ষিত আছে।',
-      ],
-      code: `# Apex domain @ A Records:\n185.199.108.153\n185.199.109.153\n185.199.110.153\n185.199.111.153\n\n# www CNAME Record:\nwww  ->  <YOUR-GITHUB-USERNAME>.github.io`,
+      title: 'ধাপ ৩: কাস্টম ডোমেইন (sohans.site)',
+      badge: 'ডোমেইন',
+      desc: 'রুট CNAME ফাইলে "sohans.site" রাখা আছে, ফলে ২ মিনিটের মধ্যেই সাইট লাইভ হয়ে যাবে:',
+      code: `# ডোমেইন DNS রেকর্ড:\n@     A     185.199.108.153\n@     A     185.199.109.153\n@     A     185.199.110.153\n@     A     185.199.111.153\nwww   CNAME <YOUR-USERNAME>.github.io`,
     },
   ];
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-stone-950/60 backdrop-blur-xs animate-in fade-in duration-200">
       <div 
-        className="bg-[#FAF9F5] border border-stone-300 w-full max-w-3xl max-h-[90vh] rounded-xl shadow-2xl overflow-y-auto relative flex flex-col p-6 sm:p-8"
+        className="bg-[#FAF9F5] border border-stone-300 w-full max-w-2xl max-h-[90vh] rounded-xl shadow-2xl overflow-y-auto relative flex flex-col p-6 sm:p-8"
         role="dialog"
         aria-modal="true"
       >
@@ -73,28 +66,24 @@ export const DeployModal: React.FC<DeployModalProps> = ({ isOpen, onClose }) => 
           </div>
           <div>
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-stone-900">
-              &ldquo;Deploy from a branch&rdquo; সেটআপ গাইড (<span className="text-[#FA812F]">sohans.site</span>)
+              Branch: <span className="text-[#FA812F]">main</span> / (root) সেটআপ গাইড
             </h2>
           </div>
         </div>
 
         {/* Info Box */}
-        <div className="mb-6 p-4 rounded-lg bg-sky-50 border border-sky-200 text-xs text-sky-950 space-y-1.5">
-          <div className="font-bold text-sm text-sky-900 flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-sky-600" />
-            <span>&ldquo;Deploy from a branch&rdquo; দিয়ে যেভাবে সমাধান হলো:</span>
+        <div className="mb-6 p-4 rounded-lg bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 space-y-1">
+          <div className="font-bold text-sm text-emerald-900 flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <span>সরাসরি main ব্রাঞ্চ থেকেই কাজ করবে!</span>
           </div>
           <p className="leading-relaxed">
-            <code className="bg-sky-100 px-1 py-0.5 rounded font-mono">main</code> ব্রাঞ্চে থাকে আনকম্পাইল্ড TypeScript কোড, যা ব্রাউজার সরাসরি চালাতে পারে না (এজন্য সাইট সাদা দেখায়)। 
-            আমরা নতুন অ্যাকশন কনফিগার করেছি যা স্বয়ংক্রিয়ভাবে কম্পাইল করা বিল্ড ফাইলগুলোকে <code className="bg-sky-100 px-1 py-0.5 rounded font-mono">gh-pages</code> ব্রাঞ্চে পুশ করে দেবে।
-          </p>
-          <p className="font-semibold text-sky-900">
-            👉 ফলে আপনার GitHub Settings-এ &ldquo;Deploy from a branch&rdquo; অপশন রেখেই শুধু Branch-এ <code className="bg-sky-200 px-1 py-0.5 rounded font-mono">gh-pages</code> সিলেক্ট করলেই সাইট সম্পূর্ণ সচল হয়ে যাবে!
+            কোনো ব্রাঞ্চ পাল্টাতে হবে না। আমরা রুট ফোল্ডারেই <code className="bg-emerald-100 px-1 py-0.5 rounded font-mono">/assets/</code> ডিরেক্টরি এবং <code className="bg-emerald-100 px-1 py-0.5 rounded font-mono">index.html</code> তৈরি করে দিয়েছি। কোড পুশ করলেই GitHub Pages সরাসরি এই ফাইলগুলো চালিয়ে আপনার ওয়েবসাইট লাইভ করে দেবে।
           </p>
         </div>
 
         {/* Steps */}
-        <div className="space-y-6">
+        <div className="space-y-5">
           {steps.map((step, idx) => (
             <div key={idx} className="bg-white p-5 rounded-lg border border-stone-200 shadow-xs">
               <div className="flex items-center justify-between mb-2">
@@ -120,7 +109,7 @@ export const DeployModal: React.FC<DeployModalProps> = ({ isOpen, onClose }) => 
                   ) : (
                     <>
                       <Copy className="w-3.5 h-3.5" />
-                      <span>কপি করুন</span>
+                      <span>কপি</span>
                     </>
                   )}
                 </button>
@@ -149,7 +138,7 @@ export const DeployModal: React.FC<DeployModalProps> = ({ isOpen, onClose }) => 
         <div className="mt-8 pt-5 border-t border-stone-200 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-xs font-mono text-emerald-700">
             <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-            <span>&ldquo;Deploy from a branch&rdquo; মোড সম্পূর্ণ কনফিগার করা হয়েছে</span>
+            <span>main / (root) ব্রাঞ্চের জন্য সব ফাইল রেডি</span>
           </div>
 
           <button
