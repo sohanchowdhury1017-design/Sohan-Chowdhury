@@ -11,7 +11,7 @@ export const About: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-[#FA812F] font-semibold block mb-1">
-              01. Background & Perspective
+              01. Background &amp; Perspective
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight">
               About N B N Sohan Chowdhury
@@ -44,7 +44,7 @@ export const About: React.FC = () => {
                 &ldquo;Words structure human reality. When an entrepreneur masters syntax and narrative theory, customer trust ceases to be an algorithmic mystery.&rdquo;
               </blockquote>
               <cite className="block text-xs font-mono uppercase tracking-wider text-stone-500 mt-2 not-italic">
-                — Sohan Chowdhury (NBN Sohan)
+                &mdash; Sohan Chowdhury (NBN Sohan)
               </cite>
             </div>
 
@@ -58,81 +58,78 @@ export const About: React.FC = () => {
                 <span>Visit Sifri</span>
                 <ArrowUpRight className="w-4 h-4 text-[#FA812F]" />
               </a>
+
               <a
-                href="#writing"
+                href="https://facebook.com/nbn.sohan"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 border border-stone-300 text-stone-800 rounded-md text-xs font-semibold tracking-wide uppercase hover:bg-white transition-colors"
               >
-                <span>Explore Essays</span>
+                <span>Facebook Profile</span>
+                <ArrowUpRight className="w-4 h-4 text-stone-400" />
               </a>
             </div>
           </div>
 
-          {/* Structured Profile Cards Column */}
-          <div className="lg:col-span-5 space-y-4">
-            
-            <div className="bg-white p-6 rounded-lg border border-stone-200 shadow-xs">
-              <h3 className="text-xs font-mono uppercase tracking-widest text-stone-400 font-semibold mb-4">
-                Core Roles & Anchors
-              </h3>
-              
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3.5 pb-4 border-b border-stone-100">
-                  <div className="w-8 h-8 rounded-md bg-orange-50 text-[#FA812F] flex items-center justify-center shrink-0">
-                    <Building2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-stone-900">Founder & Managing Director</h4>
-                    <p className="text-xs text-stone-600 mt-0.5">Sifri (<a href="https://sifribd.com" target="_blank" rel="noopener noreferrer" className="text-[#FA812F] hover:underline font-mono">sifribd.com</a>)</p>
-                    <p className="text-xs text-stone-500 mt-1">Driving company vision, digital store architecture, and curated lifestyle merchandise.</p>
-                  </div>
-                </li>
+          {/* Dossier Card */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="bg-white p-7 rounded-xl border border-stone-200/90 shadow-xs relative">
+              <span className="text-xs font-mono uppercase tracking-wider text-stone-400 font-semibold block mb-4 border-b border-stone-100 pb-2">
+                Identity &amp; Background Dossier
+              </span>
 
-                <li className="flex items-start gap-3.5 pb-4 border-b border-stone-100">
-                  <div className="w-8 h-8 rounded-md bg-sky-50 text-[#2DA8D8] flex items-center justify-center shrink-0">
-                    <GraduationCap className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-stone-900">Department of English</h4>
-                    <p className="text-xs text-stone-600 mt-0.5">East West University (EWU), Dhaka</p>
-                    <p className="text-xs text-stone-500 mt-1">Focusing on literary theory, semiotics, rhetoric, and modern textual analysis.</p>
-                  </div>
-                </li>
-
-                <li className="flex items-start gap-3.5">
-                  <div className="w-8 h-8 rounded-md bg-rose-50 text-[#F43F5E] flex items-center justify-center shrink-0">
-                    <Feather className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-stone-900">Writer & Brand Stylist</h4>
-                    <p className="text-xs text-stone-600 mt-0.5">Essays on commerce, linguistics & culture</p>
-                    <p className="text-xs text-stone-500 mt-1">Authoring reflections on entrepreneurship, semiotics, and customer psychology.</p>
-                  </div>
-                </li>
-              </ul>
+              <dl className="space-y-3.5 text-xs sm:text-sm">
+                <div className="flex items-start justify-between py-1.5 border-b border-stone-100/70">
+                  <dt className="text-stone-500">Legal Name</dt>
+                  <dd className="font-serif font-bold text-stone-900 text-right">{PERSONAL_INFO.fullName}</dd>
+                </div>
+                <div className="flex items-start justify-between py-1.5 border-b border-stone-100/70">
+                  <dt className="text-stone-500">Known Monikers</dt>
+                  <dd className="font-medium text-stone-800 text-right">NBN Sohan &middot; Sohans</dd>
+                </div>
+                <div className="flex items-start justify-between py-1.5 border-b border-stone-100/70">
+                  <dt className="text-stone-500">Primary Venture</dt>
+                  <dd className="font-medium text-stone-900 text-right">
+                    <a href={PERSONAL_INFO.sifriUrl} target="_blank" rel="noopener noreferrer" className="text-[#FA812F] hover:underline font-semibold">
+                      Sifri (sifribd.com)
+                    </a>
+                  </dd>
+                </div>
+                <div className="flex items-start justify-between py-1.5 border-b border-stone-100/70">
+                  <dt className="text-stone-500">Academic Background</dt>
+                  <dd className="font-medium text-stone-800 text-right">East West University (English)</dd>
+                </div>
+                <div className="flex items-start justify-between py-1.5 border-b border-stone-100/70">
+                  <dt className="text-stone-500">Location</dt>
+                  <dd className="font-medium text-stone-800 text-right">Dhaka, Bangladesh</dd>
+                </div>
+                <div className="flex items-start justify-between py-1.5">
+                  <dt className="text-stone-500">Primary Domain</dt>
+                  <dd className="font-mono text-[#FA812F] font-semibold text-right">sohans.site</dd>
+                </div>
+              </dl>
             </div>
 
-            {/* Quick Metadata Box */}
-            <div className="bg-[#FAF9F5] p-5 rounded-lg border border-stone-200 text-xs text-stone-600 space-y-2.5">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-stone-400">Personal Domain</span>
-                <span className="font-mono font-bold text-stone-900">sohans.site</span>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white p-5 rounded-lg border border-stone-200/80 shadow-xs">
+                <Building2 className="w-5 h-5 text-[#FA812F] mb-2" />
+                <h4 className="font-serif font-bold text-sm mb-1 text-stone-900">Venture Building</h4>
+                <p className="text-xs text-stone-500 leading-relaxed">
+                  Building dependable, scalable retail infrastructure for modern consumers.
+                </p>
               </div>
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-stone-400">Primary Email</span>
-                <a href="mailto:sohanchowdhury1017@gmail.com" className="text-stone-800 hover:text-[#FA812F] font-mono transition-colors">
-                  {PERSONAL_INFO.email}
-                </a>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-stone-400">Geographic Base</span>
-                <span className="text-stone-800">Aftabnagar, Dhaka, BD</span>
+
+              <div className="bg-white p-5 rounded-lg border border-stone-200/80 shadow-xs">
+                <Feather className="w-5 h-5 text-[#2DA8D8] mb-2" />
+                <h4 className="font-serif font-bold text-sm mb-1 text-stone-900">Literary Semiotics</h4>
+                <p className="text-xs text-stone-500 leading-relaxed">
+                  Applying rhetorical theory and narrative design to brand communications.
+                </p>
               </div>
             </div>
-
           </div>
 
         </div>
-
       </div>
     </section>
   );

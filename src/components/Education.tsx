@@ -14,7 +14,7 @@ export const Education: React.FC = () => {
               03. Academic Foundations
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight">
-              Education & Literary Discipline
+              Education &amp; Literary Discipline
             </h2>
           </div>
           <p className="text-sm text-stone-600 max-w-md">
@@ -36,7 +36,7 @@ export const Education: React.FC = () => {
 
               <div className="flex items-center gap-3 text-xs font-mono text-stone-500 mb-2">
                 <span>EAST WEST UNIVERSITY</span>
-                <span>·</span>
+                <span>&middot;</span>
                 <span>DHAKA, BANGLADESH</span>
               </div>
 
@@ -66,44 +66,36 @@ export const Education: React.FC = () => {
                   ))}
                 </div>
               </div>
-
             </div>
           </div>
 
-          {/* Academic Synthesis & Humanities Philosophy */}
+          {/* Theoretical Foundations & Interdisciplinary Edge */}
           <div className="lg:col-span-6 space-y-6">
             
+            {/* The Literary Advantage Card */}
             <div className="bg-white p-7 rounded-xl border border-stone-200/90 shadow-xs">
-              <h4 className="text-base font-serif font-bold text-stone-900 mb-4 flex items-center gap-2">
-                <Compass className="w-4 h-4 text-[#FA812F]" />
-                <span>How Literary Training Translates to Startup Leadership</span>
-              </h4>
-              
-              <div className="space-y-4">
-                {EDUCATION_DATA.highlights.map((highlight, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <span className="text-xs font-mono font-bold text-stone-400 mt-0.5">
-                      0{idx + 1}
-                    </span>
-                    <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-                      {highlight}
-                    </p>
-                  </div>
-                ))}
+              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-stone-500 mb-3">
+                <BookOpen className="w-4 h-4 text-[#FA812F]" />
+                <span>The Humanities &amp; Enterprise Synthesis</span>
               </div>
+              <h4 className="text-xl font-serif font-bold text-stone-900 mb-2">
+                Why Literature Powers Leadership
+              </h4>
+              <p className="text-sm text-stone-600 leading-relaxed">
+                Reading complex texts builds stamina for navigating ambiguous business landscapes. The ability to articulate nuanced ideas clearly creates alignment across teams and earns enduring customer trust.
+              </p>
             </div>
 
-            {/* Reflection on East West University */}
-            <div className="bg-[#FAF9F5] p-6 rounded-xl border border-stone-200 text-stone-700">
-              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-stone-500 mb-2">
-                <Scroll className="w-4 h-4 text-[#2DA8D8]" />
-                <span>Scholarly Inquiry</span>
-              </div>
-              <p className="text-xs sm:text-sm italic leading-relaxed text-stone-700 font-serif">
-                &ldquo;Studying at East West University gave me a lifelong reverence for precise language. In an age of automated noise, someone who can write with clarity and empathy possesses the ultimate unfair advantage in enterprise building.&rdquo;
+            {/* Academic Heritage Quote */}
+            <div className="bg-stone-900 text-white p-7 rounded-xl shadow-xs">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#2DA8D8] font-semibold block mb-2">
+                Academic Heritage
+              </span>
+              <p className="text-sm text-stone-300 leading-relaxed mb-4">
+                East West University (EWU) is accredited as one of Bangladesh&rsquo;s leading private institutions. The Department of English instills analytical precision, rhetorical sensitivity, and high standards of written discourse.
               </p>
-              <div className="mt-3 text-[11px] font-mono text-stone-500">
-                — N B N Sohan Chowdhury
+              <div className="text-xs font-mono text-stone-400">
+                A/2, Jahurul Islam Avenue, Jahurul Islam City, Aftabnagar, Dhaka-1212
               </div>
             </div>
 

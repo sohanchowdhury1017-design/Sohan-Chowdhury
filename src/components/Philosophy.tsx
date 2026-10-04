@@ -14,7 +14,7 @@ export const Philosophy: React.FC = () => {
               05. Operating Code
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight">
-              Philosophy & Strategic Competencies
+              Philosophy &amp; Strategic Competencies
             </h2>
           </div>
           <p className="text-sm text-stone-600 max-w-md">
@@ -58,7 +58,7 @@ export const Philosophy: React.FC = () => {
                 <h4 className="text-base font-serif font-bold text-stone-900 pb-2 border-b border-stone-100">
                   {cat.name}
                 </h4>
-                <ul className="space-y-2 text-xs text-stone-600">
+                <ul className="space-y-2 text-xs sm:text-sm text-stone-600">
                   {cat.skills.map((skill) => (
                     <li key={skill} className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#FA812F]" />

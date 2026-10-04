@@ -31,3 +31,14 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a29e;
 }
+
+/* Botanical Red/Coral Dot Matrix Pattern from reference screenshot */
+.dot-matrix-coral {
+  background-image: radial-gradient(#F43F5E 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+}
+
+.dot-matrix-stone {
+  background-image: radial-gradient(#78716C 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+}

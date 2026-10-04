@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-stone-800">
           
-          {/* Brand Info */}
+          {/* Brand Info with Custom Hand-drawn S Icon */}
           <div className="md:col-span-5 space-y-3">
             <div className="flex items-center gap-2.5">
               <img 
@@ -40,10 +40,10 @@ export const Footer: React.FC = () => {
             </div>
             <ul className="space-y-2">
               <li><a href="/" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); window.history.pushState(null, '', '/'); }} className="hover:text-white transition-colors">Home</a></li>
-              <li><a href="/about/" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); window.history.pushState(null, '', '/about/'); }} className="hover:text-white transition-colors">About & Background</a></li>
+              <li><a href="/about/" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); window.history.pushState(null, '', '/about/'); }} className="hover:text-white transition-colors">About &amp; Background</a></li>
               <li><a href="/sifri/" onClick={(e) => { e.preventDefault(); document.getElementById('sifri')?.scrollIntoView({ behavior: 'smooth' }); window.history.pushState(null, '', '/sifri/'); }} className="hover:text-white transition-colors">Sifri (sifribd.com)</a></li>
               <li><a href="/education/" onClick={(e) => { e.preventDefault(); document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' }); window.history.pushState(null, '', '/education/'); }} className="hover:text-white transition-colors">East West University</a></li>
-              <li><a href="/writing/" onClick={(e) => { e.preventDefault(); document.getElementById('writing')?.scrollIntoView({ behavior: 'smooth' }); window.history.pushState(null, '', '/writing/'); }} className="hover:text-white transition-colors">Essays & Perspectives</a></li>
+              <li><a href="/writing/" onClick={(e) => { e.preventDefault(); document.getElementById('writing')?.scrollIntoView({ behavior: 'smooth' }); window.history.pushState(null, '', '/writing/'); }} className="hover:text-white transition-colors">Essays &amp; Perspectives</a></li>
               <li><a href="/contact/" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); window.history.pushState(null, '', '/contact/'); }} className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
           {/* External Links */}
           <div className="md:col-span-4 space-y-3 text-xs">
             <div className="font-mono uppercase tracking-wider text-stone-400 font-semibold mb-3">
-              Ventures & Setup
+              Ventures &amp; Setup
             </div>
             <ul className="space-y-2.5">
               <li>
@@ -61,8 +61,8 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-stone-300 hover:text-[#FA812F] transition-colors"
                 >
-                  <span>Sifri Official E-Commerce</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#FA812F]" />
+                  <span>Sifri E-Commerce (sifribd.com)</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-stone-500" />
                 </a>
               </li>
               <li>
@@ -70,10 +70,10 @@ export const Footer: React.FC = () => {
                   href="https://facebook.com/nbn.sohan"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-stone-300 hover:text-[#1877F2] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-stone-300 hover:text-[#FA812F] transition-colors"
                 >
                   <span>Facebook Profile (@nbn.sohan)</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#1877F2]" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-stone-500" />
                 </a>
               </li>
               <li>
@@ -81,18 +81,19 @@ export const Footer: React.FC = () => {
                   href="https://wa.me/8801312815029"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-stone-300 hover:text-[#25D366] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-stone-300 hover:text-[#FA812F] transition-colors"
                 >
-                  <span>WhatsApp (+8801312815029)</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#25D366]" />
+                  <span>WhatsApp: +880 1312-815029</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-stone-500" />
                 </a>
               </li>
               <li>
                 <a
-                  href={`mailto:${PERSONAL_INFO.email}`}
-                  className="text-stone-400 hover:text-white transition-colors font-mono"
+                  href="mailto:sohanchowdhury1017@gmail.com"
+                  className="inline-flex items-center gap-1.5 text-stone-300 hover:text-[#FA812F] transition-colors"
                 >
-                  {PERSONAL_INFO.email}
+                  <span>sohanchowdhury1017@gmail.com</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-stone-500" />
                 </a>
               </li>
             </ul>
@@ -100,15 +101,15 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Quiet Bottom Copyright & Back to Top */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+        {/* Bottom Colophon */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-stone-500 gap-4">
           <div>
-            &copy; {new Date().getFullYear()} N B N Sohan Chowdhury. All rights reserved. Built for sohans.site.
+            &copy; {new Date().getFullYear()} N B N Sohan Chowdhury (Sohans). All rights reserved.
           </div>
-
+          
           <button
             onClick={scrollToTop}
-            className="inline-flex items-center gap-1 text-stone-400 hover:text-white transition-colors"
+            className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
           >
             <span>Back to top</span>
             <ArrowUp className="w-3.5 h-3.5" />

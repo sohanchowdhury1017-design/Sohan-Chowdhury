@@ -16,8 +16,8 @@ export const PERSONAL_INFO = {
   whatsapp: '+8801312815029',
   whatsappUrl: 'https://wa.me/8801312815029',
   facebookUrl: 'https://facebook.com/nbn.sohan',
-  coverPhoto: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1791091989/494751244_1132441425318194_1261865038451570544_n.jpg',
-  coverPhotoLocal: '/assets/sohan_cover_banner.jpg',
+  coverPhoto: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1791121783/3f705da5-8ca8-419f-a9d1-da5b9d6112e8.jpg',
+  coverPhotoLocal: '/assets/sohan_banner.jpg',
   socials: {
     github: 'https://github.com/sohanchowdhury',
     linkedin: 'https://linkedin.com/in/sohanchowdhury',

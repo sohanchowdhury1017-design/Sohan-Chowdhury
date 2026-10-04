@@ -21,10 +21,10 @@ export const Writings: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-[#FA812F] font-semibold block mb-1">
-              04. Essays & Thought Leadership
+              04. Essays &amp; Thought Leadership
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight">
-              Writings & Observations
+              Writings &amp; Observations
             </h2>
           </div>
           <p className="text-sm text-stone-600 max-w-md">
@@ -32,7 +32,7 @@ export const Writings: React.FC = () => {
           </p>
         </div>
 
-        {/* Category Filter Bar (Functional Buttons with click handlers) */}
+        {/* Category Filter Bar */}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
           {categories.map((cat) => (
             <button
@@ -58,29 +58,26 @@ export const Writings: React.FC = () => {
               className="bg-white p-7 rounded-lg border border-stone-200/80 hover:border-stone-900/40 hover:shadow-xs transition-all cursor-pointer group flex flex-col justify-between"
             >
               <div>
-                {/* Zero-Pill unboxed metadata */}
-                <div className="flex items-center gap-2 text-xs text-stone-500 mb-3 font-mono">
+                <div className="flex items-center gap-2 text-xs text-stone-500 mb-3">
                   <span className="text-[#FA812F] font-medium">{article.category}</span>
-                  <span aria-hidden="true">·</span>
-                  <span>{article.date}</span>
-                  <span aria-hidden="true">·</span>
+                  <span aria-hidden="true">&middot;</span>
                   <span>{article.readTime}</span>
+                  <span aria-hidden="true">&middot;</span>
+                  <span>{article.date}</span>
                 </div>
 
-                <h3 className="text-xl font-serif font-bold text-stone-900 group-hover:text-[#FA812F] transition-colors mb-3 leading-snug">
+                <h3 className="text-xl font-serif font-bold text-stone-900 mb-3 group-hover:text-[#FA812F] transition-colors leading-snug">
                   {article.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed mb-6">
+                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed mb-6 font-sans">
                   {article.excerpt}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-stone-900">
-                <span className="group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                  Read Essay <ArrowUpRight className="w-3.5 h-3.5 text-[#FA812F]" />
-                </span>
-                <span className="font-mono text-stone-400 font-normal">N B N SOHAN</span>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-medium text-stone-500">
+                <span>Read Full Essay</span>
+                <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-[#FA812F] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </div>
             </div>
           ))}
@@ -88,76 +85,56 @@ export const Writings: React.FC = () => {
 
       </div>
 
-      {/* Full Article Lightbox / Reader Modal */}
+      {/* Reading Modal */}
       {activeArticle && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-stone-950/60 backdrop-blur-xs animate-in fade-in duration-200">
-          <div 
-            className="bg-[#FAF9F5] border border-stone-300 w-full max-w-2xl max-h-[90vh] rounded-xl shadow-2xl overflow-y-auto relative flex flex-col p-6 sm:p-10"
-            role="dialog"
-            aria-modal="true"
-          >
-            {/* Close button */}
+        <div className="fixed inset-0 z-50 bg-stone-950/70 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+          <div className="bg-white max-w-2xl w-full p-6 sm:p-8 rounded-2xl shadow-xl border border-stone-200 relative my-8 animate-in fade-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => setActiveArticle(null)}
-              className="absolute top-5 right-5 p-2 rounded-md text-stone-500 hover:text-stone-950 hover:bg-stone-200 transition-colors"
-              aria-label="Close article"
+              className="absolute top-4 right-4 p-2 rounded-full hover:bg-stone-100 text-stone-400 hover:text-stone-700 transition-colors"
+              aria-label="Close essay"
             >
               <X className="w-5 h-5" />
             </button>
 
-            {/* Header info */}
-            <div className="flex items-center gap-2 text-xs font-mono text-stone-500 mb-3">
-              <span className="text-[#FA812F] font-semibold">{activeArticle.category}</span>
-              <span>·</span>
-              <span>{activeArticle.date}</span>
-              <span>·</span>
+            <div className="flex items-center gap-2 text-xs font-mono text-[#FA812F] uppercase tracking-wider mb-2 font-semibold">
+              <span>{activeArticle.category}</span>
+              <span>&middot;</span>
               <span>{activeArticle.readTime}</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900 leading-tight mb-6">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900 mb-3 leading-tight">
               {activeArticle.title}
             </h2>
 
-            {/* Author Byline */}
-            <div className="flex items-center gap-3 pb-6 mb-6 border-b border-stone-200 text-xs text-stone-600">
-              <div className="w-8 h-8 rounded-full bg-stone-900 text-white flex items-center justify-center font-serif font-bold text-xs">
-                S
-              </div>
-              <div>
-                <div className="font-semibold text-stone-900">N B N Sohan Chowdhury</div>
-                <div>Founder of Sifri & East West University English Scholar</div>
-              </div>
+            <div className="text-xs text-stone-500 mb-6 pb-4 border-b border-stone-100 flex items-center gap-2">
+              <Calendar className="w-3.5 h-3.5" />
+              <span>Published {activeArticle.date}</span>
+              <span>&middot;</span>
+              <span>By Sohan Chowdhury</span>
             </div>
 
-            {/* Pull Quote */}
-            {activeArticle.quote && (
-              <div className="my-4 p-4 bg-orange-50/60 border-l-3 border-[#FA812F] rounded-r-md">
-                <p className="font-serif italic text-stone-800 text-base sm:text-lg">
-                  &ldquo;{activeArticle.quote}&rdquo;
-                </p>
-              </div>
-            )}
-
-            {/* Article Content */}
-            <div className="space-y-4 text-stone-700 text-sm sm:text-base leading-relaxed font-sans">
-              {activeArticle.content.map((para, i) => (
-                <p key={i}>{para}</p>
-              ))}
+            <div className="text-stone-700 leading-relaxed text-sm sm:text-base space-y-4 font-sans">
+              <p className="first-letter:text-4xl first-letter:font-serif first-letter:font-bold first-letter:mr-2 first-letter:float-left first-letter:text-[#FA812F]">
+                {activeArticle.excerpt}
+              </p>
+              <p>
+                In the context of the contemporary Bangladeshi digital ecosystem, brand loyalty is rarely forged through price cuts alone. When an organization speaks with consistent voice, honest fulfillment promises, and aesthetic clarity, customers intuitively respond.
+              </p>
+              <p>
+                Literature teaches us that human actions are driven by unstated needs for recognition and belonging. Designing an e-commerce platform like Sifri (sifribd.com) requires treating every transactional touchpoint as part of a larger narrative arc.
+              </p>
             </div>
 
-            {/* Footer Modal Actions */}
-            <div className="mt-8 pt-6 border-t border-stone-200 flex flex-wrap items-center justify-between gap-4">
-              <div className="text-xs font-mono text-stone-500">
-                Published on sohans.site
-              </div>
+            <div className="mt-8 pt-6 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
+              <span>Author: N B N Sohan Chowdhury</span>
               <button
                 onClick={() => setActiveArticle(null)}
-                className="px-4 py-2 bg-stone-900 text-white rounded-md text-xs font-semibold hover:bg-stone-800 transition-colors"
+                className="px-4 py-2 bg-stone-900 hover:bg-stone-800 text-white rounded-md font-medium transition-colors"
               >
-                Close Article
+                Close Essay
               </button>
             </div>
-
           </div>
         </div>
       )}
