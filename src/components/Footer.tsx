@@ -16,9 +16,11 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-3">
             <div className="flex items-center gap-2.5">
-              <span className="w-7 h-7 rounded-full bg-[#FA812F] flex items-center justify-center text-white text-xs font-serif font-bold">
-                S
-              </span>
+              <img 
+                src="https://res.cloudinary.com/b5z0n3sl/image/upload/v1791103462/Hand-drawn_letter_S_icon_2K_20261004121610.jpg" 
+                alt="S" 
+                className="w-7 h-7 rounded-full object-cover border border-stone-700 shadow-xs"
+              />
               <span className="text-base font-bold text-white tracking-tight uppercase font-sans">
                 N B N Sohan Chowdhury
               </span>

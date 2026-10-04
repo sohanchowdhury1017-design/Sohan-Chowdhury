@@ -23,9 +23,11 @@ export const Navbar: React.FC = () => {
               onClick={(e) => handleNavClick('/', 'home', e)}
               className="group flex items-center gap-2.5 text-stone-900 transition-colors"
             >
-              <span className="w-8 h-8 rounded-full bg-[#FA812F] flex items-center justify-center text-white text-xs font-serif font-bold shadow-xs">
-                S
-              </span>
+              <img 
+                src="https://res.cloudinary.com/b5z0n3sl/image/upload/v1791103462/Hand-drawn_letter_S_icon_2K_20261004121610.jpg" 
+                alt="S" 
+                className="w-8 h-8 rounded-full object-cover shadow-xs border border-stone-200/80 group-hover:border-[#FA812F] transition-colors"
+              />
               <span className="text-lg sm:text-xl font-bold tracking-tight uppercase font-sans text-stone-900 group-hover:text-[#FA812F] transition-colors">
                 N B N Sohan Chowdhury
               </span>
