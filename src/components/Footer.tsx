@@ -37,12 +37,12 @@ export const Footer: React.FC = () => {
               Navigation
             </div>
             <ul className="space-y-2">
-              <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-white transition-colors">About & Background</a></li>
-              <li><a href="#sifri" className="hover:text-white transition-colors">Sifri (sifribd.com)</a></li>
-              <li><a href="#education" className="hover:text-white transition-colors">East West University</a></li>
-              <li><a href="#writing" className="hover:text-white transition-colors">Essays & Perspectives</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="/" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); window.history.pushState(null, '', '/'); }} className="hover:text-white transition-colors">Home</a></li>
+              <li><a href="/about/" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); window.history.pushState(null, '', '/about/'); }} className="hover:text-white transition-colors">About & Background</a></li>
+              <li><a href="/sifri/" onClick={(e) => { e.preventDefault(); document.getElementById('sifri')?.scrollIntoView({ behavior: 'smooth' }); window.history.pushState(null, '', '/sifri/'); }} className="hover:text-white transition-colors">Sifri (sifribd.com)</a></li>
+              <li><a href="/education/" onClick={(e) => { e.preventDefault(); document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' }); window.history.pushState(null, '', '/education/'); }} className="hover:text-white transition-colors">East West University</a></li>
+              <li><a href="/writing/" onClick={(e) => { e.preventDefault(); document.getElementById('writing')?.scrollIntoView({ behavior: 'smooth' }); window.history.pushState(null, '', '/writing/'); }} className="hover:text-white transition-colors">Essays & Perspectives</a></li>
+              <li><a href="/contact/" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); window.history.pushState(null, '', '/contact/'); }} className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
 

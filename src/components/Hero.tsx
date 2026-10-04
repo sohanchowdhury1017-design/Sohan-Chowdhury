@@ -16,10 +16,10 @@ export const Hero: React.FC<HeroProps> = ({ onSearchSelect }) => {
   const [searchFocus, setSearchFocus] = useState(false);
 
   const quickTopics = [
-    { label: 'Sifri (sifribd.com)', target: '#sifri' },
-    { label: 'East West University', target: '#education' },
-    { label: 'Literary Essays', target: '#writing' },
-    { label: 'Contact', target: '#contact' },
+    { label: 'Sifri (sifribd.com)', path: '/sifri/', targetId: 'sifri' },
+    { label: 'East West University', path: '/education/', targetId: 'education' },
+    { label: 'Literary Essays', path: '/writing/', targetId: 'writing' },
+    { label: 'Contact', path: '/contact/', targetId: 'contact' },
   ];
 
   const handleSearchSubmit = (e: React.FormEvent) => {
@@ -28,20 +28,20 @@ export const Hero: React.FC<HeroProps> = ({ onSearchSelect }) => {
     if (!query) return;
 
     if (query.includes('sifri') || query.includes('store') || query.includes('shop') || query.includes('venture')) {
-      const el = document.getElementById('sifri');
-      el?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('sifri')?.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', '/sifri/');
     } else if (query.includes('edu') || query.includes('east west') || query.includes('english') || query.includes('degree')) {
-      const el = document.getElementById('education');
-      el?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', '/education/');
     } else if (query.includes('essay') || query.includes('write') || query.includes('read') || query.includes('article')) {
-      const el = document.getElementById('writing');
-      el?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('writing')?.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', '/writing/');
     } else if (query.includes('contact') || query.includes('email') || query.includes('hire') || query.includes('talk')) {
-      const el = document.getElementById('contact');
-      el?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', '/contact/');
     } else {
-      const el = document.getElementById('about');
-      el?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', '/about/');
     }
   };
 
@@ -152,7 +152,12 @@ export const Hero: React.FC<HeroProps> = ({ onSearchSelect }) => {
                 {quickTopics.map((topic) => (
                   <a
                     key={topic.label}
-                    href={topic.target}
+                    href={topic.path}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById(topic.targetId)?.scrollIntoView({ behavior: 'smooth' });
+                      window.history.pushState(null, '', topic.path);
+                    }}
                     className="text-[11px] px-2 py-0.5 rounded-sm bg-stone-200/60 hover:bg-[#FA812F] hover:text-white text-stone-700 transition-colors whitespace-nowrap"
                   >
                     {topic.label}
