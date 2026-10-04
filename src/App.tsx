@@ -7,10 +7,10 @@ import React, { useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
+import { ProfessionalAreas } from './components/ProfessionalAreas';
 import { SifriSpotlight } from './components/SifriSpotlight';
 import { Education } from './components/Education';
-import { Writings } from './components/Writings';
-import { Philosophy } from './components/Philosophy';
+import { Skills } from './components/Skills';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { WhatsAppWidget } from './components/WhatsAppWidget';
@@ -30,10 +30,10 @@ export default function App() {
     const hash = window.location.hash.replace(/^#/, '');
     const cleanPathMap: Record<string, string> = {
       about: '/about/',
+      areas: '/areas/',
       sifri: '/sifri/',
       education: '/education/',
-      writing: '/writing/',
-      philosophy: '/philosophy/',
+      skills: '/skills/',
       contact: '/contact/',
       home: '/',
     };
@@ -72,7 +72,7 @@ export default function App() {
 
     window.addEventListener('popstate', handlePopState);
 
-    // 3. ScrollSpy: Update address bar with clean URLs (/about/, /sifri/, etc.) without hash
+    // 3. ScrollSpy: Update address bar with clean URLs (/about/, /areas/, etc.) without hash
     const sections = NAV_ROUTES.map(r => document.getElementById(r.sectionId)).filter(Boolean) as HTMLElement[];
 
     let ticking = false;
@@ -119,7 +119,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF9F5] text-stone-900 selection:bg-[#FA812F] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#FAF9F5] text-stone-900 selection:bg-[#FA812F] selection:text-white font-sans">
       {/* Top Navbar */}
       <Navbar />
 
@@ -130,20 +130,20 @@ export default function App() {
           <Hero />
         </section>
 
-        {/* Section 01: About N B N Sohan Chowdhury */}
+        {/* Section 01: About N.B.N Sohan Chowdhury */}
         <About />
 
-        {/* Section 02: Flagship Venture - Sifri (sifribd.com) */}
+        {/* Section 02: Professional Areas & Core Focus */}
+        <ProfessionalAreas />
+
+        {/* Section 03: Current Role - Brand & Marketing Director at SIFRI */}
         <SifriSpotlight />
 
-        {/* Section 03: Academic Foundations - East West University Dept of English */}
+        {/* Section 04: Education - Bachelor of Laws (LL.B.) */}
         <Education />
 
-        {/* Section 04: Essays & Thought Leadership */}
-        <Writings />
-
-        {/* Section 05: Philosophy & Operating Code */}
-        <Philosophy />
+        {/* Section 05: Skills & Professional Interests */}
+        <Skills />
 
         {/* Section 06: Contact & Direct Message */}
         <Contact />

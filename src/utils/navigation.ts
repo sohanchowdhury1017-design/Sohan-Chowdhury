@@ -1,13 +1,6 @@
 /**
  * Clean path routing utility for sohans.site
- * Eliminates hash fragments (#) in favor of clean URLs:
- * / -> Home
- * /about/ -> About section
- * /sifri/ -> Sifri section
- * /education/ -> Education section
- * /writing/ -> Writing section
- * /philosophy/ -> Philosophy section
- * /contact/ -> Contact section
+ * Supports clean URL paths without hash fragments
  */
 
 export interface NavRoute {
@@ -17,13 +10,13 @@ export interface NavRoute {
 }
 
 export const NAV_ROUTES: NavRoute[] = [
-  { label: 'Home', path: '/', sectionId: 'home' },
-  { label: 'About', path: '/about/', sectionId: 'about' },
-  { label: 'Sifri', path: '/sifri/', sectionId: 'sifri' },
-  { label: 'Education', path: '/education/', sectionId: 'education' },
-  { label: 'Writing', path: '/writing/', sectionId: 'writing' },
-  { label: 'Philosophy', path: '/philosophy/', sectionId: 'philosophy' },
-  { label: 'Contact', path: '/contact/', sectionId: 'contact' },
+  { label: 'হোম', path: '/', sectionId: 'home' },
+  { label: 'আমার সম্পর্কে', path: '/about/', sectionId: 'about' },
+  { label: 'পেশাগত ক্ষেত্র', path: '/areas/', sectionId: 'areas' },
+  { label: 'সিফরি (SIFRI)', path: '/sifri/', sectionId: 'sifri' },
+  { label: 'শিক্ষাজীবন', path: '/education/', sectionId: 'education' },
+  { label: 'দক্ষতা ও আগ্রহ', path: '/skills/', sectionId: 'skills' },
+  { label: 'যোগাযোগ', path: '/contact/', sectionId: 'contact' },
 ];
 
 export function navigateTo(path: string, sectionId?: string, event?: React.MouseEvent) {
@@ -31,7 +24,7 @@ export function navigateTo(path: string, sectionId?: string, event?: React.Mouse
     event.preventDefault();
   }
 
-  // Update browser address bar without reload, without hash
+  // Update browser address bar without reload
   if (window.location.pathname !== path) {
     window.history.pushState(null, '', path);
   }

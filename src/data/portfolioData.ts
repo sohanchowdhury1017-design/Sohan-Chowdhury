@@ -1,180 +1,162 @@
-import { Article, EducationDetail } from '../types';
+export interface EducationDetail {
+  degree: string;
+  year: string;
+  description: string;
+  academicInterests: string[];
+}
 
 export const PERSONAL_INFO = {
-  fullName: 'N B N Sohan Chowdhury',
-  shortName: 'Sohan',
-  preferredCall: 'Sohan Chowdhury',
-  headline: 'Founder of Sifri & Writer',
-  tagline: 'Bridging Literature, Digital Commerce & Modern Brand Architecture',
-  email: 'sohanchowdhury1017@gmail.com',
+  fullName: 'N.B.N Sohan Chowdhury',
+  shortName: 'Sohan Chowdhury',
+  preferredCall: 'NBN Sohan',
+  headline: 'Entrepreneur • Brand & Marketing Professional • Law Student',
+  headlineBn: 'উদ্যোক্তা • ব্র্যান্ড ও মার্কেটিং প্রফেশনাল • আইন শিক্ষার্থী',
+  workingCategory: 'Entrepreneur / Business Owner',
+  workingCategoryBn: 'উদ্যোক্তা / বিজনেস ওনার',
+  currentRole: 'Brand & Marketing Director — SIFRI',
+  currentRoleBn: 'ব্র্যান্ড ও মার্কেটিং ডিরেক্টর — SIFRI',
+  email: 'sohanchowdhury130@gmail.com',
+  phone1: '01312815029',
+  phone2: '01831841017',
+  whatsappUrl: 'https://wa.me/8801312815029',
+  facebookUrl: 'https://facebook.com/nbn.sohan',
   domain: 'sohans.site',
-  location: 'Dhaka, Bangladesh',
+  location: 'ঢাকা, বাংলাদেশ (Dhaka, Bangladesh)',
   coordinates: '23.7688° N, 90.4255° E',
   sifriUrl: 'https://sifribd.com',
   sifriDisplayUrl: 'sifribd.com',
-  bio: 'N B N Sohan Chowdhury is an entrepreneur, writer, and researcher grounded in English literature from East West University. As the founder of Sifri (sifribd.com), Sohan leverages narrative theory, critical semiotics, and meticulous operational design to build high-trust digital consumer experiences in Bangladesh.',
-  whatsapp: '+8801312815029',
-  whatsappUrl: 'https://wa.me/8801312815029',
-  facebookUrl: 'https://facebook.com/nbn.sohan',
   coverPhoto: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1791121783/3f705da5-8ca8-419f-a9d1-da5b9d6112e8.jpg',
   coverPhotoLocal: '/assets/sohan_banner.jpg',
-  socials: {
-    github: 'https://github.com/sohanchowdhury',
-    linkedin: 'https://linkedin.com/in/sohanchowdhury',
-    facebook: 'https://facebook.com/nbn.sohan',
-    whatsapp: 'https://wa.me/8801312815029',
-    email: 'mailto:sohanchowdhury1017@gmail.com',
-    sifri: 'https://sifribd.com',
+  siteIcon: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1791103462/Hand-drawn_letter_S_icon_2K_20261004121610.jpg',
+
+  aboutMeParagraphs: [
+    'আমি N.B.N Sohan Chowdhury—একজন তরুণ Entrepreneur, Brand & Marketing Professional এবং Law Student।',
+    'Business, Branding, Marketing, Fashion, Law, Digital Media, Investigation এবং Journalism-এর প্রতি আমার বিশেষ আগ্রহ রয়েছে। আমি নতুন কিছু শেখা, বাস্তব অভিজ্ঞতা অর্জন করা এবং নিজের Professional Skills নিয়মিত উন্নত করার চেষ্টা করি।',
+    'আমার কাজের ক্ষেত্রে Creativity, Critical Thinking, Observation, Logical Reasoning এবং Professional Communication-কে বিশেষ গুরুত্ব দিই। আমার লক্ষ্য হলো জ্ঞান ও বাস্তব অভিজ্ঞতাকে কাজে লাগিয়ে নিজের জন্য একটি শক্তিশালী এবং সফল Professional Career তৈরি করা।'
+  ],
+
+  coreFocus: [
+    'Entrepreneurship',
+    'Branding',
+    'Marketing',
+    'E-commerce',
+    'Business Development',
+    'Fashion Business',
+    'Digital Media',
+    'Strategy'
+  ],
+
+  professionalAreas: [
+    'Entrepreneurship & Business Management',
+    'Brand Strategy & Brand Management',
+    'Marketing & Digital Marketing',
+    'E-commerce & Online Business',
+    'Fashion & Clothing Business',
+    'Business Development & Growth Strategy',
+    'Social Media & Content Management',
+    'Customer Relationship Management',
+    'Sales & Marketing Strategy',
+    'Personal Branding & Professional Identity',
+    'Business Operations & Management',
+    'Team Coordination',
+    'Market Research & Consumer Insights',
+    'Strategic Planning & Creative Problem Solving',
+    'Business Communication & Client Handling'
+  ],
+
+  education: {
+    degree: 'Bachelor of Laws — LL.B.',
+    year: 'Law Student — 1st Year',
+    description: 'বর্তমানে Law বিষয়ে পড়াশোনা করছি এবং Legal Knowledge, Research, Critical Thinking, Investigation ও Professional Development-এর ওপর গুরুত্ব দিচ্ছি।',
+    academicInterests: [
+      'Law',
+      'Criminal & Civil Law',
+      'Legal Research',
+      'Investigation & Inquiry',
+      'Journalism',
+      'Business & Entrepreneurship',
+      'Corporate & Commercial Affairs',
+      'Legal Reasoning'
+    ]
   },
+
+  skills: {
+    professional: [
+      'Brand Management',
+      'Marketing & Digital Marketing',
+      'Business Development',
+      'E-commerce Management',
+      'Social Media Management',
+      'Business Planning',
+      'Customer Relationship Management',
+      'Team Coordination',
+      'Client Handling',
+      'Sales & Communication',
+      'Creative Problem Solving'
+    ],
+    analytical: [
+      'Observation Skill',
+      'Critical Thinking',
+      'Logical Reasoning',
+      'Analytical Thinking',
+      'Decision Making',
+      'Research & Information Analysis',
+      'Problem Solving',
+      'Strategic Thinking'
+    ],
+    communication: [
+      'Professional Communication',
+      'Customer Communication',
+      'Client Handling',
+      'Negotiation',
+      'Team Communication',
+      'Social Media Communication'
+    ]
+  },
+
+  professionalInterests: [
+    'Entrepreneurship',
+    'Business & Brand Building',
+    'Fashion & Clothing',
+    'E-commerce',
+    'Digital Business',
+    'Law & Legal Studies',
+    'Investigation',
+    'Journalism',
+    'Business Strategy',
+    'Personal Branding',
+    'Digital Media',
+    'Marketing & Communication'
+  ],
+
+  sifriDetails: {
+    name: 'SIFRI',
+    tagline: 'Fashion, Lifestyle & E-Commerce Venture',
+    url: 'https://sifribd.com',
+    role: 'Brand & Marketing Director — SIFRI',
+    description: 'SIFRI হলো একটি আধুনিক লাইফস্টাইল ও ফ্যাশন ভিত্তিক ই-কমার্স উদ্যোগ। এখানে ব্র্যান্ড স্ট্র্যাটেজি, ডিজিটাল মার্কেটিং, কাস্টমার স্যাটিসফ্যাকশন এবং আধুনিক ডিজিটাল রিটেইল ইকোসিস্টেমের নেতৃত্ব প্রদান করা হয়।',
+    pillars: [
+      {
+        title: 'Brand Strategy & Growth',
+        desc: 'SIFRI-এর মার্কেট পজিশনিং, আধুনিক ব্র্যান্ড আইডেন্টিটি এবং ভ্যালু প্রোপোজিশন তৈরি।'
+      },
+      {
+        title: 'Marketing & Digital Media',
+        desc: 'টার্গেটেড ডিজিটাল ক্যাম্পেইন, সোশ্যাল মিডিয়া প্রেজেন্স এবং কনটেন্ট আর্কিটেকচার।'
+      },
+      {
+        title: 'E-commerce & Operations',
+        desc: 'সহজ অনলাইন অর্ডারিং, নির্ভরযোগ্য ডেলিভারি এবং ৬৪ জেলায় কাস্টমার ট্রাস্ট।'
+      },
+      {
+        title: 'Customer Relationship',
+        desc: 'সরাসরি সম্মানজনক গ্রাহক সেবা, সততা এবং দীর্ঘমেয়াদি রিলেশনশিপ বিল্ডিং।'
+      }
+    ],
+    stats: [
+      { label: 'রোল / ভূমিকা', value: 'Brand & Marketing Director' },
+      { label: 'কভারেজ', value: '৬৪ জেলা বাংলাদেশ' },
+      { label: 'অফিসিয়াল স্টোর', value: 'sifribd.com' }
+    ]
+  }
 };
-
-export const SIFRI_DETAILS = {
-  name: 'Sifri',
-  tagline: 'Curated lifestyle, contemporary aesthetics & dependable digital shopping for Bangladesh',
-  url: 'https://sifribd.com',
-  displayUrl: 'sifribd.com',
-  foundedBy: 'N B N Sohan Chowdhury',
-  mission: 'To redefine everyday modern lifestyle retail in Bangladesh by delivering thoughtful product curation, transparent customer communication, and uncompromised fulfillment speed.',
-  pillars: [
-    {
-      title: 'Aesthetic Curation',
-      desc: 'Carefully chosen products designed with clean ergonomics, premium materials, and timeless appeal.',
-    },
-    {
-      title: 'Transparent Commerce',
-      desc: 'Honest pricing, verified stock availability, and human customer support with zero friction.',
-    },
-    {
-      title: 'Fast & Reliable Logistics',
-      desc: 'Streamlined dispatch across Dhaka and nationwide delivery network with real-time tracking.',
-    },
-    {
-      title: 'Brand Storytelling',
-      desc: 'Rooted in authentic connection, editorial photography, and respectful customer dialogue.',
-    },
-  ],
-  stats: [
-    { label: 'Nationwide Reach', value: '64 Districts' },
-    { label: 'Core Philosophy', value: 'Quality First' },
-    { label: 'Active Platform', value: 'sifribd.com' },
-  ],
-};
-
-export const EDUCATION_DATA: EducationDetail = {
-  institution: 'East West University (EWU)',
-  degree: 'Bachelor of Arts in English',
-  department: 'Department of English',
-  period: 'Class of Excellence',
-  focusAreas: [
-    'Critical Literary Analysis',
-    'Semiotics & Discourse Analysis',
-    'Modern & Post-Colonial Literature',
-    'Rhetoric, Persuasion & Stylistics',
-    'Creative Writing & Professional Prose',
-  ],
-  description:
-    'Pursuing rigorous literary theory, textual hermeneutics, and modern linguistics at East West University. This academic foundation provides the intellectual backbone for Sohan’s brand storytelling, customer psychology insights, and strategic communication.',
-  highlights: [
-    'Specialized in how textual rhetoric influences perception and audience decision-making.',
-    'Explored structuralism, semiotics, and narrative arcs applicable to consumer brand ecosystems.',
-    'Active participant in literary workshops, debate forums, and university creative societies.',
-    'Applied humanistic empathy and rigorous textual editing to modern digital ventures.',
-  ],
-};
-
-export const ARTICLES_DATA: Article[] = [
-  {
-    id: 'syntax-of-commerce',
-    title: 'The Syntax of Commerce: How Narrative Theory Builds Enduring Brands',
-    category: 'Brand & Narrative',
-    excerpt: 'Great enterprises are not merely balance sheets; they are cohesive narratives where every touchpoint is a carefully chosen punctuation mark.',
-    date: 'February 2026',
-    readTime: '5 min read',
-    quote: 'When you study linguistics, you realize consumers never buy isolated products—they inhabit stories that confirm their values.',
-    content: [
-      'In traditional business literature, brand identity is often reduced to a color palette, an iconography kit, and a slogan. But through the lens of literary semiotics, a brand is fundamentally a narrative contract between human minds.',
-      'Studying English at East West University made me look at digital interfaces the same way one analyzes a poem or a Victorian novel. Every element—from the clarity of the typography to the friction in the checkout flow—either maintains narrative suspense or ruptures suspension of disbelief.',
-      'When we founded Sifri (sifribd.com), our guiding rule was textual consistency: the promise made on the homepage had to match the tone of the SMS dispatch notice and the tactile packaging upon unboxing. In commerce, consistency is not a marketing trick; it is moral clarity expressed through systems.',
-    ],
-  },
-  {
-    id: 'building-sifri-literature-to-startup',
-    title: 'From Literary Semiotics to Startup Founding: Building Sifri in Bangladesh',
-    category: 'Entrepreneurship',
-    excerpt: 'Why an English literature scholar chose to build a digital retail venture, and what humanistic disciplines teach us about modern consumer trust.',
-    date: 'January 2026',
-    readTime: '6 min read',
-    quote: 'The best founders are observant readers of human anxiety, desire, and silent aspirations.',
-    content: [
-      'People frequently ask why a student of English literature ventured into digital commerce in Bangladesh. The conventional wisdom expects software engineers or business graduates. Yet, business at its core is applied empathy.',
-      'English literature trains the mind to embrace nuance, to detect subtext, and to listen to what is left unsaid. In Bangladesh’s rapid digital retail expansion, many brands failed because they treated customers as algorithmic data points rather than discerning individuals.',
-      'At Sifri, we prioritized customer dignity. We invested time in clear product documentation, realistic photography without deceiving filters, and polite post-order assistance. Technology is merely the distribution engine; trust is an editorial accomplishment.',
-    ],
-  },
-  {
-    id: 'clean-digital-commerce',
-    title: 'The Discipline of Clean Digital Commerce: Eliminating Noise in E-Commerce',
-    category: 'Digital Commerce',
-    excerpt: 'Examining why cluttered interfaces and false urgency tactics are losing relevance in favor of clean, respectful, minimalist buying experiences.',
-    date: 'November 2025',
-    readTime: '4 min read',
-    quote: 'True luxury and credibility in the digital era is respect for the visitor’s attention span.',
-    content: [
-      'Walk through many contemporary e-commerce websites and you are assaulted by flashing countdown timers, popups begging for phone numbers, and simulated social proof banners. This is the visual equivalent of shouting.',
-      'A clean, editorial digital platform does the opposite: it gives space for the product to breathe. It presents verified specifications with surgical clarity. It respects user agency.',
-      'With Sifri, our digital presence is shaped by intentional whitespace, balanced visual rhythm, and swift response times. When customers sense that an entrepreneur took care in crafting the store, they trust the product before it even leaves the shelf.',
-    ],
-  },
-  {
-    id: 'founders-reading-classics',
-    title: 'Why Builders Should Read Classic Literature: Empathy, Rhetoric & Long Horizons',
-    category: 'Literature & Culture',
-    excerpt: 'How reading deep literature sharpens strategic patience, cognitive resilience, and the capacity to articulate compelling visions.',
-    date: 'September 2025',
-    readTime: '5 min read',
-    quote: 'Literature does not offer shortcuts; it gives you the stamina to see human enterprises in their full, messy richness.',
-    content: [
-      'The modern tech discourse is saturated with short-form productivity hacks and ephemeral frameworks that expire in six months. In contrast, literature has stood the test of centuries.',
-      'Engaging with authors like George Eliot, James Joyce, or Rabindranath Tagore forces the thinker to confront complex moral dilemmas, structural ironies, and long-horizon human motivations.',
-      'For any builder, this intellectual workout is invaluable. It prevents cynical cynicism, encourages ethical leadership, and instills a love for craft that superficial business metrics can never simulate.',
-    ],
-  },
-];
-
-export const CORE_PHILOSOPHIES = [
-  {
-    number: '01',
-    title: 'Narrative Integrity',
-    desc: 'Every brand touchpoint, copy sentence, and fulfillment pledge is an unbroken promise of authenticity.',
-  },
-  {
-    number: '02',
-    title: 'Human-Centric Commerce',
-    desc: 'Putting customer trust and dignity ahead of short-term gimmicks or synthetic urgency.',
-  },
-  {
-    number: '03',
-    title: 'Interdisciplinary Edge',
-    desc: 'Fusing the critical rigor of English literature with the pragmatic execution of modern digital ventures.',
-  },
-  {
-    number: '04',
-    title: 'Enduring Craftsmanship',
-    desc: 'Belief in thoughtful minimalism, timeless design, and steady, high-conviction building.',
-  },
-];
-
-export const SKILL_CATEGORIES = [
-  {
-    name: 'Leadership & Venture Building',
-    skills: ['E-Commerce Strategy', 'Venture Direction', 'Product Lifecycle & Sourcing', 'Operational Execution', 'Customer Experience Design'],
-  },
-  {
-    name: 'Language, Literature & Narrative',
-    skills: ['Critical Discourse Analysis', 'Literary Semiotics', 'Persuasive Copywriting', 'Editorial Direction', 'Brand Voice Guidelines'],
-  },
-  {
-    name: 'Digital Architecture & Tools',
-    skills: ['Modern Web Architecture', 'UI/UX Editorial Aesthetics', 'Search Optimization', 'Analytics & Performance', 'Vite & GitHub Workflows'],
-  },
-];
