@@ -5,6 +5,18 @@ export interface EducationDetail {
   academicInterests: string[];
 }
 
+export interface CertificationItem {
+  id: string;
+  category: string;
+  categoryBn: string;
+  title: string;
+  titleBn: string;
+  credentialBadge: string;
+  description: string;
+  skills: string[];
+  icon: 'palette' | 'megaphone' | 'music' | 'award';
+}
+
 export const PERSONAL_INFO = {
   fullName: 'N.B.N Sohan Chowdhury',
   shortName: 'Sohan Chowdhury',
@@ -13,8 +25,8 @@ export const PERSONAL_INFO = {
   headlineBn: 'উদ্যোক্তা • ব্র্যান্ড ও মার্কেটিং প্রফেশনাল • আইন শিক্ষার্থী',
   workingCategory: 'Entrepreneur / Business Owner',
   workingCategoryBn: 'উদ্যোক্তা / বিজনেস ওনার',
-  currentRole: 'Brand & Marketing Director — SIFRI',
-  currentRoleBn: 'ব্র্যান্ড ও মার্কেটিং ডিরেক্টর — SIFRI',
+  currentRole: 'CEO & Founder — SIFRI',
+  currentRoleBn: 'সিইও এবং প্রতিষ্ঠাতা — SIFRI',
   email: 'sohanchowdhury130@gmail.com',
   phone1: '01312815029',
   phone2: '01831841017',
@@ -25,7 +37,7 @@ export const PERSONAL_INFO = {
   coordinates: '23.7688° N, 90.4255° E',
   sifriUrl: 'https://sifribd.com',
   sifriDisplayUrl: 'sifribd.com',
-  coverPhoto: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1791121783/3f705da5-8ca8-419f-a9d1-da5b9d6112e8.jpg',
+  coverPhoto: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1791128782/6f2545b3-fd9a-4079-bd24-577ae9b0cf31.jpg',
   coverPhotoLocal: '/assets/sohan_banner.jpg',
   siteIcon: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1791103462/Hand-drawn_letter_S_icon_2K_20261004121610.jpg',
 
@@ -62,6 +74,76 @@ export const PERSONAL_INFO = {
     'Market Research & Consumer Insights',
     'Strategic Planning & Creative Problem Solving',
     'Business Communication & Client Handling'
+  ],
+
+  certifications: [
+    {
+      id: 'photoshop',
+      category: 'Photoshop & Graphic Design',
+      categoryBn: 'ফটোশপ ও গ্রাফিক ডিজাইন',
+      title: 'Photoshop Expert / Photoshop Certification',
+      titleBn: 'ফটোশপ এক্সপার্ট ও গ্রাফিক ডিজাইন সার্টিফিকেশন',
+      credentialBadge: 'Certified Expert',
+      description: 'অ্যাডোবি ফটোশপ ও আধুনিক গ্রাফিক ডিজাইনে বিশেষ দক্ষতা। ব্র্যান্ড ভিজ্যুয়াল আইডেন্টিটি তৈরি, ফটো ম্যানিপুলেশন, রিটাচিং এবং প্রিমিয়াম ডিজিটাল ক্রিয়েটিভ আর্টওয়ার্ক আর্কিটেকচার।',
+      skills: [
+        'Adobe Photoshop Expert',
+        'Graphic Design & Layouts',
+        'Photo Retouching & Manipulation',
+        'Visual Brand Assets',
+        'Creative Direction'
+      ],
+      icon: 'palette' as const
+    },
+    {
+      id: 'marketing',
+      category: 'Marketing',
+      categoryBn: 'মার্কেটিং ও ব্র্যান্ড স্ট্র্যাটেজি',
+      title: 'Marketing Expert / Marketing Certification',
+      titleBn: 'মার্কেটিং এক্সপার্ট ও ব্র্যান্ডিং সার্টিফিকেশন',
+      credentialBadge: 'Certified Strategist',
+      description: 'ডিজিটাল মার্কেটিং, স্ট্র্যাটেজিক ক্যাম্পেইন ম্যানেজমেন্ট এবং ব্র্যান্ড গ্রোথ ড্রাইভ করার প্রফেশনাল সার্টিফিকেশন। কনজিউমার সাইকোলজি, সোশ্যাল মিডিয়া পারফরম্যান্স ও রিটার্ন অন ইনভেস্টমেন্ট অপ্টিমাইজেশন।',
+      skills: [
+        'Marketing Expert',
+        'Brand Strategy & Management',
+        'Digital & Social Media Marketing',
+        'Campaign Performance Analytics',
+        'Customer Acquisition & Retention'
+      ],
+      icon: 'megaphone' as const
+    },
+    {
+      id: 'music',
+      category: 'Music & Singing',
+      categoryBn: 'সংগীত ও সুরকলা',
+      title: 'Singing / Music Certificates',
+      titleBn: 'সংগীত ও কণ্ঠশিল্প সার্টিফিকেট',
+      credentialBadge: 'Certified Artiste',
+      description: 'কণ্ঠসংগীত ও মিউজিকে প্রাতিষ্ঠানিক স্বীকৃতি ও সংগীতচর্চা। সুর, তাল, নান্দনিক অডিও এক্সপ্রেশন এবং সৃজনশীল শৈল্পিক পারফরম্যান্সের অনন্য মেলবন্ধন।',
+      skills: [
+        'Vocal Music & Singing',
+        'Acoustic Expression',
+        'Musical Composition Appreciation',
+        'Voice Modulation & Stage Presence',
+        'Creative Arts Integration'
+      ],
+      icon: 'music' as const
+    },
+    {
+      id: 'other-credentials',
+      category: 'Other Credentials',
+      categoryBn: 'অন্যান্য সার্টিফিকেশন ও প্রফেশনাল ক্রেডেনশিয়ালস',
+      title: 'Venture Leadership & Legal Foundations',
+      titleBn: 'উদ্যোক্তা নেতৃত্ব ও আইনি গবেষণা ভিত্তি',
+      credentialBadge: 'Executive Credentials',
+      description: 'ই-কমার্স বিজনেস ম্যানেজমেন্ট, এন্টারপ্রেনারশিপ লিডারশিপ, লিগ্যাল রিসার্চ মেথডলজি ও এক্সিকিউটিভ নেগোসিয়েশন সার্টিফিকেশন।',
+      skills: [
+        'E-Commerce Business Operations',
+        'Legal Research & Analysis',
+        'Critical Reasoning & Problem Solving',
+        'Professional Communication & Negotiation'
+      ],
+      icon: 'award' as const
+    }
   ],
 
   education: {
@@ -133,12 +215,12 @@ export const PERSONAL_INFO = {
     name: 'SIFRI',
     tagline: 'Fashion, Lifestyle & E-Commerce Venture',
     url: 'https://sifribd.com',
-    role: 'Brand & Marketing Director — SIFRI',
-    description: 'SIFRI হলো একটি আধুনিক লাইফস্টাইল ও ফ্যাশন ভিত্তিক ই-কমার্স উদ্যোগ। এখানে ব্র্যান্ড স্ট্র্যাটেজি, ডিজিটাল মার্কেটিং, কাস্টমার স্যাটিসফ্যাকশন এবং আধুনিক ডিজিটাল রিটেইল ইকোসিস্টেমের নেতৃত্ব প্রদান করা হয়।',
+    role: 'CEO & Founder — SIFRI',
+    description: 'SIFRI হলো একটি আধুনিক লাইফস্টাইল ও ফ্যাশন ভিত্তিক ই-কমার্স উদ্যোগ। প্রধান নির্বাহী ও প্রতিষ্ঠাতা হিসেবে এখানে ব্র্যান্ড স্ট্র্যাটেজি, প্রোডাক্ট কিউরেশন, ডিজিটাল মার্কেটিং, কাস্টমার স্যাটিসফ্যাকশন এবং আধুনিক ডিজিটাল রিটেইল ইকোসিস্টেমের সামগ্রিক নেতৃত্ব প্রদান করা হয়।',
     pillars: [
       {
-        title: 'Brand Strategy & Growth',
-        desc: 'SIFRI-এর মার্কেট পজিশনিং, আধুনিক ব্র্যান্ড আইডেন্টিটি এবং ভ্যালু প্রোপোজিশন তৈরি।'
+        title: 'Founder’s Vision & Leadership',
+        desc: 'SIFRI-এর মার্কেট পজিশনিং, আধুনিক ব্র্যান্ড আইডেন্টিটি এবং দীর্ঘমেয়াদি বিজনেস ভ্যালু তৈরি।'
       },
       {
         title: 'Marketing & Digital Media',
@@ -154,7 +236,7 @@ export const PERSONAL_INFO = {
       }
     ],
     stats: [
-      { label: 'রোল / ভূমিকা', value: 'Brand & Marketing Director' },
+      { label: 'রোল / পদবী', value: 'CEO & Founder' },
       { label: 'কভারেজ', value: '৬৪ জেলা বাংলাদেশ' },
       { label: 'অফিসিয়াল স্টোর', value: 'sifribd.com' }
     ]

@@ -11,8 +11,8 @@ export const Hero: React.FC = () => {
     { label: 'আমার সম্পর্কে', path: '/about/', targetId: 'about' },
     { label: 'পেশাগত ক্ষেত্র', path: '/areas/', targetId: 'areas' },
     { label: 'সিফরি (SIFRI)', path: '/sifri/', targetId: 'sifri' },
+    { label: 'সার্টিফিকেশন ও স্কিলস', path: '/skills/', targetId: 'skills' },
     { label: 'আইন শিক্ষা (LL.B.)', path: '/education/', targetId: 'education' },
-    { label: 'দক্ষতা ও আগ্রহ', path: '/skills/', targetId: 'skills' },
     { label: 'যোগাযোগ', path: '/contact/', targetId: 'contact' },
   ];
 
@@ -140,7 +140,7 @@ export const Hero: React.FC = () => {
             {/* Right Column: 3 Key Pillars of Identity */}
             <div className="lg:col-span-4 space-y-4">
               
-              {/* Role 1: Brand & Marketing Director at SIFRI */}
+              {/* Role 1: CEO & Founder at SIFRI */}
               <div className="bg-stone-50 p-5 rounded-2xl border border-stone-200/80 hover:border-stone-400 transition-colors">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-9 h-9 rounded-xl bg-orange-100 text-[#FA812F] flex items-center justify-center">
@@ -148,11 +148,11 @@ export const Hero: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-[11px] font-mono text-stone-400 uppercase tracking-wider block">বর্তমান দায়িত্ব</span>
-                    <h3 className="text-sm font-bold text-stone-900">Brand &amp; Marketing Director</h3>
+                    <h3 className="text-sm font-bold text-stone-900">CEO &amp; Founder — SIFRI</h3>
                   </div>
                 </div>
                 <p className="text-xs text-stone-600 leading-relaxed">
-                  ফ্যাশন ও লাইফস্টাইল ই-কমার্স প্ল্যাটফর্ম <strong>SIFRI</strong> (<a href={PERSONAL_INFO.sifriUrl} target="_blank" rel="noopener noreferrer" className="text-[#FA812F] underline">sifribd.com</a>)-এর ব্র্যান্ড ও মার্কেটিং ডিরেক্টর।
+                  ফ্যাশন ও লাইফস্টাইল ই-কমার্স প্ল্যাটফর্ম <strong>SIFRI</strong> (<a href={PERSONAL_INFO.sifriUrl} target="_blank" rel="noopener noreferrer" className="text-[#FA812F] underline">sifribd.com</a>)-এর প্রধান নির্বাহী ও প্রতিষ্ঠাতা (CEO &amp; Founder)।
                 </p>
               </div>
 

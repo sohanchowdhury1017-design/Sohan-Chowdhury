@@ -42,7 +42,7 @@ export const WhatsAppWidget: React.FC = () => {
 
   return (
     <div 
-      className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-[99999] font-sans flex flex-col items-end"
+      className="fixed bottom-20 right-4 sm:bottom-8 sm:right-8 z-40 font-sans flex flex-col items-end"
       aria-label="WhatsApp Chat Support"
     >
       

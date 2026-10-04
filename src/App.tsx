@@ -14,6 +14,7 @@ import { Skills } from './components/Skills';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { WhatsAppWidget } from './components/WhatsAppWidget';
+import { MobileBottomNav } from './components/MobileBottomNav';
 import { NAV_ROUTES, NavRoute } from './utils/navigation';
 
 export default function App() {
@@ -164,10 +165,15 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <div className="pb-16 lg:pb-0">
+        <Footer />
+      </div>
 
       {/* Floating Interactive WhatsApp Widget (wa.me/+8801312815029) */}
       <WhatsAppWidget />
+
+      {/* Pinned Mobile Bottom App Bar (Mobile View Navigation) */}
+      <MobileBottomNav />
     </div>
   );
 }

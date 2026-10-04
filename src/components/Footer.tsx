@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-xs text-stone-400 leading-relaxed max-w-sm">
-              {PERSONAL_INFO.headlineBn}। Brand &amp; Marketing Director — SIFRI (<a href={PERSONAL_INFO.sifriUrl} target="_blank" rel="noopener noreferrer" className="text-[#FA812F] hover:underline">sifribd.com</a>) এবং আইন শিক্ষার্থী (LL.B.)।
+              {PERSONAL_INFO.headlineBn}। CEO &amp; Founder — SIFRI (<a href={PERSONAL_INFO.sifriUrl} target="_blank" rel="noopener noreferrer" className="text-[#FA812F] hover:underline">sifribd.com</a>) এবং আইন শিক্ষার্থী (LL.B.)।
             </p>
             <div className="text-xs font-mono text-stone-500">
               অফিসিয়াল ডোমেইন: <span className="text-stone-300">{PERSONAL_INFO.domain}</span>
