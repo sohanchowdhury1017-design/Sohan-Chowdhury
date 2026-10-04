@@ -15,9 +15,14 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { WhatsAppWidget } from './components/WhatsAppWidget';
 import { MobileBottomNav } from './components/MobileBottomNav';
+import { ScrollProgressBar } from './components/ScrollProgressBar';
+import { useScrollReveal } from './utils/useScrollReveal';
 import { NAV_ROUTES, NavRoute } from './utils/navigation';
 
 export default function App() {
+  // Activate luxury IntersectionObserver scroll animations
+  useScrollReveal();
+
   useEffect(() => {
     try {
       // 1. Convert any legacy hash URL (e.g. #about) to clean path (/about/)
@@ -135,6 +140,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF9F5] text-stone-900 selection:bg-[#FA812F] selection:text-white font-sans">
+      {/* Top Thin Luxury Scroll Progress Bar */}
+      <ScrollProgressBar />
+
       {/* Top Navbar */}
       <Navbar />
 

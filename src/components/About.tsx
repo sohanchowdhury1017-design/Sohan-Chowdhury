@@ -8,7 +8,7 @@ export const About: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 scroll-reveal">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-[#FA812F] font-semibold block mb-1">
               ০১. পরিচিতি ও দৃষ্টিভঙ্গি &middot; Profile &amp; Vision
@@ -25,7 +25,7 @@ export const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Main Narrative Column with User's Exact Bengali Text */}
-          <div className="lg:col-span-7 space-y-6 text-stone-700 leading-relaxed text-base font-sans">
+          <div className="lg:col-span-7 space-y-6 text-stone-700 leading-relaxed text-base font-sans scroll-reveal-left">
             
             <p className="text-lg font-medium text-stone-900 leading-relaxed border-l-4 border-[#FA812F] pl-4 py-1 bg-white/60 rounded-r-md">
               {PERSONAL_INFO.aboutMeParagraphs[0]}
@@ -38,6 +38,20 @@ export const About: React.FC = () => {
             <p>
               {PERSONAL_INFO.aboutMeParagraphs[2]}
             </p>
+
+            {PERSONAL_INFO.aboutMeParagraphs[3] && (
+              <div className="bg-gradient-to-r from-orange-50/80 to-purple-50/80 border border-orange-200/70 p-4 rounded-xl flex items-start gap-3 my-3 text-stone-800 shadow-2xs">
+                <span className="text-2xl shrink-0">🎸</span>
+                <div>
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#FA812F] font-bold block mb-0.5">
+                    সৃজনশীল শিল্পচর্চা &middot; Acoustic Guitar Artistry
+                  </span>
+                  <p className="text-xs sm:text-sm text-stone-700 leading-relaxed font-sans">
+                    {PERSONAL_INFO.aboutMeParagraphs[3]}
+                  </p>
+                </div>
+              </div>
+            )}
 
             {/* Core Working Values Box */}
             <div className="bg-white p-6 rounded-2xl border border-stone-200 shadow-xs my-6 space-y-3">
@@ -79,7 +93,7 @@ export const About: React.FC = () => {
           </div>
 
           {/* Dossier Card: পেশাগত পরিচয় | Professional Profile */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-6 scroll-reveal-right delay-100">
             <div className="bg-white p-7 sm:p-8 rounded-2xl border border-stone-200 shadow-xs relative">
               <div className="flex items-center justify-between pb-3 border-b border-stone-100 mb-5">
                 <span className="text-xs font-mono uppercase tracking-wider text-[#FA812F] font-bold">

@@ -10,7 +10,7 @@ export const SifriSpotlight: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 scroll-reveal">
           <div>
             <div className="inline-flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-full bg-[#FA812F]" />
@@ -40,7 +40,7 @@ export const SifriSpotlight: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
           
           {/* Main Venture Narrative Card */}
-          <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-2xl border border-stone-200 shadow-xs flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-2xl border border-stone-200 shadow-xs flex flex-col justify-between scroll-reveal-left">
             <div>
               <div className="flex items-center gap-2 text-xs font-mono text-[#FA812F] uppercase tracking-wider mb-3 font-semibold">
                 <ShoppingBag className="w-4 h-4" />
@@ -82,7 +82,7 @@ export const SifriSpotlight: React.FC = () => {
           </div>
 
           {/* Right Column: Platform Destination & Direct Action */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-6 scroll-reveal-right delay-100">
             
             <div className="bg-stone-900 text-white p-7 sm:p-8 rounded-2xl flex flex-col justify-between shadow-xs relative overflow-hidden">
               <div>

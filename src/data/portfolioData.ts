@@ -44,7 +44,8 @@ export const PERSONAL_INFO = {
   aboutMeParagraphs: [
     'আমি N.B.N Sohan Chowdhury—একজন তরুণ Entrepreneur, Brand & Marketing Professional এবং Law Student।',
     'Business, Branding, Marketing, Fashion, Law, Digital Media, Investigation এবং Journalism-এর প্রতি আমার বিশেষ আগ্রহ রয়েছে। আমি নতুন কিছু শেখা, বাস্তব অভিজ্ঞতা অর্জন করা এবং নিজের Professional Skills নিয়মিত উন্নত করার চেষ্টা করি।',
-    'আমার কাজের ক্ষেত্রে Creativity, Critical Thinking, Observation, Logical Reasoning এবং Professional Communication-কে বিশেষ গুরুত্ব দিই। আমার লক্ষ্য হলো জ্ঞান ও বাস্তব অভিজ্ঞতাকে কাজে লাগিয়ে নিজের জন্য একটি শক্তিশালী এবং সফল Professional Career তৈরি করা।'
+    'আমার কাজের ক্ষেত্রে Creativity, Critical Thinking, Observation, Logical Reasoning এবং Professional Communication-কে বিশেষ গুরুত্ব দিই। আমার লক্ষ্য হলো জ্ঞান ও বাস্তব অভিজ্ঞতাকে কাজে লাগিয়ে নিজের জন্য একটি শক্তিশালী এবং সফল Professional Career তৈরি করা।',
+    'পেশাগত কাজের পাশাপাশি সুর ও বাদ্যযন্ত্রের জগতে আমার বিশেষ বিচরণ রয়েছে—আমি অ্যাকোস্টিক গিটার বাজাই। গিটারের সুরেলা অ্যাকোস্টিক মেলোডি, রিদম ও কর্ডস আমার চিন্তাভাবনায় নতুন সৃজনশীলতা, একাগ্রতা ও অনুপ্রেরণা জোগায়।'
   ],
 
   coreFocus: [
@@ -113,18 +114,18 @@ export const PERSONAL_INFO = {
     },
     {
       id: 'music',
-      category: 'Music & Singing',
-      categoryBn: 'সংগীত ও সুরকলা',
-      title: 'Singing / Music Certificates',
-      titleBn: 'সংগীত ও কণ্ঠশিল্প সার্টিফিকেট',
-      credentialBadge: 'Certified Artiste',
-      description: 'কণ্ঠসংগীত ও মিউজিকে প্রাতিষ্ঠানিক স্বীকৃতি ও সংগীতচর্চা। সুর, তাল, নান্দনিক অডিও এক্সপ্রেশন এবং সৃজনশীল শৈল্পিক পারফরম্যান্সের অনন্য মেলবন্ধন।',
+      category: 'Guitar Performance & Music',
+      categoryBn: 'অ্যাকোস্টিক গিটার বাদন ও সংগীতকলা',
+      title: 'Acoustic Guitar Performance / Music Certification',
+      titleBn: 'অ্যাকোস্টিক গিটার পারফরম্যান্স ও মিউজিক সার্টিফিকেশন',
+      credentialBadge: 'Certified Guitarist',
+      description: 'অ্যাকোস্টিক গিটার বাদন ও যন্ত্রসংগীতে প্রাতিষ্ঠানিক স্বীকৃতি ও নিয়মিত গিটারচর্চা। গিটারের সুরেলা অ্যাকোস্টিক কর্ডস, রিদম ও মেলোডিক ফ্রেজিং, স্বরলিপি এবং নান্দনিক বাদ্যযন্ত্র পারফরম্যান্সের শৈল্পিক প্রকাশ।',
       skills: [
-        'Vocal Music & Singing',
-        'Acoustic Expression',
-        'Musical Composition Appreciation',
-        'Voice Modulation & Stage Presence',
-        'Creative Arts Integration'
+        'Acoustic Guitar Playing',
+        'Guitar Chords & Rhythms',
+        'Melodic Phrasing & Fingerstyle',
+        'Instrumental Composition Appreciation',
+        'Acoustic Sound & Stage Performance'
       ],
       icon: 'music' as const
     },

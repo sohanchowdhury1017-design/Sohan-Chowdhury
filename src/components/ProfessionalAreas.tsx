@@ -8,7 +8,7 @@ export const ProfessionalAreas: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 scroll-reveal">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-[#FA812F] font-semibold block mb-1">
               ০২. কাজের পরিধি &middot; Expertise &amp; Practice
@@ -23,7 +23,7 @@ export const ProfessionalAreas: React.FC = () => {
         </div>
 
         {/* Core Professional Focus Banner */}
-        <div className="bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-white p-6 sm:p-8 rounded-2xl shadow-sm mb-12 border border-stone-800">
+        <div className="bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-white p-6 sm:p-8 rounded-2xl shadow-sm mb-12 border border-stone-800 scroll-reveal delay-100">
           <div className="flex items-center gap-2 text-xs font-mono text-[#FA812F] uppercase tracking-wider mb-3 font-semibold">
             <Target className="w-4 h-4" />
             <span>Core Professional Focus</span>
@@ -45,7 +45,9 @@ export const ProfessionalAreas: React.FC = () => {
           {PERSONAL_INFO.professionalAreas.map((area, idx) => (
             <div
               key={area}
-              className="bg-white p-5 sm:p-6 rounded-xl border border-stone-200/80 hover:border-[#FA812F] hover:shadow-xs transition-all group flex items-start gap-4"
+              className={`bg-white p-5 sm:p-6 rounded-xl border border-stone-200/80 hover:border-[#FA812F] hover:shadow-xs transition-all group flex items-start gap-4 scroll-reveal ${
+                idx % 3 === 1 ? 'delay-75' : idx % 3 === 2 ? 'delay-150' : ''
+              }`}
             >
               <div className="w-8 h-8 rounded-lg bg-orange-50 text-[#FA812F] flex items-center justify-center shrink-0 font-mono text-xs font-bold group-hover:bg-[#FA812F] group-hover:text-white transition-colors">
                 {String(idx + 1).padStart(2, '0')}

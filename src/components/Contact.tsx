@@ -41,7 +41,7 @@ export const Contact: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4 scroll-reveal">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-[#FA812F] font-semibold block mb-1">
               ০৬. সরাসরি যোগাযোগ &middot; Get In Touch
@@ -58,7 +58,7 @@ export const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Left Column: Direct Phone, Email, Facebook, Website Cards */}
-          <div className="lg:col-span-5 space-y-5">
+          <div className="lg:col-span-5 space-y-5 scroll-reveal-left">
             
             {/* Phone & WhatsApp Card */}
             <div className="bg-white p-6 sm:p-7 rounded-2xl border border-stone-200 shadow-xs space-y-4">
@@ -201,7 +201,7 @@ export const Contact: React.FC = () => {
           </div>
 
           {/* Right Column: Bengali Contact Form */}
-          <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-stone-200 shadow-xs">
+          <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-stone-200 shadow-xs scroll-reveal-right delay-100">
             <h3 className="text-xl sm:text-2xl font-serif font-bold text-stone-900 mb-2">
               বার্তা পাঠান &middot; Send a Message
             </h3>

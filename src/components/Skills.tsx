@@ -50,7 +50,7 @@ export const Skills: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4 scroll-reveal">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-[#FA812F] font-semibold block mb-1">
               ০৫. সার্টিফিকেশন ও বিশেষ দক্ষতা &middot; Certifications &amp; Skills
@@ -63,13 +63,13 @@ export const Skills: React.FC = () => {
             </p>
           </div>
           <p className="text-sm text-stone-600 max-w-md font-sans">
-            ফটোশপ ও গ্রাফিক ডিজাইন, আধুনিক ডিজিটাল মার্কেটিং, সংগীত ও সুরকলা এবং আইনি ও ব্যবসায়িক গবেষণার সমন্বিত ক্রেডেনশিয়ালস।
+            ফটোশপ ও গ্রাফিক ডিজাইন, আধুনিক ডিজিটাল মার্কেটিং, অ্যাকোস্টিক গিটার বাদন এবং আইনি ও ব্যবসায়িক গবেষণার সমন্বিত ক্রেডেনশিয়ালস।
           </p>
         </div>
 
         {/* ================= PRIMARY CERTIFICATIONS SPOTLIGHT ================= */}
         <div className="mb-20">
-          <div className="flex items-center gap-2 mb-6">
+          <div className="flex items-center gap-2 mb-6 scroll-reveal">
             <Sparkles className="w-4 h-4 text-[#FA812F]" />
             <h3 className="text-lg font-serif font-bold text-stone-900">
               সার্টিফিকেশন ও বিশেষজ্ঞ ক্ষেত্র &middot; Verified Certifications
@@ -77,10 +77,12 @@ export const Skills: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {certifications.map((cert) => (
+            {certifications.map((cert, idx) => (
               <div
                 key={cert.id}
-                className="bg-white p-7 sm:p-8 rounded-2xl border border-stone-200 shadow-xs hover:border-[#FA812F] hover:shadow-md transition-all group flex flex-col justify-between"
+                className={`bg-white p-7 sm:p-8 rounded-2xl border border-stone-200 shadow-xs hover:border-[#FA812F] hover:shadow-md transition-all group flex flex-col justify-between scroll-reveal ${
+                  idx % 2 === 1 ? 'delay-100' : ''
+                }`}
               >
                 <div>
                   {/* Top Category & Badge */}

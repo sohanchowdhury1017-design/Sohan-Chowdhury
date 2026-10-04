@@ -40,9 +40,19 @@ export const Hero: React.FC = () => {
     <section id="home" className="relative pt-6 pb-16 bg-[#FAF9F5] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
-        {/* ================= OFFICIAL CLOUDINARY BRAND BANNER ================= */}
-        <div className="mb-8 sm:mb-12 rounded-2xl sm:rounded-3xl overflow-hidden border border-stone-200/90 shadow-md relative group bg-stone-900/5">
-          <div className="relative aspect-[1024/346] w-full overflow-hidden flex items-center justify-center">
+        {/* ================= OFFICIAL CLOUDINARY BRAND BANNER WITH ROTATING BORDER BEAM ================= */}
+        <div className="relative p-[2.5px] sm:p-[3px] rounded-2xl sm:rounded-3xl overflow-hidden mb-8 sm:mb-12 shadow-xl hover:shadow-2xl transition-all duration-500 group">
+          {/* Static Ambient Border Track */}
+          <div className="absolute inset-0 bg-stone-200 rounded-2xl sm:rounded-3xl" />
+
+          {/* Layer 1: Ambient Blurred Rotating Glow (Aura) */}
+          <div className="absolute inset-[-160%] animate-border-beam banner-glow-beam blur-xl opacity-75 group-hover:opacity-100 transition-opacity pointer-events-none" />
+
+          {/* Layer 2: Focused Sharp Rotating Light Beam */}
+          <div className="absolute inset-[-160%] animate-border-beam banner-glow-beam opacity-95 group-hover:opacity-100 transition-opacity pointer-events-none" />
+
+          {/* Inner Content Container holding the banner */}
+          <div className="relative aspect-[1024/346] w-full overflow-hidden rounded-[calc(1rem-2.5px)] sm:rounded-[calc(1.5rem-3px)] bg-stone-900 flex items-center justify-center">
             <img
               src={PERSONAL_INFO.coverPhoto}
               onError={(e) => {

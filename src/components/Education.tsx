@@ -10,7 +10,7 @@ export const Education: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 scroll-reveal">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-[#2DA8D8] font-semibold block mb-1">
               ০৪. শিক্ষাজীবন &middot; Legal Studies &amp; Academia
@@ -28,7 +28,7 @@ export const Education: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Degree Spotlight */}
-          <div className="lg:col-span-6 bg-white p-8 rounded-2xl border border-stone-200 shadow-xs relative overflow-hidden">
+          <div className="lg:col-span-6 bg-white p-8 rounded-2xl border border-stone-200 shadow-xs relative overflow-hidden scroll-reveal-left">
             <div className="w-12 h-12 rounded-xl bg-sky-50 text-[#2DA8D8] flex items-center justify-center mb-6">
               <Scale className="w-6 h-6" />
             </div>
@@ -80,7 +80,7 @@ export const Education: React.FC = () => {
           </div>
 
           {/* Academic Interests Grid */}
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-6 scroll-reveal-right delay-100">
             
             <div className="bg-white p-7 sm:p-8 rounded-2xl border border-stone-200 shadow-xs">
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#2DA8D8] font-bold mb-4">
