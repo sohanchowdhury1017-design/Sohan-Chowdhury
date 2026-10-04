@@ -25,9 +25,11 @@ export function navigateTo(path: string, sectionId?: string, event?: React.Mouse
   }
 
   // Update browser address bar without reload
-  if (window.location.pathname !== path) {
-    window.history.pushState(null, '', path);
-  }
+  try {
+    if (window.location.pathname !== path) {
+      window.history.pushState(null, '', path);
+    }
+  } catch (_) {}
 
   // If sectionId is provided or can be found from path
   const targetId = sectionId || NAV_ROUTES.find(r => r.path === path)?.sectionId;
