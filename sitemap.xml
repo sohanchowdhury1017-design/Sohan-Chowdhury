@@ -6,14 +6,20 @@
   <url>
     <loc>https://sohans.site/</loc>
     <lastmod>2026-10-04</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://sohans.site/about/</loc>
     <lastmod>2026-10-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sohans.site/areas/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sohans.site/sifri/</loc>
@@ -25,24 +31,24 @@
     <loc>https://sohans.site/education/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sohans.site/writing/</loc>
+    <loc>https://sohans.site/skills/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sohans.site/philosophy/</loc>
-    <lastmod>2026-10-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://sohans.site/contact/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sohans.site/fb/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
