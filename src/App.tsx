@@ -19,9 +19,15 @@ import { NAV_ROUTES, NavRoute } from './utils/navigation';
 export default function App() {
   useEffect(() => {
     // 1. Convert any legacy hash URL (e.g. #about) to clean path (/about/)
-    const hash = window.location.hash.replace(/^#/, '');
     const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
 
+    // Instant redirect for /fb shortlink
+    if (currentPath === '/fb' || window.location.pathname.startsWith('/fb') || window.location.hash === '#fb') {
+      window.location.replace('https://facebook.com/nbn.sohan');
+      return;
+    }
+
+    const hash = window.location.hash.replace(/^#/, '');
     const cleanPathMap: Record<string, string> = {
       about: '/about/',
       sifri: '/sifri/',
