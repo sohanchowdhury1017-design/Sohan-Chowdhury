@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -13,15 +13,13 @@ import { Writings } from './components/Writings';
 import { Philosophy } from './components/Philosophy';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { DeployModal } from './components/DeployModal';
+import { WhatsAppWidget } from './components/WhatsAppWidget';
 
 export default function App() {
-  const [deployGuideOpen, setDeployGuideOpen] = useState(false);
-
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF9F5] text-stone-900 selection:bg-[#FA812F] selection:text-white">
       {/* Top Navbar */}
-      <Navbar onOpenDeployGuide={() => setDeployGuideOpen(true)} />
+      <Navbar />
 
       {/* Main Content Sections */}
       <main className="flex-1">
@@ -48,13 +46,10 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer onOpenDeployGuide={() => setDeployGuideOpen(true)} />
+      <Footer />
 
-      {/* GitHub & Custom Domain (sohans.site) Deploy Guide Modal */}
-      <DeployModal
-        isOpen={deployGuideOpen}
-        onClose={() => setDeployGuideOpen(false)}
-      />
+      {/* Floating Interactive WhatsApp Widget (wa.me/+8801312815029) */}
+      <WhatsAppWidget />
     </div>
   );
 }

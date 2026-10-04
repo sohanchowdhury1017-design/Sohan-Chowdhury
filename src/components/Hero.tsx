@@ -74,9 +74,53 @@ export const Hero: React.FC<HeroProps> = ({ onSearchSelect }) => {
             </h1>
 
             {/* Narrative Subtitle */}
-            <p className="text-sm sm:text-base text-stone-600 leading-relaxed mb-6 max-w-sm">
+            <p className="text-sm sm:text-base text-stone-600 leading-relaxed mb-4 max-w-sm">
               Founder of <span className="font-semibold text-stone-900 underline decoration-[#FA812F]/40 underline-offset-2">Sifri</span> and East West University Department of English scholar. Blending narrative theory, brand strategy, and modern digital commerce.
             </p>
+
+            {/* Prominent Animated Facebook PP & WhatsApp Badges */}
+            <div className="mb-6 flex flex-wrap items-center gap-3">
+              {/* Facebook Profile Button */}
+              <a
+                href="https://facebook.com/nbn.sohan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#1877F2] text-white shadow-md hover:shadow-lg hover:bg-[#166fe5] hover:scale-105 active:scale-95 transition-all duration-300 font-sans group cursor-pointer"
+                title="Facebook: facebook.com/nbn.sohan"
+              >
+                <div className="relative">
+                  <img
+                    src={portraitImg}
+                    alt="N B N Sohan Chowdhury"
+                    className="w-7 h-7 rounded-full object-cover border-2 border-white shadow-xs"
+                  />
+                  <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-white text-[#1877F2] rounded-full flex items-center justify-center text-[9px] font-black leading-none shadow-xs">
+                    f
+                  </span>
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="text-[10px] uppercase font-mono tracking-wider text-blue-100 font-medium">Facebook</span>
+                  <span className="text-xs font-bold font-sans">@nbn.sohan</span>
+                </div>
+                {/* Live ping dot */}
+                <span className="relative flex h-2 w-2 ml-0.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-85"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400 border border-white"></span>
+                </span>
+              </a>
+
+              {/* Quick Direct WhatsApp Button */}
+              <a
+                href="https://wa.me/8801312815029"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#25D366]/15 hover:bg-[#25D366] text-[#008069] hover:text-white border border-[#25D366]/30 transition-all text-xs font-semibold shadow-xs group cursor-pointer"
+                title="Chat on WhatsApp: +8801312815029"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#25D366] group-hover:bg-white animate-pulse" />
+                <span>WhatsApp: +8801312815029</span>
+              </a>
+            </div>
 
             {/* Interactive Search Bar (Visual Match with Reference) */}
             <form onSubmit={handleSearchSubmit} className="relative mb-6 max-w-sm">
@@ -202,6 +246,33 @@ export const Hero: React.FC<HeroProps> = ({ onSearchSelect }) => {
 
               {/* 6. Botanical Accent: Floating Small Floral / Petals */}
               <div className="absolute -bottom-2 right-12 w-8 h-8 rounded-full border border-stone-400/40 pointer-events-none z-10" />
+
+              {/* 7. Animated Facebook Profile Pill Badge */}
+              <a
+                href="https://facebook.com/nbn.sohan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute -bottom-5 sm:-bottom-6 left-1/2 -translate-x-1/2 z-40 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-blue-200/90 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2 text-xs font-semibold text-stone-900 group"
+                title="Connect on Facebook: facebook.com/nbn.sohan"
+              >
+                <div className="relative">
+                  <img
+                    src={portraitImg}
+                    alt="Sohan Chowdhury"
+                    className="w-6 h-6 rounded-full object-cover border-2 border-[#1877F2]"
+                  />
+                  <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-[#1877F2] rounded-full flex items-center justify-center text-[8px] text-white font-bold leading-none">
+                    f
+                  </span>
+                </div>
+                <span className="text-[#1877F2] font-mono text-[11px] group-hover:underline">
+                  @nbn.sohan
+                </span>
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1877F2] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#1877F2]"></span>
+                </span>
+              </a>
 
             </div>
           </div>

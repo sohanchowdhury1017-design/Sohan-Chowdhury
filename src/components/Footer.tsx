@@ -2,11 +2,7 @@ import React from 'react';
 import { ArrowUp, ArrowUpRight } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
-interface FooterProps {
-  onOpenDeployGuide: () => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onOpenDeployGuide }) => {
+export const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -50,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDeployGuide }) => {
             </ul>
           </div>
 
-          {/* External Links & Deploy Guide */}
+          {/* External Links */}
           <div className="md:col-span-4 space-y-3 text-xs">
             <div className="font-mono uppercase tracking-wider text-stone-400 font-semibold mb-3">
               Ventures & Setup
@@ -68,13 +64,26 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDeployGuide }) => {
                 </a>
               </li>
               <li>
-                <button
-                  onClick={onOpenDeployGuide}
-                  className="inline-flex items-center gap-1.5 text-stone-400 hover:text-white transition-colors cursor-pointer"
+                <a
+                  href="https://facebook.com/nbn.sohan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-stone-300 hover:text-[#1877F2] transition-colors"
                 >
-                  <span>GitHub & sohans.site Setup Guide</span>
-                  <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-stone-800 text-stone-300">Guide</span>
-                </button>
+                  <span>Facebook Profile (@nbn.sohan)</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#1877F2]" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/8801312815029"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-stone-300 hover:text-[#25D366] transition-colors"
+                >
+                  <span>WhatsApp (+8801312815029)</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#25D366]" />
+                </a>
               </li>
               <li>
                 <a
