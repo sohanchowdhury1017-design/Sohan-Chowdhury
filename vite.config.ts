@@ -16,6 +16,7 @@ export default defineConfig(() => {
       outDir: 'dist',
       assetsDir: 'assets',
       rollupOptions: {
+        input: path.resolve('src/main.tsx'),
         output: {
           entryFileNames: 'assets/index.js',
           chunkFileNames: 'assets/[name].js',
