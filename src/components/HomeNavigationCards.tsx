@@ -6,12 +6,7 @@ import {
   Award, 
   PhoneCall, 
   ArrowRight, 
-  Sparkles,
-  CheckCircle2,
-  Calendar,
-  Briefcase,
-  Layers,
-  Scale
+  CheckCircle2
 } from 'lucide-react';
 import { navigateTo } from '../utils/navigation';
 import { PERSONAL_INFO } from '../data/portfolioData';
@@ -127,22 +122,9 @@ export const HomeNavigationCards: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-[#FAF9F5] dark:bg-[#0d0c0a] border-t border-stone-200/80 dark:border-stone-800/80 transition-colors duration-300">
+    <section className="py-10 sm:py-14 bg-[#FAF9F5] dark:bg-[#0d0c0a] border-t border-stone-200/80 dark:border-stone-800/80 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 dark:bg-orange-950/50 border border-orange-200 dark:border-orange-900/60 text-[#FA812F] text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>মূল তথ্য বিভাগসমূহ &middot; 5 Dedicated Information Hubs</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight">
-            ৫টি পৃথক পেজ ও তথ্য সম্ভার
-          </h2>
-          <p className="text-sm sm:text-base text-stone-600 dark:text-stone-400 font-sans mt-3">
-            প্রতিটি পেজ সম্পূর্ণ আলাদা ও সুনির্দিষ্ট তথ্যে সাজানো। নিচে আপনার কাঙ্ক্ষিত বিভাগে ক্লিক করে বিস্তারিত তথ্য দেখুন।
-          </p>
-        </div>
+        {/* 5 Distinct Cards / Buttons Grid */}
 
         {/* 5 Distinct Cards / Buttons Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
