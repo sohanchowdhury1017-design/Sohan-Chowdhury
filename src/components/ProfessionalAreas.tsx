@@ -1,10 +1,10 @@
 import React from 'react';
-import { Briefcase, TrendingUp, Sparkles, CheckCircle2, Layers, Target, Compass, Store } from 'lucide-react';
+import { Target } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const ProfessionalAreas: React.FC = () => {
   return (
-    <section id="areas" className="py-20 bg-[#FAF9F5] border-t border-stone-200/80">
+    <section id="areas" className="py-20 bg-[#FAF9F5] dark:bg-[#0d0c0a] border-t border-stone-200/80 dark:border-stone-800/80 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -13,17 +13,17 @@ export const ProfessionalAreas: React.FC = () => {
             <span className="text-xs font-mono uppercase tracking-widest text-[#FA812F] font-semibold block mb-1">
               ০২. কাজের পরিধি &middot; Expertise &amp; Practice
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight">
               পেশাগত ক্ষেত্র | Professional Areas
             </h2>
           </div>
-          <p className="text-sm text-stone-600 max-w-md font-sans">
+          <p className="text-sm text-stone-600 dark:text-stone-400 max-w-md font-sans">
             উদ্যোক্তা হিসেবে ব্যবসা সম্প্রসারণ, ব্র্যান্ড ম্যানেজমেন্ট, ডিজিটাল মার্কেটিং এবং আধুনিক ই-কমার্স ডেভেলপমেন্ট।
           </p>
         </div>
 
         {/* Core Professional Focus Banner */}
-        <div className="bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-white p-6 sm:p-8 rounded-2xl shadow-sm mb-12 border border-stone-800 scroll-reveal delay-100">
+        <div className="bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 dark:from-[#171512] dark:via-[#1e1c18] dark:to-[#171512] text-white p-6 sm:p-8 rounded-2xl shadow-sm mb-12 border border-stone-800 dark:border-stone-700/80 scroll-reveal delay-100">
           <div className="flex items-center gap-2 text-xs font-mono text-[#FA812F] uppercase tracking-wider mb-3 font-semibold">
             <Target className="w-4 h-4" />
             <span>Core Professional Focus</span>
@@ -45,15 +45,15 @@ export const ProfessionalAreas: React.FC = () => {
           {PERSONAL_INFO.professionalAreas.map((area, idx) => (
             <div
               key={area}
-              className={`bg-white p-5 sm:p-6 rounded-xl border border-stone-200/80 hover:border-[#FA812F] hover:shadow-xs transition-all group flex items-start gap-4 scroll-reveal ${
+              className={`bg-white dark:bg-[#1a1815] p-5 sm:p-6 rounded-xl border border-stone-200/80 dark:border-stone-800 hover:border-[#FA812F] dark:hover:border-[#FA812F] hover:shadow-xs transition-all group flex items-start gap-4 scroll-reveal ${
                 idx % 3 === 1 ? 'delay-75' : idx % 3 === 2 ? 'delay-150' : ''
               }`}
             >
-              <div className="w-8 h-8 rounded-lg bg-orange-50 text-[#FA812F] flex items-center justify-center shrink-0 font-mono text-xs font-bold group-hover:bg-[#FA812F] group-hover:text-white transition-colors">
+              <div className="w-8 h-8 rounded-lg bg-orange-50 dark:bg-orange-950/50 text-[#FA812F] flex items-center justify-center shrink-0 font-mono text-xs font-bold group-hover:bg-[#FA812F] group-hover:text-white transition-colors">
                 {String(idx + 1).padStart(2, '0')}
               </div>
               <div>
-                <h3 className="text-sm sm:text-base font-bold text-stone-900 group-hover:text-[#FA812F] transition-colors leading-snug">
+                <h3 className="text-sm sm:text-base font-bold text-stone-900 dark:text-stone-100 group-hover:text-[#FA812F] dark:group-hover:text-[#FA812F] transition-colors leading-snug">
                   {area}
                 </h3>
               </div>

@@ -18,7 +18,7 @@ export interface CertificationItem {
 }
 
 export const PERSONAL_INFO = {
-  fullName: 'N.B.N Sohan Chowdhury',
+  fullName: 'N.B.N. Sohan Chowdhury',
   shortName: 'Sohan Chowdhury',
   preferredCall: 'NBN Sohan',
   headline: 'Entrepreneur • Brand & Marketing Professional • Law Student',
@@ -27,6 +27,28 @@ export const PERSONAL_INFO = {
   workingCategoryBn: 'উদ্যোক্তা / বিজনেস ওনার',
   currentRole: 'CEO & Founder — SIFRI',
   currentRoleBn: 'সিইও এবং প্রতিষ্ঠাতা — SIFRI',
+  
+  // ব্যক্তিগত ও পারিবারিক তথ্য
+  birthDate: '19 July 2006 (১৯ জুলাই ২০০৬, বুধবার)',
+  birthDateEn: '19 July 2006, Wednesday',
+  birthDateDisplay: '19 July 2006',
+  family: {
+    father: {
+      name: 'Sazzad Chowdhury',
+      nameBn: 'সাজ্জাদ চৌধুরী',
+      role: 'Businessman',
+      roleBn: 'ব্যবসায়ী',
+    },
+    mother: {
+      name: 'Urmi Chowdhury',
+      nameBn: 'উর্মি চৌধুরী',
+      role: 'Director, Private School',
+      roleBn: 'একটি প্রাইভেট স্কুলের ডিরেক্টর',
+    },
+  },
+  businessJourneyStartYear: '২০২১',
+  businessJourneyStartYearEn: '2021',
+
   email: 'sohanchowdhury130@gmail.com',
   phone1: '01312815029',
   phone2: '01831841017',
@@ -39,7 +61,27 @@ export const PERSONAL_INFO = {
   sifriDisplayUrl: 'sifribd.com',
   coverPhoto: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1791128782/6f2545b3-fd9a-4079-bd24-577ae9b0cf31.jpg',
   coverPhotoLocal: '/assets/sohan_banner.jpg',
+  coverPhoto2: 'https://res.cloudinary.com/b5z0n3sl/image/upload/c_fill,w_1024,h_346,g_auto/v1791186496/Gemini_Generated_Image_ibv4uwibv4uwibv4.jpg',
+  coverPhoto2Local: '/assets/sohan_banner_2.jpg',
+  bannerSlides: [
+    {
+      id: 1,
+      image: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1791128782/6f2545b3-fd9a-4079-bd24-577ae9b0cf31.jpg',
+      fallback: '/assets/sohan_banner.jpg',
+      alt: 'N.B.N Sohan Chowdhury - Official Brand Banner 1',
+      title: 'Official Brand Identity',
+    },
+    {
+      id: 2,
+      image: 'https://res.cloudinary.com/b5z0n3sl/image/upload/c_fill,w_1024,h_346,g_auto/v1791186496/Gemini_Generated_Image_ibv4uwibv4uwibv4.jpg',
+      fallback: '/assets/sohan_banner_2.jpg',
+      alt: 'N.B.N Sohan Chowdhury - Official Brand Banner 2',
+      title: 'Executive Vision & Leadership',
+    }
+  ],
   siteIcon: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1791103462/Hand-drawn_letter_S_icon_2K_20261004121610.jpg',
+  whatsappAvatar: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1791190538/edc07784-1c6c-44c8-8142-210351edf74a.jpg',
+  whatsappAvatarLocal: '/assets/whatsapp_avatar.jpg',
 
   aboutMeParagraphs: [
     'আমি N.B.N Sohan Chowdhury—একজন তরুণ Entrepreneur, Brand & Marketing Professional এবং Law Student।',
@@ -149,14 +191,53 @@ export const PERSONAL_INFO = {
 
   education: {
     degree: 'Bachelor of Laws — LL.B.',
-    year: 'Law Student — 1st Year',
-    description: 'বর্তমানে Law বিষয়ে পড়াশোনা করছি এবং Legal Knowledge, Research, Critical Thinking, Investigation ও Professional Development-এর ওপর গুরুত্ব দিচ্ছি।',
+    degreeBn: 'ব্যাচেলর অব লজ (LL.B.)',
+    year: 'Law Student — 1st Year (প্রথম বর্ষ)',
+    description: 'বর্তমানে আমি LLB-এর ১ম বর্ষে অধ্যয়নরত। প্রাতিষ্ঠানিক আইন শিক্ষা, লিগ্যাল রিসার্চ, ক্রিটিক্যাল থিংকিং, ইনভেস্টিগেশন এবং বিশ্লেষণধর্মী আইনি দক্ষতা উন্নয়নের ওপর বিশেষ গুরুত্ব দিচ্ছি।',
+    timeline: [
+      {
+        id: 'llb',
+        level: 'LLB (Bachelor of Laws)',
+        levelBn: 'আইন শিক্ষা — ১ম বর্ষ (LL.B.)',
+        status: 'বর্তমানে ১ম বর্ষে অধ্যয়নরত',
+        statusEn: 'Currently Enrolled — 1st Year',
+        institution: 'আইন অনুষদ (Faculty of Law)',
+        institutionBn: 'আইন বিভাগ',
+        badge: 'বর্তমান প্রাতিষ্ঠানিক ডিগ্রি',
+        current: true,
+        description: 'আইনি জ্ঞান, প্রাতিষ্ঠানিক গবেষণা, বিশ্লেষণধর্মী দৃষ্টিভঙ্গি ও পেশাগত দক্ষতা উন্নয়ন।'
+      },
+      {
+        id: 'hsc',
+        level: 'Higher Secondary Certificate (HSC)',
+        levelBn: 'উচ্চ মাধ্যমিক (HSC)',
+        status: 'এইচএসসি সম্পন্ন',
+        statusEn: 'Completed',
+        institution: 'রংপুর (Rangpur)',
+        institutionBn: 'রংপুর',
+        badge: 'উচ্চ মাধ্যমিক শিক্ষা',
+        current: false,
+        description: 'রংপুর থেকে সাফল্যের সাথে উচ্চ মাধ্যমিক (HSC) সম্পন্ন।'
+      },
+      {
+        id: 'ssc',
+        level: 'Secondary School Certificate (SSC)',
+        levelBn: 'মাধ্যমিক (SSC)',
+        status: 'এসএসসি সম্পন্ন',
+        statusEn: 'Completed',
+        institution: 'Nurjahanpur RMC High School',
+        institutionBn: 'নূরজাহানপুর আরএমসি হাই স্কুল',
+        badge: 'মাধ্যমিক শিক্ষা',
+        current: false,
+        description: 'Nurjahanpur RMC High School থেকে কৃতিত্বের সাথে মাধ্যমিক (SSC) সম্পন্ন।'
+      }
+    ],
     academicInterests: [
-      'Law',
+      'Law & Jurisprudence',
       'Criminal & Civil Law',
       'Legal Research',
       'Investigation & Inquiry',
-      'Journalism',
+      'Journalism & Media',
       'Business & Entrepreneurship',
       'Corporate & Commercial Affairs',
       'Legal Reasoning'

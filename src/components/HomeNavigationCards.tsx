@@ -1,0 +1,209 @@
+import React from 'react';
+import { 
+  User, 
+  ShoppingBag, 
+  GraduationCap, 
+  Award, 
+  PhoneCall, 
+  ArrowRight, 
+  Sparkles,
+  CheckCircle2,
+  Calendar,
+  Briefcase,
+  Layers,
+  Scale
+} from 'lucide-react';
+import { navigateTo } from '../utils/navigation';
+import { PERSONAL_INFO } from '../data/portfolioData';
+
+interface HomeCardProps {
+  id: string;
+  number: string;
+  titleBn: string;
+  titleEn: string;
+  badge: string;
+  badgeColor: string;
+  icon: React.ReactNode;
+  highlights: string[];
+  ctaLabel: string;
+  path: string;
+  accentColor: string;
+  featured?: boolean;
+}
+
+export const HomeNavigationCards: React.FC = () => {
+  const cards: HomeCardProps[] = [
+    {
+      id: 'about',
+      number: '০১',
+      titleBn: 'আমার সম্পর্কে',
+      titleEn: 'Personal & Family Background',
+      badge: 'ব্যক্তিগত পরিচয়',
+      badgeColor: 'bg-orange-50 dark:bg-orange-950/50 text-[#FA812F] border-orange-200 dark:border-orange-900/60',
+      icon: <User className="w-5 h-5 text-[#FA812F]" />,
+      highlights: [
+        `জন্ম: 19 July 2006 (Wednesday / বুধবার)`,
+        `পিতা: ${PERSONAL_INFO.family.father.name} (${PERSONAL_INFO.family.father.role})`,
+        `মাতা: ${PERSONAL_INFO.family.mother.name} (${PERSONAL_INFO.family.mother.role})`,
+        'অ্যাকোস্টিক গিটার বাদন ও অফিসিয়াল ডসিয়ার'
+      ],
+      ctaLabel: 'সম্পূর্ণ পরিচয় দেখুন',
+      path: '/about/',
+      accentColor: '#FA812F',
+    },
+    {
+      id: 'sifri',
+      number: '০২',
+      titleBn: 'সিফরি (SIFRI) ভেঞ্চার',
+      titleEn: 'Executive Role & E-Commerce',
+      badge: 'প্রধান দায়িত্ব',
+      badgeColor: 'bg-amber-50 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400 border-amber-200 dark:border-amber-900/60',
+      icon: <ShoppingBag className="w-5 h-5 text-amber-500" />,
+      highlights: [
+        'CEO & Founder — SIFRI (sifribd.com)',
+        '২০২১ সাল থেকে শুরু হওয়া ব্যবসায়িক পথচলা',
+        'ফ্যাশন ও লাইফস্টাইল ই-কমার্স প্ল্যাটফর্ম',
+        'সারাদেশে ৬৪ জেলায় বিস্তৃত ডেলিভারি নেটওয়ার্ক'
+      ],
+      ctaLabel: 'সিফরি ভেঞ্চার দেখুন',
+      path: '/sifri/',
+      accentColor: '#F59E0B',
+    },
+    {
+      id: 'education',
+      number: '০৩',
+      titleBn: 'শিক্ষাজীবন',
+      titleEn: 'Academic Journey & Legal Studies',
+      badge: 'আইন শিক্ষা (LL.B.)',
+      badgeColor: 'bg-sky-50 dark:bg-sky-950/50 text-[#2DA8D8] border-sky-200 dark:border-sky-900/60',
+      icon: <GraduationCap className="w-5 h-5 text-[#2DA8D8]" />,
+      highlights: [
+        'Bachelor of Laws (LL.B.) — ১ম বর্ষে অধ্যয়নরত',
+        'উচ্চ মাধ্যমিক (HSC) — রংপুর থেকে সম্পন্ন',
+        'মাধ্যমিক (SSC) — নূরজাহানপুর আরএমসি হাই স্কুল',
+        'লিগ্যাল রিসার্চ, অনুসন্ধান ও ক্রিটিক্যাল থিংকিং'
+      ],
+      ctaLabel: 'শিক্ষাজীবন দেখুন',
+      path: '/education/',
+      accentColor: '#2DA8D8',
+    },
+    {
+      id: 'skills',
+      number: '০৪',
+      titleBn: 'দক্ষতা ও কাজের ক্ষেত্র',
+      titleEn: 'Certifications & 15 Focus Areas',
+      badge: 'বিশেষজ্ঞ দক্ষতা',
+      badgeColor: 'bg-purple-50 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400 border-purple-200 dark:border-purple-900/60',
+      icon: <Award className="w-5 h-5 text-purple-500" />,
+      highlights: [
+        'Photoshop Expert & Graphic Design Certification',
+        'Marketing & Brand Strategy Certification',
+        '১৫টি প্রফেশনাল বিজনেস ও ম্যানেজমেন্ট ক্ষেত্র',
+        'অবজারভেশন, অ্যানালিটিক্যাল ও লিডারশিপ স্কিলস'
+      ],
+      ctaLabel: 'দক্ষতা ও ক্ষেত্র দেখুন',
+      path: '/skills/',
+      accentColor: '#8B5CF6',
+    },
+    {
+      id: 'contact',
+      number: '০৫',
+      titleBn: 'সরাসরি যোগাযোগ',
+      titleEn: 'Contact, Phones & Message Form',
+      badge: 'সরাসরি পৌঁছান',
+      badgeColor: 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-900/60',
+      icon: <PhoneCall className="w-5 h-5 text-emerald-500" />,
+      highlights: [
+        `WhatsApp ও প্রাইমারি ফোন: ${PERSONAL_INFO.phone1}`,
+        `বিকল্প যোগাযোগ নম্বর: ${PERSONAL_INFO.phone2}`,
+        `অফিসিয়াল ইমেইল: ${PERSONAL_INFO.email}`,
+        'সরাসরি মেসেজ পাঠানোর ফর্ম ও সোশ্যাল লিঙ্ক'
+      ],
+      ctaLabel: 'যোগাযোগ পেজে যান',
+      path: '/contact/',
+      accentColor: '#10B981',
+      featured: true
+    },
+  ];
+
+  return (
+    <section className="py-16 sm:py-20 bg-[#FAF9F5] dark:bg-[#0d0c0a] border-t border-stone-200/80 dark:border-stone-800/80 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 dark:bg-orange-950/50 border border-orange-200 dark:border-orange-900/60 text-[#FA812F] text-xs font-semibold uppercase tracking-wider mb-3">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>মূল তথ্য বিভাগসমূহ &middot; 5 Dedicated Information Hubs</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+            ৫টি পৃথক পেজ ও তথ্য সম্ভার
+          </h2>
+          <p className="text-sm sm:text-base text-stone-600 dark:text-stone-400 font-sans mt-3">
+            প্রতিটি পেজ সম্পূর্ণ আলাদা ও সুনির্দিষ্ট তথ্যে সাজানো। নিচে আপনার কাঙ্ক্ষিত বিভাগে ক্লিক করে বিস্তারিত তথ্য দেখুন।
+          </p>
+        </div>
+
+        {/* 5 Distinct Cards / Buttons Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+          {cards.map((card, idx) => (
+            <div
+              key={card.id}
+              onClick={(e) => navigateTo(card.path, card.id, e)}
+              className={`group relative bg-white dark:bg-[#1a1815] rounded-3xl p-7 sm:p-8 border transition-all duration-300 flex flex-col justify-between cursor-pointer hover:-translate-y-1.5 shadow-sm hover:shadow-xl ${
+                card.featured
+                  ? 'border-[#FA812F] dark:border-[#FA812F]/80 md:col-span-2 lg:col-span-1 bg-gradient-to-br from-white via-white to-orange-50/30 dark:from-[#1a1815] dark:via-[#1a1815] dark:to-orange-950/20'
+                  : 'border-stone-200/90 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600'
+              }`}
+            >
+              <div>
+                {/* Header Row: Icon, Number, Badge */}
+                <div className="flex items-center justify-between gap-3 mb-5">
+                  <div className="w-12 h-12 rounded-2xl bg-stone-50 dark:bg-stone-800/80 border border-stone-100 dark:border-stone-700/80 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    {card.icon}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full border ${card.badgeColor}`}>
+                      {card.badge}
+                    </span>
+                    <span className="text-xs font-mono font-bold text-stone-400 dark:text-stone-500">
+                      {card.number}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Card Title */}
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-stone-900 dark:text-stone-100 group-hover:text-[#FA812F] dark:group-hover:text-[#FA812F] transition-colors mb-1">
+                  {card.titleBn}
+                </h3>
+                <div className="text-xs font-mono text-stone-500 dark:text-stone-400 mb-5">
+                  {card.titleEn}
+                </div>
+
+                {/* Key Information Bullets */}
+                <ul className="space-y-2.5 mb-7">
+                  {card.highlights.map((item, bulletIdx) => (
+                    <li key={bulletIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-stone-700 dark:text-stone-300 font-sans leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-[#FA812F] shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Bottom Action Button */}
+              <div className="pt-5 border-t border-stone-100 dark:border-stone-800">
+                <div className="w-full inline-flex items-center justify-between px-5 py-3 rounded-xl bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 group-hover:bg-[#FA812F] dark:group-hover:bg-[#FA812F] dark:group-hover:text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-xs">
+                  <span>{card.ctaLabel}</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+};

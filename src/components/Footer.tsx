@@ -1,7 +1,8 @@
 import React from 'react';
-import { ArrowUp, ArrowUpRight, MessageCircle } from 'lucide-react';
+import { ArrowUp, ArrowUpRight } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { navigateTo } from '../utils/navigation';
+import { ThemeToggle } from './ThemeToggle';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -9,10 +10,10 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-stone-900 text-stone-300 py-16 border-t border-stone-800 font-sans">
+    <footer className="bg-stone-900 dark:bg-[#090807] text-stone-300 py-16 border-t border-stone-800 dark:border-stone-800/80 font-sans transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-stone-800">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-stone-800 dark:border-stone-800/80">
           
           {/* Brand Info with Custom Hand-drawn S Icon & Bengali Profile */}
           <div className="md:col-span-5 space-y-3.5">
@@ -40,13 +41,12 @@ export const Footer: React.FC = () => {
               ন্যাভিগেশন &middot; Navigation
             </div>
             <ul className="space-y-2">
-              <li><a href="/" onClick={(e) => navigateTo('/', 'home', e)} className="hover:text-white transition-colors">হোম (Home)</a></li>
-              <li><a href="/about/" onClick={(e) => navigateTo('/about/', 'about', e)} className="hover:text-white transition-colors">আমার সম্পর্কে (About Me)</a></li>
-              <li><a href="/areas/" onClick={(e) => navigateTo('/areas/', 'areas', e)} className="hover:text-white transition-colors">পেশাগত ক্ষেত্র (Professional Areas)</a></li>
-              <li><a href="/sifri/" onClick={(e) => navigateTo('/sifri/', 'sifri', e)} className="hover:text-white transition-colors">সিফরি (SIFRI)</a></li>
-              <li><a href="/education/" onClick={(e) => navigateTo('/education/', 'education', e)} className="hover:text-white transition-colors">শিক্ষাজীবন (LL.B.)</a></li>
-              <li><a href="/skills/" onClick={(e) => navigateTo('/skills/', 'skills', e)} className="hover:text-white transition-colors">দক্ষতা ও আগ্রহ (Skills)</a></li>
-              <li><a href="/contact/" onClick={(e) => navigateTo('/contact/', 'contact', e)} className="hover:text-white transition-colors">যোগাযোগ (Contact)</a></li>
+              <li><a href="/" onClick={(e) => navigateTo('/', 'home', e)} className="hover:text-white transition-colors cursor-pointer">হোম (Home)</a></li>
+              <li><a href="/about/" onClick={(e) => navigateTo('/about/', 'about', e)} className="hover:text-white transition-colors cursor-pointer">আমার সম্পর্কে (About Me)</a></li>
+              <li><a href="/sifri/" onClick={(e) => navigateTo('/sifri/', 'sifri', e)} className="hover:text-white transition-colors cursor-pointer">সিফরি (SIFRI)</a></li>
+              <li><a href="/education/" onClick={(e) => navigateTo('/education/', 'education', e)} className="hover:text-white transition-colors cursor-pointer">শিক্ষাজীবন (LL.B.)</a></li>
+              <li><a href="/skills/" onClick={(e) => navigateTo('/skills/', 'skills', e)} className="hover:text-white transition-colors cursor-pointer">দক্ষতা ও কাজের ক্ষেত্র (Skills)</a></li>
+              <li><a href="/contact/" onClick={(e) => navigateTo('/contact/', 'contact', e)} className="hover:text-white transition-colors cursor-pointer">যোগাযোগ (Contact)</a></li>
             </ul>
           </div>
 
@@ -118,13 +118,16 @@ export const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} {PERSONAL_INFO.fullName} (NBN Sohan). সর্বস্বত্ব সংরক্ষিত &middot; All rights reserved.
           </div>
           
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
-          >
-            <span>উপরে যান &middot; Back to top</span>
-            <ArrowUp className="w-3.5 h-3.5" />
-          </button>
+          <div className="flex items-center gap-4">
+            <ThemeToggle showLabel />
+            <button
+              onClick={scrollToTop}
+              className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
+            >
+              <span>উপরে যান &middot; Back to top</span>
+              <ArrowUp className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
 
       </div>

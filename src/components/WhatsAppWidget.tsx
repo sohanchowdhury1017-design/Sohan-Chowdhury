@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Send, Smile, CheckCheck, Lock } from 'lucide-react';
+import { PERSONAL_INFO } from '../data/portfolioData';
 import sohanAvatarImg from '../assets/images/sohan_avatar.jpg';
 
 export const WhatsAppWidget: React.FC = () => {
@@ -78,7 +79,10 @@ export const WhatsAppWidget: React.FC = () => {
               {/* Profile Image with Online Dot */}
               <div className="relative">
                 <img
-                  src={sohanAvatarImg}
+                  src={PERSONAL_INFO.whatsappAvatar}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = PERSONAL_INFO.whatsappAvatarLocal || sohanAvatarImg;
+                  }}
                   alt="N.B.N Sohan Chowdhury"
                   className="w-11 h-11 rounded-full object-cover border-2 border-white/60 shadow-xs"
                 />
@@ -88,7 +92,7 @@ export const WhatsAppWidget: React.FC = () => {
               {/* Title & Online Status */}
               <div>
                 <div className="flex items-center gap-1.5 leading-tight">
-                  <span className="font-bold text-sm tracking-tight text-white">@nbn.sohan</span>
+                  <span className="font-bold text-sm tracking-tight text-white">Sohan</span>
                   {/* Verified Badge */}
                   <svg className="w-4 h-4 fill-[#20A090] text-white" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="10" fill="#38BDF8" />
@@ -104,7 +108,7 @@ export const WhatsAppWidget: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-1 text-[11px] text-white/90 font-medium">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#25D366]" />
-                  <span>অনলাইন</span>
+                  <span>Online</span>
                 </div>
               </div>
             </div>

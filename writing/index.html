@@ -3,6 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Early Theme Detection to prevent theme flash -->
+    <script>
+      (function() {
+        try {
+          var stored = localStorage.getItem('sohans_site_theme');
+          var theme = stored ? stored : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.colorScheme = 'dark';
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.colorScheme = 'light';
+          }
+        } catch (e) {}
+      })();
+    </script>
     
     <!-- Site Icon & Favicons -->
     <link rel="icon" type="image/jpeg" href="https://res.cloudinary.com/b5z0n3sl/image/upload/v1791103462/Hand-drawn_letter_S_icon_2K_20261004121610.jpg" />
@@ -10,11 +27,11 @@
     <link rel="apple-touch-icon" href="https://res.cloudinary.com/b5z0n3sl/image/upload/v1791103462/Hand-drawn_letter_S_icon_2K_20261004121610.jpg" />
     
     <!-- Primary Page Title & Core Identity -->
-    <title>N.B.N Sohan Chowdhury | Entrepreneur • Brand &amp; Marketing Professional • Law Student</title>
+    <title>Articles, Insights & Writing | N.B.N Sohan Chowdhury</title>
     
     <!-- Meta Descriptions -->
-    <meta name="description" content="N.B.N Sohan Chowdhury—একজন তরুণ Entrepreneur, Brand &amp; Marketing Professional এবং Law Student। CEO &amp; Founder at SIFRI। বিজনেস, ব্র্যান্ডিং, মার্কেটিং ও আইন বিষয়ক অফিসিয়াল ওয়েবসাইট।" />
-    <meta name="keywords" content="N.B.N Sohan Chowdhury, Sohan Chowdhury, NBN Sohan, Sohans, SIFRI, CEO & Founder, Law Student, Entrepreneur, Sifri BD, Photoshop Expert, Marketing Expert, sohans.site" />
+    <meta name="description" content="Read articles, investigative perspectives, and insights on entrepreneurship, brand marketing, legal reasoning, and digital commerce." />
+    <meta name="keywords" content="Sohan Chowdhury Writing, Business Insights, Brand Strategy Articles, Legal Perspectives, Digital Media Opinions" />
     <meta name="author" content="N.B.N Sohan Chowdhury" />
     
     <!-- Indexing & Search Engine Directives -->
@@ -23,7 +40,7 @@
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large" />
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://sohans.site/" />
+    <link rel="canonical" href="https://sohans.site/writing/" />
     
     <!-- Geo & Regional Tags -->
     <meta name="geo.region" content="BD" />
@@ -33,9 +50,9 @@
     <!-- OpenGraph / Facebook Sharing Metadata -->
     <meta property="og:locale" content="bn_BD" />
     <meta property="og:type" content="profile" />
-    <meta property="og:title" content="N.B.N Sohan Chowdhury | Entrepreneur • Brand &amp; Marketing Professional • Law Student" />
-    <meta property="og:description" content="N.B.N Sohan Chowdhury—একজন তরুণ Entrepreneur, Brand &amp; Marketing Professional এবং Law Student। CEO &amp; Founder — SIFRI।" />
-    <meta property="og:url" content="https://sohans.site/" />
+    <meta property="og:title" content="Articles, Insights & Writing | N.B.N Sohan Chowdhury" />
+    <meta property="og:description" content="Read articles, investigative perspectives, and insights on entrepreneurship, brand marketing, legal reasoning, and digital commerce." />
+    <meta property="og:url" content="https://sohans.site/writing/" />
     <meta property="og:site_name" content="N.B.N Sohan Chowdhury | sohans.site" />
     <meta property="og:image" content="https://res.cloudinary.com/b5z0n3sl/image/upload/v1791128782/6f2545b3-fd9a-4079-bd24-577ae9b0cf31.jpg" />
     <meta property="og:image:width" content="1376" />
@@ -47,8 +64,8 @@
 
     <!-- Twitter / X Sharing Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="N.B.N Sohan Chowdhury | Entrepreneur • Brand &amp; Marketing Professional • Law Student" />
-    <meta name="twitter:description" content="Official website of N.B.N Sohan Chowdhury (CEO &amp; Founder at SIFRI, Law Student)." />
+    <meta name="twitter:title" content="Articles, Insights & Writing | N.B.N Sohan Chowdhury" />
+    <meta name="twitter:description" content="Read articles, investigative perspectives, and insights on entrepreneurship, brand marketing, legal reasoning, and digital commerce." />
     <meta name="twitter:image" content="https://res.cloudinary.com/b5z0n3sl/image/upload/v1791128782/6f2545b3-fd9a-4079-bd24-577ae9b0cf31.jpg" />
     <meta name="twitter:image:alt" content="N.B.N Sohan Chowdhury" />
 
