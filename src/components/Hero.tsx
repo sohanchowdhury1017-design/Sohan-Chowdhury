@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Search, ArrowRight, ArrowUpRight, MessageCircle, Phone, Briefcase, Scale, ShoppingBag, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import sohanBannerImg from '../assets/images/sohan_banner.jpg';
@@ -9,6 +9,54 @@ export const Hero: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+
+  // Gentle scroll-triggered and entry fade-in animation states
+  const [bannerInView, setBannerInView] = useState(false);
+  const [cardInView, setCardInView] = useState(false);
+  const bannerRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // If IntersectionObserver is not available, reveal immediately
+    if (typeof IntersectionObserver === 'undefined') {
+      setBannerInView(true);
+      setCardInView(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target === bannerRef.current) {
+              setBannerInView(true);
+            }
+            if (entry.target === cardRef.current) {
+              setCardInView(true);
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    if (bannerRef.current) observer.observe(bannerRef.current);
+    if (cardRef.current) observer.observe(cardRef.current);
+
+    // Subtle fallback to guarantee presentation under all circumstances
+    const fallbackTimer = setTimeout(() => {
+      setBannerInView(true);
+      setCardInView(true);
+    }, 400);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallbackTimer);
+    };
+  }, []);
 
   const bannerSlides = [
     {
@@ -69,7 +117,12 @@ export const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         {/* ================= OFFICIAL CLOUDINARY BRAND BANNER SLIDER WITH ROTATING BORDER BEAM ================= */}
-        <div className="relative p-[2.5px] sm:p-[3px] rounded-2xl sm:rounded-3xl overflow-hidden mb-8 sm:mb-12 shadow-xl hover:shadow-2xl transition-all duration-500 group">
+        <div 
+          ref={bannerRef}
+          className={`relative p-[2.5px] sm:p-[3px] rounded-2xl sm:rounded-3xl overflow-hidden mb-8 sm:mb-12 shadow-xl hover:shadow-2xl group transition-all duration-700 ease-out will-change-transform ${
+            bannerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+          }`}
+        >
           {/* Static Ambient Border Track */}
           <div className="absolute inset-0 bg-stone-200 dark:bg-stone-800 rounded-2xl sm:rounded-3xl" />
 
@@ -172,7 +225,12 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* ================= EXECUTIVE PROFILE INTRO CARD ================= */}
-        <div className="bg-white dark:bg-[#121622] rounded-3xl p-6 sm:p-10 lg:p-12 border-2 border-stone-200 dark:border-stone-800 shadow-sm transition-all duration-300 relative">
+        <div 
+          ref={cardRef}
+          className={`bg-white dark:bg-[#121622] rounded-3xl p-6 sm:p-10 lg:p-12 border-2 border-stone-200 dark:border-stone-800 shadow-sm transition-all duration-700 ease-out will-change-transform relative ${
+            cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
+        >
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             
@@ -180,7 +238,9 @@ export const Hero: React.FC = () => {
             <div className="lg:col-span-8 space-y-6">
               
               {/* Status Badges in Solid High-Contrast Colors (Komla Orange as Main) */}
-              <div className="flex flex-wrap items-center gap-2">
+              <div className={`flex flex-wrap items-center gap-2 transition-all duration-700 ease-out delay-100 ${
+                cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+              }`}>
                 <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-orange-100 dark:bg-orange-950/80 border border-orange-300 dark:border-orange-800 text-[#c2410c] dark:text-orange-300 text-xs font-bold shadow-2xs">
                   <span className="w-2 h-2 rounded-full bg-[#FA812F]" />
                   <span>অফিসিয়াল পোর্টফোলিও &middot; official profile</span>
@@ -191,7 +251,9 @@ export const Hero: React.FC = () => {
               </div>
 
               {/* Title & Tagline */}
-              <div>
+              <div className={`transition-all duration-700 ease-out delay-150 ${
+                cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+              }`}>
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight leading-tight">
                   {PERSONAL_INFO.fullName}
                 </h1>
@@ -204,12 +266,19 @@ export const Hero: React.FC = () => {
               </div>
 
               {/* Bengali Introductory Summary */}
-              <p className="text-sm sm:text-base text-stone-700 dark:text-stone-300 leading-relaxed font-sans max-w-2xl">
+              <p className={`text-sm sm:text-base text-stone-700 dark:text-stone-300 leading-relaxed font-sans max-w-2xl transition-all duration-700 ease-out delay-200 ${
+                cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+              }`}>
                 {PERSONAL_INFO.aboutMeParagraphs[0]} {PERSONAL_INFO.aboutMeParagraphs[2]}
               </p>
 
               {/* Quick Search Bar with Signature Komla Orange Action */}
-              <form onSubmit={handleSearchSubmit} className="relative max-w-lg pt-1">
+              <form 
+                onSubmit={handleSearchSubmit} 
+                className={`relative max-w-lg pt-1 transition-all duration-700 ease-out delay-250 ${
+                  cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+                }`}
+              >
                 <div className="relative flex items-center">
                   <input
                     type="text"
@@ -229,7 +298,9 @@ export const Hero: React.FC = () => {
               </form>
 
               {/* Quick Topic Chips in Solid High-Contrast Colors */}
-              <div className="flex flex-wrap gap-2 pt-1">
+              <div className={`flex flex-wrap gap-2 pt-1 transition-all duration-700 ease-out delay-300 ${
+                cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+              }`}>
                 {quickTopics.map((topic, i) => (
                   <button
                     key={topic.label}
@@ -253,7 +324,9 @@ export const Hero: React.FC = () => {
               {/* Role 1: CEO & Founder at SIFRI & Entrepreneur Since 2021 */}
               <div 
                 onClick={(e) => navigateTo('/sifri/', 'sifri', e)}
-                className="bg-white dark:bg-[#161c28] p-5 rounded-2xl border-2 border-orange-200 dark:border-stone-800 hover:border-[#FA812F] dark:hover:border-[#FA812F] transition-all cursor-pointer group shadow-2xs"
+                className={`bg-white dark:bg-[#161c28] p-5 rounded-2xl border-2 border-orange-200 dark:border-stone-800 hover:border-[#FA812F] dark:hover:border-[#FA812F] transition-all duration-700 ease-out delay-200 cursor-pointer group shadow-2xs ${
+                  cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
               >
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-3">
@@ -274,7 +347,9 @@ export const Hero: React.FC = () => {
               {/* Role 2: Law Student — 1st Year */}
               <div 
                 onClick={(e) => navigateTo('/education/', 'education', e)}
-                className="bg-white dark:bg-[#161c28] p-5 rounded-2xl border-2 border-sky-200 dark:border-stone-800 hover:border-[#0284c7] dark:hover:border-[#38bdf8] transition-all cursor-pointer group shadow-2xs"
+                className={`bg-white dark:bg-[#161c28] p-5 rounded-2xl border-2 border-sky-200 dark:border-stone-800 hover:border-[#0284c7] dark:hover:border-[#38bdf8] transition-all duration-700 ease-out delay-300 cursor-pointer group shadow-2xs ${
+                  cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
               >
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-10 h-10 rounded-xl bg-[#0284c7] text-white flex items-center justify-center group-hover:scale-105 transition-transform shadow-xs">
@@ -291,7 +366,9 @@ export const Hero: React.FC = () => {
               </div>
 
               {/* Role 3: Fast Contact Links */}
-              <div className="bg-[#1e293b] dark:bg-[#0f172a] border-2 border-stone-700 text-white p-5 rounded-2xl shadow-sm space-y-3">
+              <div className={`bg-[#1e293b] dark:bg-[#0f172a] border-2 border-stone-700 text-white p-5 rounded-2xl shadow-sm space-y-3 transition-all duration-700 ease-out delay-400 ${
+                cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}>
                 <div className="text-xs font-mono text-amber-300 uppercase tracking-wider font-bold">
                   সরাসরি যোগাযোগ &middot; Quick Connect
                 </div>
