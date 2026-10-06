@@ -70,8 +70,8 @@ export const HomeNavigationCards: React.FC = () => {
       titleBn: 'শিক্ষাজীবন',
       titleEn: 'Academic Journey & Legal Studies',
       badge: 'আইন শিক্ষা (LL.B.)',
-      badgeColor: 'bg-sky-50 dark:bg-sky-950/50 text-[#2DA8D8] border-sky-200 dark:border-sky-900/60',
-      icon: <GraduationCap className="w-5 h-5 text-[#2DA8D8]" />,
+      badgeColor: 'bg-sky-50 dark:bg-sky-950/50 text-sky-700 dark:text-sky-300 border-sky-200/80 dark:border-sky-800/80',
+      icon: <GraduationCap className="w-5 h-5 text-sky-500" />,
       highlights: [
         'Bachelor of Laws (LL.B.) — ১ম বর্ষে অধ্যয়নরত',
         'উচ্চ মাধ্যমিক (HSC) — রংপুর থেকে সম্পন্ন',
@@ -80,7 +80,7 @@ export const HomeNavigationCards: React.FC = () => {
       ],
       ctaLabel: 'শিক্ষাজীবন দেখুন',
       path: '/education/',
-      accentColor: '#2DA8D8',
+      accentColor: '#0ea5e9',
     },
     {
       id: 'skills',
@@ -88,8 +88,8 @@ export const HomeNavigationCards: React.FC = () => {
       titleBn: 'দক্ষতা ও কাজের ক্ষেত্র',
       titleEn: 'Certifications & 15 Focus Areas',
       badge: 'বিশেষজ্ঞ দক্ষতা',
-      badgeColor: 'bg-purple-50 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400 border-purple-200 dark:border-purple-900/60',
-      icon: <Award className="w-5 h-5 text-purple-500" />,
+      badgeColor: 'bg-gradient-to-r from-sky-50 to-orange-50 dark:from-sky-950/40 dark:to-orange-950/40 text-stone-800 dark:text-stone-200 border-sky-200/80 dark:border-sky-800/80',
+      icon: <Award className="w-5 h-5 text-sky-500" />,
       highlights: [
         'Photoshop Expert & Graphic Design Certification',
         'Marketing & Brand Strategy Certification',
@@ -98,7 +98,7 @@ export const HomeNavigationCards: React.FC = () => {
       ],
       ctaLabel: 'দক্ষতা ও ক্ষেত্র দেখুন',
       path: '/skills/',
-      accentColor: '#8B5CF6',
+      accentColor: '#0284c7',
     },
     {
       id: 'contact',
@@ -106,8 +106,8 @@ export const HomeNavigationCards: React.FC = () => {
       titleBn: 'সরাসরি যোগাযোগ',
       titleEn: 'Contact, Phones & Message Form',
       badge: 'সরাসরি পৌঁছান',
-      badgeColor: 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-900/60',
-      icon: <PhoneCall className="w-5 h-5 text-emerald-500" />,
+      badgeColor: 'bg-sky-50 dark:bg-sky-950/50 text-sky-700 dark:text-sky-300 border-sky-200/80 dark:border-sky-800/80',
+      icon: <PhoneCall className="w-5 h-5 text-[#FA812F]" />,
       highlights: [
         `WhatsApp ও প্রাইমারি ফোন: ${PERSONAL_INFO.phone1}`,
         `বিকল্প যোগাযোগ নম্বর: ${PERSONAL_INFO.phone2}`,
@@ -116,36 +116,38 @@ export const HomeNavigationCards: React.FC = () => {
       ],
       ctaLabel: 'যোগাযোগ পেজে যান',
       path: '/contact/',
-      accentColor: '#10B981',
+      accentColor: '#FA812F',
       featured: true
     },
   ];
 
   return (
-    <section className="py-10 sm:py-14 bg-[#FAF9F5] dark:bg-[#0d0c0a] border-t border-stone-200/80 dark:border-stone-800/80 transition-colors duration-300">
+    <section className="py-10 sm:py-14 bg-[#FAF8F5] dark:bg-[#0b0f17] border-t border-orange-100/70 dark:border-stone-800/80 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 5 Distinct Cards / Buttons Grid */}
-
-        {/* 5 Distinct Cards / Buttons Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
-          {cards.map((card, idx) => (
+          {cards.map((card) => (
             <div
               key={card.id}
               onClick={(e) => navigateTo(card.path, card.id, e)}
-              className={`group relative bg-white dark:bg-[#1a1815] rounded-3xl p-7 sm:p-8 border transition-all duration-300 flex flex-col justify-between cursor-pointer hover:-translate-y-1.5 shadow-sm hover:shadow-xl ${
+              className={`group relative bg-white dark:bg-[#131926] rounded-3xl p-7 sm:p-8 border-2 transition-all duration-300 flex flex-col justify-between cursor-pointer hover:-translate-y-1.5 shadow-sm hover:shadow-md ${
                 card.featured
-                  ? 'border-[#FA812F] dark:border-[#FA812F]/80 md:col-span-2 lg:col-span-1 bg-gradient-to-br from-white via-white to-orange-50/30 dark:from-[#1a1815] dark:via-[#1a1815] dark:to-orange-950/20'
-                  : 'border-stone-200/90 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600'
+                  ? 'border-[#FA812F] md:col-span-2 lg:col-span-1 ring-1 ring-[#FA812F]/20'
+                  : 'border-stone-200 dark:border-stone-800 hover:border-[#FA812F]'
               }`}
             >
               <div>
                 {/* Header Row: Icon, Number, Badge */}
                 <div className="flex items-center justify-between gap-3 mb-5">
-                  <div className="w-12 h-12 rounded-2xl bg-stone-50 dark:bg-stone-800/80 border border-stone-100 dark:border-stone-700/80 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-2xs ${
+                    card.id === 'education' || card.id === 'skills'
+                      ? 'bg-sky-100 dark:bg-sky-950/80 text-[#0284c7]'
+                      : 'bg-orange-100 dark:bg-orange-950/80 text-[#FA812F]'
+                  }`}>
                     {card.icon}
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full border ${card.badgeColor}`}>
+                    <span className={`text-[11px] font-bold px-3 py-1 rounded-full border ${card.badgeColor}`}>
                       {card.badge}
                     </span>
                     <span className="text-xs font-mono font-bold text-stone-400 dark:text-stone-500">
@@ -155,7 +157,7 @@ export const HomeNavigationCards: React.FC = () => {
                 </div>
 
                 {/* Card Title */}
-                <h3 className="text-xl sm:text-2xl font-serif font-bold text-stone-900 dark:text-stone-100 group-hover:text-[#FA812F] dark:group-hover:text-[#FA812F] transition-colors mb-1">
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-stone-900 dark:text-stone-100 group-hover:text-[#FA812F] transition-colors mb-1">
                   {card.titleBn}
                 </h3>
                 <div className="text-xs font-mono text-stone-500 dark:text-stone-400 mb-5">
@@ -166,16 +168,20 @@ export const HomeNavigationCards: React.FC = () => {
                 <ul className="space-y-2.5 mb-7">
                   {card.highlights.map((item, bulletIdx) => (
                     <li key={bulletIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-stone-700 dark:text-stone-300 font-sans leading-relaxed">
-                      <CheckCircle2 className="w-4 h-4 text-[#FA812F] shrink-0 mt-0.5" />
+                      <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${card.id === 'education' || card.id === 'skills' ? 'text-[#0284c7]' : 'text-[#FA812F]'}`} />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Bottom Action Button */}
-              <div className="pt-5 border-t border-stone-100 dark:border-stone-800">
-                <div className="w-full inline-flex items-center justify-between px-5 py-3 rounded-xl bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 group-hover:bg-[#FA812F] dark:group-hover:bg-[#FA812F] dark:group-hover:text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-xs">
+              {/* Bottom Action Button - Komla Orange Dominant */}
+              <div className="pt-5 border-t border-stone-200 dark:border-stone-800">
+                <div className={`w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all shadow-xs ${
+                  card.id === 'education' || card.id === 'skills'
+                    ? 'bg-[#0284c7] hover:bg-[#0369a1] text-white'
+                    : 'bg-[#FA812F] hover:bg-[#e07124] text-white'
+                }`}>
                   <span>{card.ctaLabel}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>

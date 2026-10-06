@@ -4,7 +4,7 @@ import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-stone-100/60 dark:bg-[#12110f] border-t border-b border-stone-200/70 dark:border-stone-800/80 transition-colors duration-300">
+    <section id="about" className="py-20 bg-[#FAF8F5] dark:bg-[#0b0f17] border-t border-b border-orange-100/70 dark:border-stone-800/80 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -27,7 +27,7 @@ export const About: React.FC = () => {
           {/* Main Narrative Column with User's Exact Bengali Text */}
           <div className="lg:col-span-7 space-y-6 text-stone-700 dark:text-stone-300 leading-relaxed text-base font-sans scroll-reveal-left">
             
-            <p className="text-lg font-medium text-stone-900 dark:text-stone-100 leading-relaxed border-l-4 border-[#FA812F] pl-4 py-1 bg-white/60 dark:bg-stone-800/60 rounded-r-md">
+            <p className="text-lg font-medium text-stone-900 dark:text-stone-100 leading-relaxed border-l-4 border-[#FA812F] pl-4 py-2 bg-white dark:bg-[#131926] rounded-r-xl border border-stone-200/70 dark:border-stone-800 shadow-2xs">
               {PERSONAL_INFO.aboutMeParagraphs[0]}
             </p>
 
@@ -139,7 +139,7 @@ export const About: React.FC = () => {
 
                 {/* Mother Info */}
                 <div className="p-3.5 bg-stone-50/80 dark:bg-stone-800/70 rounded-xl border border-stone-100 dark:border-stone-700/80 flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-sky-100 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 flex items-center justify-center shrink-0">
                     <GraduationCap className="w-4 h-4" />
                   </div>
                   <div>
@@ -162,20 +162,20 @@ export const About: React.FC = () => {
                 href={PERSONAL_INFO.sifriUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 rounded-xl text-xs font-semibold tracking-wide uppercase hover:bg-stone-800 dark:hover:bg-stone-200 transition-colors shadow-xs"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#FA812F] hover:bg-[#e07124] text-white rounded-xl text-xs font-bold tracking-wide uppercase transition-all shadow-xs cursor-pointer"
               >
                 <span>সিফরি স্টোর পরিদর্শন করুন</span>
-                <ArrowUpRight className="w-4 h-4 text-[#FA812F]" />
+                <ArrowUpRight className="w-4 h-4 text-white" />
               </a>
 
               <a
                 href={PERSONAL_INFO.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-800 dark:text-stone-200 rounded-xl text-xs font-semibold tracking-wide hover:bg-stone-50 dark:hover:bg-stone-700 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-orange-200/80 dark:border-stone-700 bg-white dark:bg-[#131926] text-stone-800 dark:text-stone-200 rounded-xl text-xs font-semibold tracking-wide hover:border-sky-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors shadow-2xs"
               >
                 <span>Facebook Profile</span>
-                <ArrowUpRight className="w-4 h-4 text-stone-400" />
+                <ArrowUpRight className="w-4 h-4 text-sky-500" />
               </a>
             </div>
 

@@ -6,7 +6,7 @@ export const SifriSpotlight: React.FC = () => {
   const sifri = PERSONAL_INFO.sifriDetails;
 
   return (
-    <section id="sifri" className="py-24 bg-stone-100/50 dark:bg-[#12110f] relative overflow-hidden border-t border-stone-200 dark:border-stone-800/80 transition-colors duration-300">
+    <section id="sifri" className="py-24 bg-[#FAF8F5] dark:bg-[#0b0f17] relative overflow-hidden border-t border-orange-100/70 dark:border-stone-800/80 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Header */}
@@ -28,7 +28,7 @@ export const SifriSpotlight: React.FC = () => {
               href={sifri.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#FA812F] text-white rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-[#e07124] transition-all shadow-md group cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#FA812F] hover:bg-[#e07124] text-white rounded-xl text-xs font-bold tracking-wider uppercase transition-all shadow-sm group cursor-pointer"
             >
               <span>sifribd.com পরিদর্শন করুন</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -40,7 +40,7 @@ export const SifriSpotlight: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
           
           {/* Main Venture Narrative Card */}
-          <div className="lg:col-span-7 bg-white dark:bg-[#1a1815] p-8 sm:p-10 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-xs flex flex-col justify-between scroll-reveal-left transition-colors">
+          <div className="lg:col-span-7 bg-white dark:bg-[#131926] p-8 sm:p-10 rounded-2xl border border-orange-100/90 dark:border-stone-800 shadow-[0_4px_20px_rgba(250,129,47,0.04)] flex flex-col justify-between scroll-reveal-left transition-colors">
             <div>
               <div className="flex items-center gap-2 text-xs font-mono text-[#FA812F] uppercase tracking-wider mb-3 font-semibold">
                 <ShoppingBag className="w-4 h-4" />

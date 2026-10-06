@@ -16,50 +16,58 @@ html.dark {
   color-scheme: dark;
 }
 
+::selection {
+  background-color: #0ea5e9;
+  color: #ffffff;
+}
+
 body {
   font-family: var(--font-sans);
-  background-color: #FAF9F5;
+  background-color: #FAF8F5; /* Premium Off-White with soft warm undertone */
   color: #1c1917;
   overflow-x: hidden;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 html.dark body {
-  background-color: #0d0c0a;
-  color: #f5f5f4;
+  background-color: #0b0f17; /* Deep midnight navy/slate complementing sky blue and warm orange */
+  color: #f8fafc;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar with subtle warm & sky accents */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f0ea;
+  background: #f4efe6;
+}
+html.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d6d3d1;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #a8a29e;
+  background: #0ea5e9;
 }
 
-/* Botanical Red/Coral Dot Matrix Pattern from reference screenshot */
-.dot-matrix-coral {
-  background-image: radial-gradient(#F43F5E 1.5px, transparent 1.5px);
-  background-size: 14px 14px;
+/* Subtle dot-matrix accents */
+.dot-matrix-warm {
+  background-image: radial-gradient(rgba(250, 129, 47, 0.2) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
 }
 
-.dot-matrix-stone {
-  background-image: radial-gradient(#78716C 1.5px, transparent 1.5px);
-  background-size: 14px 14px;
+.dot-matrix-sky {
+  background-image: radial-gradient(rgba(14, 165, 233, 0.2) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* ================= ROTATING BORDER BEAM ANIMATION ================= */
+/* ================= ROTATING BORDER BEAM (SKY BLUE + KOMLA ORANGE + WARM LIGHT) ================= */
 @keyframes border-beam-spin {
   0% {
     transform: rotate(0deg);
@@ -70,7 +78,7 @@ html {
 }
 
 .animate-border-beam {
-  animation: border-beam-spin 6s linear infinite;
+  animation: border-beam-spin 6.5s linear infinite;
   will-change: transform;
 }
 
@@ -78,12 +86,13 @@ html {
   background: conic-gradient(
     from 0deg at 50% 50%,
     transparent 0deg,
-    transparent 230deg,
-    rgba(250, 129, 47, 0.15) 270deg,
-    rgba(250, 129, 47, 0.6) 310deg,
+    transparent 180deg,
+    rgba(250, 129, 47, 0.2) 210deg,
+    #0ea5e9 250deg,
+    #ffffff 290deg,
+    #ffedd5 315deg,
     #FA812F 335deg,
-    #ffedd5 350deg,
-    #FA812F 355deg,
+    #ea580c 355deg,
     transparent 360deg
   );
 }

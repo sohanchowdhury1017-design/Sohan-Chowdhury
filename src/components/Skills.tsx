@@ -44,7 +44,7 @@ export const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-24 bg-stone-100/60 dark:bg-[#12110f] border-t border-stone-200 dark:border-stone-800/80 transition-colors duration-300">
+    <section id="skills" className="py-24 bg-[#FAF8F5] dark:bg-[#0b0f17] border-t border-orange-100/70 dark:border-stone-800/80 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

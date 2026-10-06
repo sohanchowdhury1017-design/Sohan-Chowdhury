@@ -37,7 +37,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#FAF9F5] dark:bg-[#0d0c0a] border-t border-stone-200 dark:border-stone-800/80 transition-colors duration-300 relative">
+    <section id="contact" className="py-24 bg-[#FAF8F5] dark:bg-[#0b0f17] border-t border-orange-100/70 dark:border-stone-800/80 transition-colors duration-300 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -279,7 +279,7 @@ export const Contact: React.FC = () => {
                   <button
                     type="submit"
                     disabled={status === 'sending'}
-                    className="w-full sm:w-auto px-7 py-3 bg-[#FA812F] hover:bg-[#e07124] text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    className="w-full sm:w-auto px-8 py-3.5 bg-[#FA812F] hover:bg-[#e07124] text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all shadow-xs flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                   >
                     <span>{status === 'sending' ? 'পাঠানো হচ্ছে...' : 'বার্তা পাঠান'}</span>
                     <Send className="w-3.5 h-3.5" />

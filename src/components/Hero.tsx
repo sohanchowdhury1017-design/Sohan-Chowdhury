@@ -172,19 +172,20 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* ================= EXECUTIVE PROFILE INTRO CARD ================= */}
-        <div className="bg-white/80 dark:bg-[#161411]/90 backdrop-blur-xs rounded-3xl p-6 sm:p-10 lg:p-12 border border-stone-200/90 dark:border-stone-800/90 shadow-xs transition-colors duration-300">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-white dark:bg-[#121622] rounded-3xl p-6 sm:p-10 lg:p-12 border-2 border-stone-200 dark:border-stone-800 shadow-sm transition-all duration-300 relative">
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             
             {/* Left Column: Bengali Identity, Tagline, Bio & Search */}
             <div className="lg:col-span-8 space-y-6">
               
-              {/* Status Badge */}
+              {/* Status Badges in Solid High-Contrast Colors (Komla Orange as Main) */}
               <div className="flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-950/40 border border-orange-200 dark:border-orange-900/60 text-[#FA812F] text-xs font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-[#FA812F] animate-pulse" />
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-orange-100 dark:bg-orange-950/80 border border-orange-300 dark:border-orange-800 text-[#c2410c] dark:text-orange-300 text-xs font-bold shadow-2xs">
+                  <span className="w-2 h-2 rounded-full bg-[#FA812F]" />
                   <span>অফিসিয়াল পোর্টফোলিও &middot; official profile</span>
                 </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-xs font-medium">
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sky-100 dark:bg-sky-950/80 border border-sky-300 dark:border-sky-800 text-[#0284c7] dark:text-sky-300 text-xs font-bold">
                   {PERSONAL_INFO.workingCategory}
                 </span>
               </div>
@@ -194,10 +195,10 @@ export const Hero: React.FC = () => {
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight leading-tight">
                   {PERSONAL_INFO.fullName}
                 </h1>
-                <p className="text-base sm:text-xl font-medium text-[#FA812F] mt-2 font-sans">
-                  {PERSONAL_INFO.headline}
+                <p className="text-base sm:text-xl font-bold text-[#FA812F] mt-2 font-sans flex items-center gap-2">
+                  <span>{PERSONAL_INFO.headline}</span>
                 </p>
-                <p className="text-xs sm:text-sm text-stone-500 dark:text-stone-400 font-sans mt-0.5">
+                <p className="text-xs sm:text-sm text-[#0284c7] font-sans mt-0.5 font-semibold">
                   ({PERSONAL_INFO.headlineBn})
                 </p>
               </div>
@@ -207,7 +208,7 @@ export const Hero: React.FC = () => {
                 {PERSONAL_INFO.aboutMeParagraphs[0]} {PERSONAL_INFO.aboutMeParagraphs[2]}
               </p>
 
-              {/* Quick Search Bar */}
+              {/* Quick Search Bar with Signature Komla Orange Action */}
               <form onSubmit={handleSearchSubmit} className="relative max-w-lg pt-1">
                 <div className="relative flex items-center">
                   <input
@@ -215,25 +216,29 @@ export const Hero: React.FC = () => {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="অনুসন্ধান করুন: সিফরি, আইন শিক্ষা, মার্কেটিং, দক্ষতা..."
-                    className="w-full bg-white dark:bg-[#1f1d19] border-2 border-stone-200 dark:border-stone-700 rounded-xl pl-10 pr-24 py-3 text-xs sm:text-sm text-stone-900 dark:text-stone-100 placeholder-stone-400 dark:placeholder-stone-500 focus:outline-hidden focus:border-[#FA812F] shadow-xs transition-colors"
+                    className="w-full bg-[#FAF8F5] dark:bg-[#18202e] border-2 border-stone-300 dark:border-stone-700 rounded-xl pl-10 pr-28 py-3 text-xs sm:text-sm text-stone-900 dark:text-stone-100 placeholder-stone-500 focus:outline-hidden focus:border-[#FA812F] focus:bg-white transition-all"
                   />
-                  <Search className="w-4 h-4 text-stone-400 absolute left-3.5 pointer-events-none" />
+                  <Search className="w-4 h-4 text-stone-500 absolute left-3.5 pointer-events-none" />
                   <button
                     type="submit"
-                    className="absolute right-2 px-4 py-1.5 bg-stone-900 dark:bg-stone-800 hover:bg-[#FA812F] dark:hover:bg-[#FA812F] text-white text-xs font-semibold rounded-lg transition-colors cursor-pointer"
+                    className="absolute right-2 px-4 py-1.5 bg-[#FA812F] hover:bg-[#e07124] text-white text-xs font-bold rounded-lg transition-all shadow-xs cursor-pointer"
                   >
                     খুঁজুন
                   </button>
                 </div>
               </form>
 
-              {/* Quick Topic Chips */}
+              {/* Quick Topic Chips in Solid High-Contrast Colors */}
               <div className="flex flex-wrap gap-2 pt-1">
-                {quickTopics.map((topic) => (
+                {quickTopics.map((topic, i) => (
                   <button
                     key={topic.label}
                     onClick={() => navigateTo(topic.path, topic.targetId)}
-                    className="text-xs font-medium bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-800 dark:text-stone-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
+                    className={`text-xs font-bold px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
+                      i % 2 === 0
+                        ? 'bg-orange-100 hover:bg-orange-200 text-[#9a3412] dark:bg-orange-950/60 dark:text-orange-200 border-orange-300 dark:border-orange-800'
+                        : 'bg-sky-100 hover:bg-sky-200 text-[#075985] dark:bg-sky-950/60 dark:text-sky-200 border-sky-300 dark:border-sky-800'
+                    }`}
                   >
                     {topic.label}
                   </button>
@@ -242,26 +247,26 @@ export const Hero: React.FC = () => {
 
             </div>
 
-            {/* Right Column: 3 Key Pillars of Identity */}
+            {/* Right Column: 3 Key Pillars of Identity in Solid Style */}
             <div className="lg:col-span-4 space-y-4">
               
               {/* Role 1: CEO & Founder at SIFRI & Entrepreneur Since 2021 */}
               <div 
                 onClick={(e) => navigateTo('/sifri/', 'sifri', e)}
-                className="bg-stone-50 dark:bg-[#1b1916] p-5 rounded-2xl border border-stone-200/80 dark:border-stone-800 hover:border-[#FA812F] dark:hover:border-[#FA812F] transition-all cursor-pointer group"
+                className="bg-white dark:bg-[#161c28] p-5 rounded-2xl border-2 border-orange-200 dark:border-stone-800 hover:border-[#FA812F] dark:hover:border-[#FA812F] transition-all cursor-pointer group shadow-2xs"
               >
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-orange-100 dark:bg-orange-950/60 text-[#FA812F] flex items-center justify-center group-hover:scale-105 transition-transform">
-                      <ShoppingBag className="w-4 h-4" />
+                    <div className="w-10 h-10 rounded-xl bg-[#FA812F] text-white flex items-center justify-center group-hover:scale-105 transition-transform shadow-xs">
+                      <ShoppingBag className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[11px] font-mono text-stone-400 dark:text-stone-500 uppercase tracking-wider block">বর্তমান দায়িত্ব &middot; {PERSONAL_INFO.businessJourneyStartYear} থেকে</span>
+                      <span className="text-[11px] font-mono text-[#c2410c] dark:text-orange-400 uppercase tracking-wider block font-bold">বর্তমান দায়িত্ব &middot; {PERSONAL_INFO.businessJourneyStartYear} থেকে</span>
                       <h3 className="text-sm font-bold text-stone-900 dark:text-stone-100 group-hover:text-[#FA812F] transition-colors">CEO &amp; Founder — SIFRI</h3>
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+                <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed font-sans">
                   ২০২১ সালে শুরু হয় ব্যবসায়িক পথচলা। ফ্যাশন ও লাইফস্টাইল ই-কমার্স প্ল্যাটফর্ম <strong>SIFRI</strong>-এর বিস্তারিত তথ্য দেখতে ক্লিক করুন →
                 </p>
               </div>
@@ -269,42 +274,42 @@ export const Hero: React.FC = () => {
               {/* Role 2: Law Student — 1st Year */}
               <div 
                 onClick={(e) => navigateTo('/education/', 'education', e)}
-                className="bg-stone-50 dark:bg-[#1b1916] p-5 rounded-2xl border border-stone-200/80 dark:border-stone-800 hover:border-[#2DA8D8] dark:hover:border-[#2DA8D8] transition-all cursor-pointer group"
+                className="bg-white dark:bg-[#161c28] p-5 rounded-2xl border-2 border-sky-200 dark:border-stone-800 hover:border-[#0284c7] dark:hover:border-[#38bdf8] transition-all cursor-pointer group shadow-2xs"
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-9 h-9 rounded-xl bg-sky-100 dark:bg-sky-950/60 text-[#2DA8D8] flex items-center justify-center group-hover:scale-105 transition-transform">
-                    <Scale className="w-4 h-4" />
+                  <div className="w-10 h-10 rounded-xl bg-[#0284c7] text-white flex items-center justify-center group-hover:scale-105 transition-transform shadow-xs">
+                    <Scale className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-[11px] font-mono text-stone-400 dark:text-stone-500 uppercase tracking-wider block">শিক্ষাজীবন &middot; ১ম বর্ষ</span>
-                    <h3 className="text-sm font-bold text-stone-900 dark:text-stone-100 group-hover:text-[#2DA8D8] transition-colors">Bachelor of Laws — LL.B.</h3>
+                    <span className="text-[11px] font-mono text-[#0284c7] dark:text-sky-400 uppercase tracking-wider block font-bold">শিক্ষাজীবন &middot; ১ম বর্ষ</span>
+                    <h3 className="text-sm font-bold text-stone-900 dark:text-stone-100 group-hover:text-[#0284c7] transition-colors">Bachelor of Laws — LL.B.</h3>
                   </div>
                 </div>
-                <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+                <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed font-sans">
                   বর্তমানে LLB-এর ১ম বর্ষে অধ্যয়নরত। নূরজাহানপুর আরএমসি হাই স্কুল (SSC) ও রংপুর (HSC)-এর অ্যাকাডেমিক বিবরণ দেখতে ক্লিক করুন →
                 </p>
               </div>
 
               {/* Role 3: Fast Contact Links */}
-              <div className="bg-stone-900 text-white p-5 rounded-2xl shadow-xs space-y-3">
-                <div className="text-xs font-mono text-stone-400 uppercase tracking-wider">
-                  সরাসরি যোগাযোগ
+              <div className="bg-[#1e293b] dark:bg-[#0f172a] border-2 border-stone-700 text-white p-5 rounded-2xl shadow-sm space-y-3">
+                <div className="text-xs font-mono text-amber-300 uppercase tracking-wider font-bold">
+                  সরাসরি যোগাযোগ &middot; Quick Connect
                 </div>
                 <div className="flex items-center justify-between gap-2">
                   <a
                     href={PERSONAL_INFO.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-2 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-semibold rounded-lg transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-bold rounded-xl transition-colors shadow-xs"
                   >
-                    <MessageCircle className="w-3.5 h-3.5" />
+                    <MessageCircle className="w-4 h-4" />
                     <span>WhatsApp</span>
                   </a>
                   <a
                     href={`tel:${PERSONAL_INFO.phone1}`}
-                    className="inline-flex items-center gap-1.5 px-3 py-2 bg-stone-800 hover:bg-stone-700 text-white text-xs font-medium rounded-lg transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2.5 bg-stone-800 hover:bg-stone-700 text-white text-xs font-semibold rounded-xl transition-colors border border-stone-600"
                   >
-                    <Phone className="w-3.5 h-3.5 text-[#FA812F]" />
+                    <Phone className="w-4 h-4 text-[#38bdf8]" />
                     <span>{PERSONAL_INFO.phone1}</span>
                   </a>
                 </div>

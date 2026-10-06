@@ -10,8 +10,11 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-stone-900 dark:bg-[#090807] text-stone-300 py-16 border-t border-stone-800 dark:border-stone-800/80 font-sans transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-[#0c111c] dark:bg-[#070a10] text-stone-300 relative border-t border-sky-950/70 font-sans transition-colors duration-300">
+      {/* Top Stripe in Signature Komla Orange */}
+      <div className="h-[3px] bg-[#FA812F]" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-stone-800 dark:border-stone-800/80">
           
