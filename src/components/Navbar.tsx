@@ -14,9 +14,9 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#FAF8F5] dark:bg-[#0b0f17] border-b-2 border-stone-200 dark:border-stone-800 transition-colors duration-300 relative shadow-xs">
-      {/* Solid Top Accent Bar in Signature Komla Orange */}
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#FA812F]" />
+    <header className="sticky top-0 z-50 bg-[#0B0F19]/95 backdrop-blur-md border-b border-[#161B26] transition-colors duration-300 relative shadow-sm">
+      {/* 🍊 Signature Komla Orange Accent Bar */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FA812F] via-[#fb923c] to-[#FA812F]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -26,18 +26,18 @@ export const Navbar: React.FC = () => {
             <a 
               href="/" 
               onClick={(e) => handleNavClick('/', 'home', e)}
-              className="group flex items-center gap-2.5 text-stone-900 dark:text-stone-100 transition-colors cursor-pointer"
+              className="group flex items-center gap-2.5 text-[#E2E8F0] transition-colors cursor-pointer"
             >
               <img 
                 src={PERSONAL_INFO.siteIcon} 
                 alt="S" 
-                className="w-10 h-10 rounded-full object-cover shadow-xs border-2 border-stone-300 dark:border-stone-700 group-hover:border-[#FA812F] transition-colors"
+                className="w-10 h-10 rounded-full object-cover shadow-xs border-2 border-[#1E2638] group-hover:border-[#FA812F] transition-colors"
               />
               <div className="flex flex-col">
-                <span className="text-base sm:text-lg font-bold tracking-tight font-sans text-stone-900 dark:text-stone-100 group-hover:text-[#FA812F] transition-colors">
+                <span className="text-base sm:text-lg font-bold tracking-tight font-sans text-[#E2E8F0] group-hover:text-[#FA812F] transition-colors">
                   {PERSONAL_INFO.fullName}
                 </span>
-                <span className="text-[11px] text-stone-500 dark:text-stone-400 font-medium hidden sm:block">
+                <span className="text-[11px] text-[#94A3B8] font-medium hidden sm:block">
                   {PERSONAL_INFO.headline}
                 </span>
               </div>
@@ -56,7 +56,7 @@ export const Navbar: React.FC = () => {
                   className={`relative py-1.5 transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[#FA812F] after:transition-all after:duration-200 ${
                     isActive
                       ? 'text-[#FA812F] font-bold after:w-full'
-                      : 'text-stone-700 dark:text-stone-300 hover:text-[#FA812F] dark:hover:text-[#FA812F] after:w-0 hover:after:w-full hover:after:bg-[#FA812F]'
+                      : 'text-[#CBD5E1] hover:text-[#FA812F] after:w-0 hover:after:w-full hover:after:bg-[#FA812F]'
                   }`}
                 >
                   {route.label}
@@ -65,8 +65,8 @@ export const Navbar: React.FC = () => {
             })}
           </nav>
 
-          {/* Actions: Theme Toggle, Facebook profile and WhatsApp */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Desktop Actions (hidden below lg to prevent overlap/duplication with mobile bar) */}
+          <div className="hidden lg:flex items-center gap-3">
             {/* Theme Toggle Button */}
             <ThemeToggle />
 
@@ -75,7 +75,7 @@ export const Navbar: React.FC = () => {
               href={PERSONAL_INFO.facebookUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative group p-1.5 rounded-full hover:bg-sky-100 dark:hover:bg-sky-950/60 transition-colors flex items-center justify-center cursor-pointer"
+              className="relative group p-1.5 rounded-full hover:bg-[#161B26] transition-colors flex items-center justify-center cursor-pointer"
               title="Facebook: facebook.com/nbn.sohan"
               aria-label="Facebook Profile"
             >
@@ -83,38 +83,39 @@ export const Navbar: React.FC = () => {
                 <img 
                   src={PERSONAL_INFO.siteIcon} 
                   alt="Facebook" 
-                  className="w-8 h-8 rounded-full object-cover border-2 border-[#1877F2] shadow-xs group-hover:scale-105 transition-transform" 
+                  className="w-8 h-8 rounded-full object-cover border-2 border-stone-700 group-hover:border-[#FA812F] shadow-xs group-hover:scale-105 transition-transform" 
                 />
-                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white dark:border-stone-900 rounded-full" />
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#FA812F] border-2 border-[#0B0F19] rounded-full" />
               </div>
             </a>
 
-            {/* Direct Connect / WhatsApp - Solid Orange Button */}
+            {/* Direct Connect / WhatsApp - Vibrant Green CTA */}
             <a
               href={PERSONAL_INFO.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-[#FA812F] hover:bg-[#e07124] text-white rounded-xl text-xs font-bold tracking-wide transition-all shadow-sm hover:scale-102 active:scale-98 cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-xl text-xs font-bold tracking-wide transition-all shadow-[0_4px_16px_rgba(37,211,102,0.35)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.45)] hover:scale-102 active:scale-98 cursor-pointer"
             >
               <MessageCircle className="w-4 h-4" />
               <span>যোগাযোগ করুন</span>
             </a>
           </div>
 
-          {/* Mobile Menu Actions */}
-          <div className="flex lg:hidden items-center gap-2">
+          {/* Mobile Menu Actions (visible only below lg) */}
+          <div className="flex lg:hidden items-center gap-2.5">
             <ThemeToggle />
             <a
               href={PERSONAL_INFO.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-1.5 bg-[#FA812F] hover:bg-[#e07124] text-white rounded-xl text-xs font-bold shadow-xs"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-xl text-xs font-bold shadow-xs transition-colors"
             >
-              হোয়াটসঅ্যাপ
+              <MessageCircle className="w-3.5 h-3.5" />
+              <span>হোয়াটসঅ্যাপ</span>
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 focus:outline-hidden cursor-pointer"
+              className="p-2 text-stone-300 hover:text-white focus:outline-hidden cursor-pointer"
               aria-label="মেনু খুলুন"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

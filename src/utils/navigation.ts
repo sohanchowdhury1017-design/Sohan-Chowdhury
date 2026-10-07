@@ -10,7 +10,7 @@ export interface NavRoute {
   label: string;
   labelEn: string;
   path: string;
-  iconName: 'user' | 'shopping-bag' | 'graduation-cap' | 'award' | 'phone';
+  iconName: 'user' | 'shopping-bag' | 'graduation-cap' | 'award' | 'phone' | 'book-open';
   description: string;
 }
 
@@ -57,6 +57,17 @@ export const CORE_PAGES: NavRoute[] = [
   },
 ];
 
+export const ADDITIONAL_PAGES: NavRoute[] = [
+  { 
+    id: 'writing',
+    label: 'প্রবন্ধ ও লেখা', 
+    labelEn: 'Articles & Writing',
+    path: '/writing/', 
+    iconName: 'book-open',
+    description: 'আইন, উদ্যোক্তা দর্শন, ই-কমার্স ব্র্যান্ডিং ও মননশীলতার বিভিন্ন বিশ্লেষণধর্মী লেখা ও অন্তর্দৃষ্টি।'
+  },
+];
+
 // All navigable routes for navbar & seo
 export const NAV_ROUTES = [
   { label: 'হোম', path: '/', sectionId: 'home' },
@@ -83,8 +94,9 @@ export function getCurrentRouteKey(): string {
   // Check hash first if present (e.g. /#about or #education)
   const hash = window.location.hash.replace(/^#/, '');
   if (hash) {
-    if (['about', 'sifri', 'education', 'skills', 'contact', 'areas'].includes(hash)) {
+    if (['about', 'sifri', 'education', 'skills', 'contact', 'areas', 'writing', 'articles'].includes(hash)) {
       if (hash === 'areas') return 'skills';
+      if (hash === 'articles') return 'writing';
       return hash;
     }
   }
@@ -94,7 +106,8 @@ export function getCurrentRouteKey(): string {
   if (p.includes('/about/')) return 'about';
   if (p.includes('/sifri/')) return 'sifri';
   if (p.includes('/education/')) return 'education';
-  if (p.includes('/skills/') || p.includes('/areas/') || p.includes('/writing/')) return 'skills';
+  if (p.includes('/skills/') || p.includes('/areas/')) return 'skills';
+  if (p.includes('/writing/') || p.includes('/articles/')) return 'writing';
   if (p.includes('/contact/')) return 'contact';
   if (p.includes('/philosophy/')) return 'about';
 

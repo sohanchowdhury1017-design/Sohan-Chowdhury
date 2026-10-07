@@ -5,7 +5,8 @@ import {
   ShoppingBag, 
   GraduationCap, 
   Award, 
-  PhoneCall 
+  PhoneCall,
+  BookOpen
 } from 'lucide-react';
 import { NAV_ROUTES, navigateTo, useCurrentPage } from '../utils/navigation';
 
@@ -28,6 +29,8 @@ export const MobileBottomNav: React.FC = () => {
         return <GraduationCap className={iconClass} />;
       case 'skills':
         return <Award className={iconClass} />;
+      case 'writing':
+        return <BookOpen className={iconClass} />;
       case 'contact':
         return <PhoneCall className={iconClass} />;
       default:
@@ -47,6 +50,8 @@ export const MobileBottomNav: React.FC = () => {
         return 'শিক্ষা';
       case 'skills':
         return 'দক্ষতা';
+      case 'writing':
+        return 'প্রবন্ধ';
       case 'contact':
         return 'যোগাযোগ';
       default:

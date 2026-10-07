@@ -50,6 +50,7 @@ export const Footer: React.FC = () => {
               <li><a href="/education/" onClick={(e) => navigateTo('/education/', 'education', e)} className="hover:text-white transition-colors cursor-pointer">শিক্ষাজীবন (LL.B.)</a></li>
               <li><a href="/skills/" onClick={(e) => navigateTo('/skills/', 'skills', e)} className="hover:text-white transition-colors cursor-pointer">দক্ষতা ও কাজের ক্ষেত্র (Skills)</a></li>
               <li><a href="/contact/" onClick={(e) => navigateTo('/contact/', 'contact', e)} className="hover:text-white transition-colors cursor-pointer">যোগাযোগ (Contact)</a></li>
+              <li className="pt-1 border-t border-stone-800"><a href="/writing/" onClick={(e) => navigateTo('/writing/', 'writing', e)} className="text-stone-400 hover:text-[#FA812F] transition-colors cursor-pointer inline-flex items-center gap-1.5"><span>প্রবন্ধ ও লেখালেখি (Articles &amp; Insights)</span><ArrowUpRight className="w-3 h-3 text-stone-500" /></a></li>
             </ul>
           </div>
 

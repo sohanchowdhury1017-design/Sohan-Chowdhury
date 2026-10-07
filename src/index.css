@@ -6,60 +6,96 @@
   --font-sans: 'Hind Siliguri', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Playfair Display', Georgia, Cambria, serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* 🌌 The Cyber Boss Color Palette */
+  --color-cyber-bg: #0B0F19;
+  --color-cyber-card: #161B26;
+  --color-cyber-primary: #00F5D4;
+  --color-cyber-secondary: #7B2CBF;
+  --color-cyber-text: #E2E8F0;
 }
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
+  /* 🌌 The Cyber Boss Theme Variables */
+  --bg-color: #0B0F19;
+  --card-bg: #161B26;
+  --primary-color: #00F5D4;
+  --secondary-color: #7B2CBF;
+  --text-color: #E2E8F0;
 }
 
 html.dark {
   color-scheme: dark;
 }
 
+/* "বস" লেভেলের নিওন গ্লোয়িং বাটন */
+.boss-button {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.boss-button:hover {
+  background-color: var(--primary-color);
+  color: #0B0F19;
+  box-shadow: 0 0 25px rgba(0, 245, 212, 0.6), 0 0 50px rgba(0, 245, 212, 0.25);
+  transform: scale(1.05);
+}
+
 ::selection {
-  background-color: #0ea5e9;
-  color: #ffffff;
+  background-color: #00F5D4;
+  color: #0B0F19;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #FAF8F5; /* Premium Off-White with soft warm undertone */
-  color: #1c1917;
+  background-color: #0B0F19; /* 60% Main Deep Charcoal Navy */
+  color: #E2E8F0; /* Off-White Text */
   overflow-x: hidden;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 html.dark body {
-  background-color: #0b0f17; /* Deep midnight navy/slate complementing sky blue and warm orange */
-  color: #f8fafc;
+  background-color: #0B0F19;
+  color: #E2E8F0;
 }
 
-/* Custom scrollbar with subtle warm & sky accents */
+/* Custom scrollbar with Cyber Boss accents */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f4efe6;
+  background: #0B0F19;
 }
 html.dark ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #0B0F19;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #1E2638;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0ea5e9;
+  background: #00F5D4;
 }
 
 /* Subtle dot-matrix accents */
-.dot-matrix-warm {
-  background-image: radial-gradient(rgba(250, 129, 47, 0.2) 1.5px, transparent 1.5px);
+.dot-matrix-cyber {
+  background-image: radial-gradient(rgba(0, 245, 212, 0.25) 1.5px, transparent 1.5px);
   background-size: 16px 16px;
 }
 
-.dot-matrix-sky {
-  background-image: radial-gradient(rgba(14, 165, 233, 0.2) 1.5px, transparent 1.5px);
+.dot-matrix-purple {
+  background-image: radial-gradient(rgba(123, 44, 191, 0.25) 1.5px, transparent 1.5px);
   background-size: 16px 16px;
 }
 
@@ -67,7 +103,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ================= ROTATING BORDER BEAM (SKY BLUE + KOMLA ORANGE + WARM LIGHT) ================= */
+/* ================= ROTATING BORDER BEAM (NEON CYAN #00F5D4 + ELECTRIC PURPLE #7B2CBF) ================= */
 @keyframes border-beam-spin {
   0% {
     transform: rotate(0deg);
@@ -86,13 +122,13 @@ html {
   background: conic-gradient(
     from 0deg at 50% 50%,
     transparent 0deg,
-    transparent 180deg,
-    rgba(250, 129, 47, 0.2) 210deg,
-    #0ea5e9 250deg,
-    #ffffff 290deg,
-    #ffedd5 315deg,
-    #FA812F 335deg,
-    #ea580c 355deg,
+    transparent 160deg,
+    rgba(123, 44, 191, 0.25) 190deg,
+    #7B2CBF 220deg,
+    #9d4edd 250deg,
+    #ffffff 285deg,
+    #00F5D4 320deg,
+    #05d5b7 345deg,
     transparent 360deg
   );
 }

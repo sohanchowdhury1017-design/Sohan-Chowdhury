@@ -14,6 +14,7 @@ import { SifriSpotlight } from './components/SifriSpotlight';
 import { Education } from './components/Education';
 import { Skills } from './components/Skills';
 import { Contact } from './components/Contact';
+import { Articles } from './components/Articles';
 import { Footer } from './components/Footer';
 import { WhatsAppWidget } from './components/WhatsAppWidget';
 import { MobileBottomNav } from './components/MobileBottomNav';
@@ -29,11 +30,11 @@ export default function App() {
   // Dynamic meta title and description updater across all routes
   usePageSEO();
 
-  // Current active page state ('home' | 'about' | 'sifri' | 'education' | 'skills' | 'contact')
+  // Current active page state ('home' | 'about' | 'sifri' | 'education' | 'skills' | 'writing' | 'contact')
   const currentPage = useCurrentPage();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF9F5] dark:bg-[#0d0c0a] text-stone-900 dark:text-stone-100 selection:bg-[#FA812F] selection:text-white font-sans transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-[#0B0F19] text-[#E2E8F0] selection:bg-[#00F5D4] selection:text-[#0B0F19] font-sans transition-colors duration-300">
       {/* Top Thin Luxury Scroll Progress Bar */}
       <ScrollProgressBar />
 
@@ -103,7 +104,20 @@ export default function App() {
           </div>
         )}
 
-        {/* ================= PAGE 5: CONTACT (Separate Page) ================= */}
+        {/* ================= PAGE 5: ARTICLES & WRITING (Separate Page) ================= */}
+        {currentPage === 'writing' && (
+          <div className="animate-in fade-in duration-300">
+            <PageHeaderBanner
+              currentId="writing"
+              titleBn="প্রবন্ধ ও লেখালেখি"
+              titleEn="Articles, Research & Perspectives"
+              subtitle="আইন, ব্যবসা, ই-কমার্স ব্র্যান্ডিং ও মননশীলতার বিভিন্ন বিশ্লেষণধর্মী লেখা"
+            />
+            <Articles />
+          </div>
+        )}
+
+        {/* ================= PAGE 6: CONTACT (Separate Page) ================= */}
         {currentPage === 'contact' && (
           <div className="animate-in fade-in duration-300">
             <PageHeaderBanner
@@ -117,7 +131,7 @@ export default function App() {
         )}
 
         {/* ================= SAFE FALLBACK (Prevents any blank view) ================= */}
-        {!['home', 'about', 'sifri', 'education', 'skills', 'contact'].includes(currentPage) && (
+        {!['home', 'about', 'sifri', 'education', 'skills', 'writing', 'contact'].includes(currentPage) && (
           <div className="animate-in fade-in duration-300">
             <Hero />
             <HomeNavigationCards />

@@ -6,7 +6,8 @@ import {
   Award, 
   PhoneCall, 
   ArrowRight, 
-  CheckCircle2
+  CheckCircle2,
+  BookOpen
 } from 'lucide-react';
 import { navigateTo } from '../utils/navigation';
 import { PERSONAL_INFO } from '../data/portfolioData';
