@@ -4,20 +4,20 @@ import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-[#FAF8F5] dark:bg-[#0b0f17] border-t border-b border-orange-100/70 dark:border-stone-800/80 transition-colors duration-300">
+    <section id="about" className="py-20 bg-[#0B0C10] border-t border-b border-[#1F242E] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 scroll-reveal">
           <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-[#FA812F] font-semibold block mb-1">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-semibold block mb-1">
               ০১. পরিচিতি ও দৃষ্টিভঙ্গি &middot; Profile &amp; Vision
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#F8FAFC] tracking-tight">
               আমার সম্পর্কে | About Me
             </h2>
           </div>
-          <p className="text-sm text-stone-600 dark:text-stone-400 max-w-md font-sans">
+          <p className="text-sm text-[#94A3B8] max-w-md font-sans">
             জ্ঞান, পর্যবেক্ষণ ও বাস্তব অভিজ্ঞতাকে সমন্বিত করে একটি শক্তিশালী পেশাগত ক্যারিয়ার বিনির্মাণ।
           </p>
         </div>
@@ -25,9 +25,9 @@ export const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Main Narrative Column with User's Exact Bengali Text */}
-          <div className="lg:col-span-7 space-y-6 text-stone-700 dark:text-stone-300 leading-relaxed text-base font-sans scroll-reveal-left">
+          <div className="lg:col-span-7 space-y-6 text-[#94A3B8] leading-relaxed text-base font-sans scroll-reveal-left">
             
-            <p className="text-lg font-medium text-stone-900 dark:text-stone-100 leading-relaxed border-l-4 border-[#FA812F] pl-4 py-2 bg-white dark:bg-[#131926] rounded-r-xl border border-stone-200/70 dark:border-stone-800 shadow-2xs">
+            <p className="text-lg font-medium text-[#F8FAFC] leading-relaxed border-l-4 border-[#D4AF37] pl-4 py-2 bg-[#13161C] rounded-r-xl border border-[#1F242E] shadow-2xs">
               {PERSONAL_INFO.aboutMeParagraphs[0]}
             </p>
 
@@ -40,13 +40,13 @@ export const About: React.FC = () => {
             </p>
 
             {PERSONAL_INFO.aboutMeParagraphs[3] && (
-              <div className="bg-gradient-to-r from-orange-50/80 to-purple-50/80 dark:from-orange-950/20 dark:to-purple-950/20 border border-orange-200/70 dark:border-orange-900/40 p-4 rounded-xl flex items-start gap-3 my-3 text-stone-800 dark:text-stone-200 shadow-2xs">
+              <div className="bg-[#13161C] border border-[#1F242E] p-4 rounded-xl flex items-start gap-3 my-3 text-[#F8FAFC] shadow-2xs">
                 <span className="text-2xl shrink-0">🎸</span>
                 <div>
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#FA812F] font-bold block mb-0.5">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#D4AF37] font-bold block mb-0.5">
                     সৃজনশীল শিল্পচর্চা &middot; Acoustic Guitar Artistry
                   </span>
-                  <p className="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed font-sans">
+                  <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed font-sans">
                     {PERSONAL_INFO.aboutMeParagraphs[3]}
                   </p>
                 </div>
@@ -54,8 +54,8 @@ export const About: React.FC = () => {
             )}
 
             {/* Core Working Values Box */}
-            <div className="bg-white dark:bg-[#1a1815] p-6 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-xs my-6 space-y-3">
-              <h3 className="text-xs font-mono uppercase tracking-wider text-stone-400 dark:text-stone-500 font-semibold">
+            <div className="bg-[#13161C] p-6 rounded-2xl border border-[#1F242E] shadow-xs my-6 space-y-3">
+              <h3 className="text-xs font-mono uppercase tracking-wider text-[#D4AF37] font-semibold">
                 কাজের মূল ভিত্তি &middot; Core Values of Practice
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">

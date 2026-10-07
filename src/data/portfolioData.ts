@@ -21,6 +21,17 @@ export const PERSONAL_INFO = {
   fullName: 'N.B.N. Sohan Chowdhury',
   shortName: 'Sohan Chowdhury',
   preferredCall: 'NBN Sohan',
+  searchAliases: [
+    'nbn sohan',
+    'n b n sohan',
+    'nbn sohan chowdhury',
+    'n b n sohan chowdhury',
+    'NBN Sohan',
+    'N B N Sohan',
+    'NBN Sohan Chowdhury',
+    'N.B.N. Sohan Chowdhury',
+    'Sohan Chowdhury'
+  ],
   headline: 'Entrepreneur • Brand & Marketing Professional • Law Student',
   headlineBn: 'উদ্যোক্তা • ব্র্যান্ড ও মার্কেটিং প্রফেশনাল • আইন শিক্ষার্থী',
   workingCategory: 'Entrepreneur / Business Owner',
@@ -84,7 +95,7 @@ export const PERSONAL_INFO = {
   whatsappAvatarLocal: '/assets/whatsapp_avatar.jpg',
 
   aboutMeParagraphs: [
-    'আমি N.B.N Sohan Chowdhury—একজন তরুণ Entrepreneur, Brand & Marketing Professional এবং Law Student।',
+    'আমি NBN Sohan (N.B.N. Sohan Chowdhury)—একজন তরুণ Entrepreneur, Brand & Marketing Professional এবং Law Student।',
     'Business, Branding, Marketing, Fashion, Law, Digital Media, Investigation এবং Journalism-এর প্রতি আমার বিশেষ আগ্রহ রয়েছে। আমি নতুন কিছু শেখা, বাস্তব অভিজ্ঞতা অর্জন করা এবং নিজের Professional Skills নিয়মিত উন্নত করার চেষ্টা করি।',
     'আমার কাজের ক্ষেত্রে Creativity, Critical Thinking, Observation, Logical Reasoning এবং Professional Communication-কে বিশেষ গুরুত্ব দিই। আমার লক্ষ্য হলো জ্ঞান ও বাস্তব অভিজ্ঞতাকে কাজে লাগিয়ে নিজের জন্য একটি শক্তিশালী এবং সফল Professional Career তৈরি করা।',
     'পেশাগত কাজের পাশাপাশি সুর ও বাদ্যযন্ত্রের জগতে আমার বিশেষ বিচরণ রয়েছে—আমি অ্যাকোস্টিক গিটার বাজাই। গিটারের সুরেলা অ্যাকোস্টিক মেলোডি, রিদম ও কর্ডস আমার চিন্তাভাবনায় নতুন সৃজনশীলতা, একাগ্রতা ও অনুপ্রেরণা জোগায়।'

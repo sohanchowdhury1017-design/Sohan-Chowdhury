@@ -7,95 +7,128 @@
   --font-serif: 'Playfair Display', Georgia, Cambria, serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 
-  /* 🌌 The Cyber Boss Color Palette */
-  --color-cyber-bg: #0B0F19;
-  --color-cyber-card: #161B26;
-  --color-cyber-primary: #00F5D4;
-  --color-cyber-secondary: #7B2CBF;
-  --color-cyber-text: #E2E8F0;
+  /* ফাইনাল এক্সক্লুসিভ কালার প্যালেট (Final Exclusive Palette) */
+  --color-bg-primary: #0B0C10;
+  --color-bg-surface: #13161C;
+  --color-border-subtle: #1F242E;
+  --color-accent-gold: #D4AF37;
+  --color-accent-gold-hover: #E5C07B;
+  --color-accent-amber: #F59E0B;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #94A3B8;
 }
 
 :root {
   color-scheme: dark;
-  /* 🌌 The Cyber Boss Theme Variables */
-  --bg-color: #0B0F19;
-  --card-bg: #161B26;
-  --primary-color: #00F5D4;
-  --secondary-color: #7B2CBF;
-  --text-color: #E2E8F0;
+  /* ব্যবহারের জন্য CSS Variables (সরাসরি ইউজারের দেওয়া কোড) */
+  --bg-primary: #0B0C10;
+  --bg-surface: #13161C;
+  --border-subtle: #1F242E;
+  --accent-gold: #D4AF37;
+  --accent-gold-hover: #E5C07B;
+  --accent-amber: #F59E0B;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+
+  /* Backward compatible standard aliases */
+  --bg-color: #0B0C10;
+  --card-bg: #13161C;
+  --primary-color: #D4AF37;
+  --secondary-color: #F59E0B;
+  --text-color: #F8FAFC;
 }
 
 html.dark {
   color-scheme: dark;
 }
 
-/* "বস" লেভেলের নিওন গ্লোয়িং বাটন */
+/* "বস" লেভেলের শ্যাম্পেন গোল্ড প্রিমিয়াম গ্লোয়িং বাটন */
 .boss-button {
-  background-color: transparent;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
+  background-color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  color: #0B0C10;
   padding: 10px 24px;
   border-radius: 12px;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
 }
 
 .boss-button:hover {
-  background-color: var(--primary-color);
-  color: #0B0F19;
-  box-shadow: 0 0 25px rgba(0, 245, 212, 0.6), 0 0 50px rgba(0, 245, 212, 0.25);
-  transform: scale(1.05);
+  background-color: var(--accent-gold-hover);
+  border-color: var(--accent-gold-hover);
+  color: #0B0C10;
+  box-shadow: 0 0 28px rgba(212, 175, 55, 0.45);
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* সেকেন্ডারি অ্যাম্বার বাটন / আউটলাইন বাটন */
+.boss-button-outline {
+  background-color: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boss-button-outline:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
 }
 
 ::selection {
-  background-color: #00F5D4;
-  color: #0B0F19;
+  background-color: #D4AF37;
+  color: #0B0C10;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #0B0F19; /* 60% Main Deep Charcoal Navy */
-  color: #E2E8F0; /* Off-White Text */
+  background-color: #0B0C10; /* Deep Obsidian */
+  color: #F8FAFC; /* Platinum White */
   overflow-x: hidden;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 html.dark body {
-  background-color: #0B0F19;
-  color: #E2E8F0;
+  background-color: #0B0C10;
+  color: #F8FAFC;
 }
 
-/* Custom scrollbar with Cyber Boss accents */
+/* Custom scrollbar with Obsidian & Gold accents */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0F19;
+  background: #0B0C10;
 }
 html.dark ::-webkit-scrollbar-track {
-  background: #0B0F19;
+  background: #0B0C10;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1E2638;
+  background: #1F242E;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #00F5D4;
+  background: #D4AF37;
 }
 
 /* Subtle dot-matrix accents */
 .dot-matrix-cyber {
-  background-image: radial-gradient(rgba(0, 245, 212, 0.25) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(212, 175, 55, 0.2) 1.5px, transparent 1.5px);
   background-size: 16px 16px;
 }
 
 .dot-matrix-purple {
-  background-image: radial-gradient(rgba(123, 44, 191, 0.25) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(245, 158, 11, 0.2) 1.5px, transparent 1.5px);
   background-size: 16px 16px;
 }
 
@@ -103,7 +136,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ================= ROTATING BORDER BEAM (NEON CYAN #00F5D4 + ELECTRIC PURPLE #7B2CBF) ================= */
+/* ================= ROTATING BORDER BEAM (CHAMPAGNE GOLD #D4AF37 + AMBER GLOW #F59E0B) ================= */
 @keyframes border-beam-spin {
   0% {
     transform: rotate(0deg);
@@ -123,12 +156,12 @@ html {
     from 0deg at 50% 50%,
     transparent 0deg,
     transparent 160deg,
-    rgba(123, 44, 191, 0.25) 190deg,
-    #7B2CBF 220deg,
-    #9d4edd 250deg,
+    rgba(245, 158, 11, 0.2) 190deg,
+    #F59E0B 220deg,
+    #fbbf24 250deg,
     #ffffff 285deg,
-    #00F5D4 320deg,
-    #05d5b7 345deg,
+    #D4AF37 320deg,
+    #E5C07B 345deg,
     transparent 360deg
   );
 }

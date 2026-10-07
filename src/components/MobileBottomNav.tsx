@@ -62,7 +62,7 @@ export const MobileBottomNav: React.FC = () => {
   return (
     <nav 
       aria-label="মোবাইল অ্যাপ নেভিগেশন"
-      className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-[#12110f]/95 backdrop-blur-xl border-t border-stone-200/90 dark:border-stone-800/90 shadow-[0_-4px_25px_rgba(0,0,0,0.08)] px-1 sm:px-2 pt-1.5 pb-2 transition-colors duration-300"
+      className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-[#0B0C10]/95 backdrop-blur-xl border-t border-[#1F242E] shadow-[0_-4px_25px_rgba(0,0,0,0.5)] px-1 sm:px-2 pt-1.5 pb-2 transition-colors duration-300"
       style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 8px) + 4px)' }}
     >
       <div className="max-w-md mx-auto grid grid-cols-6 gap-0.5 items-center">
@@ -79,25 +79,25 @@ export const MobileBottomNav: React.FC = () => {
               }}
               className={`group flex flex-col items-center justify-center py-1 px-0.5 rounded-xl transition-all relative select-none cursor-pointer ${
                 isActive 
-                  ? 'text-[#FA812F]' 
-                  : 'text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 active:bg-stone-100/80 dark:active:bg-stone-800/80'
+                  ? 'text-[#D4AF37]' 
+                  : 'text-[#94A3B8] hover:text-[#F8FAFC] active:bg-[#13161C]'
               }`}
             >
               {/* Active Indicator Top Pill */}
               {isActive && (
-                <span className="absolute -top-1.5 w-6 h-0.5 bg-[#FA812F] rounded-full shadow-xs" />
+                <span className="absolute -top-1.5 w-6 h-0.5 bg-[#D4AF37] rounded-full shadow-[0_0_8px_rgba(212,175,55,0.8)]" />
               )}
 
               {/* Icon Container with subtle active pill on click */}
               <div className={`p-1 rounded-xl transition-all duration-200 ${
-                isActive ? 'bg-orange-50/80 dark:bg-orange-950/40' : 'group-hover:bg-stone-50 dark:group-hover:bg-stone-800/50'
+                isActive ? 'bg-[#D4AF37]/15' : 'group-hover:bg-[#13161C]'
               }`}>
                 {getRouteIcon(route.sectionId, isActive)}
               </div>
 
               {/* Short Label */}
               <span className={`text-[10px] sm:text-[11px] font-sans tracking-tight leading-tight mt-0.5 truncate max-w-full font-medium ${
-                isActive ? 'font-bold text-[#FA812F]' : 'text-stone-600 dark:text-stone-400'
+                isActive ? 'font-bold text-[#D4AF37]' : 'text-[#94A3B8]'
               }`}>
                 {shortLabel}
               </span>

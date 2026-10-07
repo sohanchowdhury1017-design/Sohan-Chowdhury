@@ -6,20 +6,20 @@ export const Education: React.FC = () => {
   const edu = PERSONAL_INFO.education;
 
   return (
-    <section id="education" className="py-20 bg-[#FAF8F5] dark:bg-[#0b0f17] border-t border-orange-100/70 dark:border-stone-800/80 transition-colors duration-300">
+    <section id="education" className="py-20 bg-[#0B0C10] border-t border-[#1F242E] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 scroll-reveal">
           <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-sky-600 dark:text-sky-400 font-semibold block mb-1">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-semibold block mb-1">
               ০৪. শিক্ষাজীবন &middot; Legal Studies &amp; Academic Milestones
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#F8FAFC] tracking-tight">
               শিক্ষাজীবন | Education
             </h2>
           </div>
-          <p className="text-sm text-stone-600 dark:text-stone-400 max-w-md font-sans">
+          <p className="text-sm text-[#94A3B8] max-w-md font-sans">
             আইনি জ্ঞান, প্রাতিষ্ঠানিক গবেষণা, বিশ্লেষণধর্মী দৃষ্টিভঙ্গি ও মাধ্যমিক থেকে উচ্চতর আইন শিক্ষার ধারাবাহিক অগ্রগতি।
           </p>
         </div>
@@ -27,8 +27,8 @@ export const Education: React.FC = () => {
         {/* ================= ACADEMIC MILESTONES (SSC, HSC, LLB) ================= */}
         <div className="mb-12 scroll-reveal">
           <div className="flex items-center gap-2 mb-6">
-            <GraduationCap className="w-4 h-4 text-[#2DA8D8]" />
-            <h3 className="text-lg font-serif font-bold text-stone-900 dark:text-stone-100">
+            <GraduationCap className="w-4 h-4 text-[#D4AF37]" />
+            <h3 className="text-lg font-serif font-bold text-[#F8FAFC]">
               শিক্ষাগত পটভূমি ও অ্যাকাডেমিক পর্যায় &middot; Educational Timeline
             </h3>
           </div>
@@ -37,10 +37,10 @@ export const Education: React.FC = () => {
             {edu.timeline.map((item, idx) => (
               <div
                 key={item.id}
-                className={`bg-white dark:bg-[#1a1815] p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between ${
+                className={`bg-[#13161C] p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between ${
                   item.current
-                    ? 'border-[#2DA8D8] ring-2 ring-[#2DA8D8]/20 shadow-md'
-                    : 'border-stone-200 dark:border-stone-800 shadow-xs hover:border-stone-300 dark:hover:border-stone-700 hover:shadow-sm'
+                    ? 'border-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.15)] ring-1 ring-[#D4AF37]/30'
+                    : 'border-[#1F242E] hover:border-[#D4AF37]/40 shadow-xs'
                 }`}
               >
                 <div>
@@ -48,13 +48,13 @@ export const Education: React.FC = () => {
                     <span
                       className={`text-[10px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full font-bold ${
                         item.current
-                          ? 'bg-sky-100 dark:bg-sky-950/60 text-[#2DA8D8]'
-                          : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300'
+                          ? 'bg-[#D4AF37]/15 text-[#D4AF37] border border-[#D4AF37]/30'
+                          : 'bg-[#0B0C10] text-[#94A3B8] border border-[#1F242E]'
                       }`}
                     >
                       {item.badge}
                     </span>
-                    <span className="text-xs font-mono text-stone-400 dark:text-stone-500">
+                    <span className="text-xs font-mono text-[#94A3B8]">
                       0{idx + 1}
                     </span>
                   </div>

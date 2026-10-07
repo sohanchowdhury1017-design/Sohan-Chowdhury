@@ -115,28 +115,28 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative pt-6 pb-16 bg-[#FAF9F5] dark:bg-[#0d0c0a] transition-colors duration-300 overflow-hidden">
+    <section id="home" className="relative pt-6 pb-16 bg-[#0B0C10] transition-colors duration-300 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         {/* ================= OFFICIAL CLOUDINARY BRAND BANNER SLIDER WITH ROTATING BORDER BEAM ================= */}
         <div 
           ref={bannerRef}
-          className={`relative p-[2.5px] sm:p-[3px] rounded-2xl sm:rounded-3xl overflow-hidden mb-8 sm:mb-12 shadow-xl hover:shadow-2xl group transition-all duration-700 ease-out will-change-transform ${
+          className={`relative p-[2px] rounded-2xl sm:rounded-3xl overflow-hidden mb-8 sm:mb-12 shadow-2xl group transition-all duration-700 ease-out will-change-transform ${
             bannerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}
         >
-          {/* Static Ambient Border Track */}
-          <div className="absolute inset-0 bg-stone-200 dark:bg-stone-800 rounded-2xl sm:rounded-3xl" />
+          {/* Static Ambient Border Track in Muted Slate */}
+          <div className="absolute inset-0 bg-[#1F242E] rounded-2xl sm:rounded-3xl" />
 
-          {/* Layer 1: Ambient Blurred Rotating Glow (Aura) */}
-          <div className="absolute inset-[-160%] animate-border-beam banner-glow-beam blur-xl opacity-75 group-hover:opacity-100 transition-opacity pointer-events-none" />
+          {/* Layer 1: Ambient Blurred Rotating Glow (Champagne Gold + Amber Glow) */}
+          <div className="absolute inset-[-160%] animate-border-beam banner-glow-beam blur-xl opacity-60 group-hover:opacity-90 transition-opacity pointer-events-none" />
 
           {/* Layer 2: Focused Sharp Rotating Light Beam */}
-          <div className="absolute inset-[-160%] animate-border-beam banner-glow-beam opacity-95 group-hover:opacity-100 transition-opacity pointer-events-none" />
+          <div className="absolute inset-[-160%] animate-border-beam banner-glow-beam opacity-85 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
           {/* Inner Content Container holding the interactive 3s auto slider */}
           <div 
-            className="relative aspect-[1024/346] w-full overflow-hidden rounded-[calc(1rem-2.5px)] sm:rounded-[calc(1.5rem-3px)] bg-stone-900 flex items-center justify-center select-none"
+            className="relative aspect-[1024/346] w-full overflow-hidden rounded-[calc(1rem-2px)] sm:rounded-[calc(1.5rem-2px)] bg-[#0B0C10] flex items-center justify-center select-none"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
             onTouchStart={() => setIsPaused(true)}
@@ -186,9 +186,9 @@ export const Hero: React.FC = () => {
                 setCurrentSlide((prev) => (prev === 0 ? bannerSlides.length - 1 : prev - 1));
               }}
               aria-label="Previous Banner Slide"
-              className="absolute left-2 sm:left-4 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/45 hover:bg-black/80 backdrop-blur-xs text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer shadow-lg border border-white/20"
+              className="absolute left-2 sm:left-4 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#0B0C10]/75 hover:bg-[#0B0C10] text-[#F8FAFC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer shadow-lg border border-[#1F242E]"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-5 h-5 text-[#F8FAFC]" />
             </button>
 
             {/* Right Chevron Button */}
@@ -199,13 +199,13 @@ export const Hero: React.FC = () => {
                 setCurrentSlide((prev) => (prev + 1) % bannerSlides.length);
               }}
               aria-label="Next Banner Slide"
-              className="absolute right-2 sm:right-4 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/45 hover:bg-black/80 backdrop-blur-xs text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer shadow-lg border border-white/20"
+              className="absolute right-2 sm:right-4 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#0B0C10]/75 hover:bg-[#0B0C10] text-[#F8FAFC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer shadow-lg border border-[#1F242E]"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-5 h-5 text-[#F8FAFC]" />
             </button>
 
             {/* Bottom Slider Dots */}
-            <div className="absolute bottom-2.5 sm:bottom-4 z-20 flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 shadow-lg">
+            <div className="absolute bottom-2.5 sm:bottom-4 z-20 flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0B0C10]/85 backdrop-blur-md border border-[#1F242E] shadow-lg">
               {bannerSlides.map((slide, idx) => (
                 <button
                   key={slide.id}
@@ -217,8 +217,8 @@ export const Hero: React.FC = () => {
                   aria-label={`Go to banner slide ${idx + 1}`}
                   className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                     idx === currentSlide 
-                      ? 'w-6 bg-[#FA812F] shadow-[0_0_10px_#FA812F]' 
-                      : 'w-2 bg-white/50 hover:bg-white'
+                      ? 'w-6 bg-[#D4AF37] shadow-[0_0_12px_rgba(212,175,55,0.7)]' 
+                      : 'w-2 bg-white/40 hover:bg-white/80'
                   }`}
                 />
               ))}
@@ -226,10 +226,10 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* ================= EXECUTIVE PROFILE INTRO CARD (30% Slate Night) ================= */}
+        {/* ================= EXECUTIVE PROFILE INTRO CARD (Graphite Sheet #13161C + Muted Slate Border #1F242E) ================= */}
         <div 
           ref={cardRef}
-          className={`bg-[#161B26] rounded-3xl p-6 sm:p-10 lg:p-12 border-2 border-[#1E2638] shadow-xl transition-all duration-700 ease-out will-change-transform relative ${
+          className={`bg-[#13161C] rounded-3xl p-6 sm:p-10 lg:p-12 border border-[#1F242E] shadow-2xl transition-all duration-700 ease-out will-change-transform relative ${
             cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
@@ -239,42 +239,49 @@ export const Hero: React.FC = () => {
             {/* Left Column: Bengali Identity, Tagline, Bio & Search */}
             <div className="lg:col-span-8 space-y-6">
               
-              {/* Status Badges in Komla Orange & Electric Purple */}
+              {/* Status Badges in Champagne Gold & Amber Glow */}
               <div className={`flex flex-wrap items-center gap-2 transition-all duration-700 ease-out delay-100 ${
                 cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
               }`}>
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FA812F]/10 border border-[#FA812F]/30 text-[#FA812F] text-xs font-bold shadow-2xs">
-                  <span className="w-2 h-2 rounded-full bg-[#FA812F] animate-pulse" />
-                  <span>অফিসিয়াল পোর্টফোলিও &middot; official profile</span>
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-bold shadow-2xs">
+                  <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
+                  <span>অফিসিয়াল পোর্টফোলিও &middot; NBN Sohan</span>
                 </span>
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#7B2CBF]/15 border border-[#7B2CBF]/40 text-[#c084fc] text-xs font-bold">
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#F59E0B]/10 border border-[#F59E0B]/30 text-[#F59E0B] text-xs font-semibold">
                   {PERSONAL_INFO.workingCategory}
+                </span>
+                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#0B0C10] border border-[#1F242E] text-[#94A3B8] text-[11px] font-mono" title="Search Keywords">
+                  <span>nbn sohan</span>
+                  <span className="text-[#D4AF37]">&bull;</span>
+                  <span>n b n sohan</span>
+                  <span className="text-[#D4AF37]">&bull;</span>
+                  <span>nbn sohan chowdhury</span>
                 </span>
               </div>
 
-              {/* Title & Tagline */}
+              {/* Title & Tagline in Platinum White (Explicitly indexes NBN Sohan and N.B.N Sohan Chowdhury) */}
               <div className={`transition-all duration-700 ease-out delay-150 ${
                 cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
               }`}>
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#E2E8F0] tracking-tight leading-tight">
-                  {PERSONAL_INFO.fullName}
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#F8FAFC] tracking-tight leading-tight">
+                  NBN Sohan <span className="text-xl sm:text-3xl lg:text-4xl font-sans font-medium text-[#94A3B8] block sm:inline">({PERSONAL_INFO.fullName})</span>
                 </h1>
-                <p className="text-base sm:text-xl font-bold text-[#FA812F] mt-2 font-sans flex items-center gap-2">
+                <p className="text-base sm:text-xl font-bold text-[#D4AF37] mt-2 font-sans flex items-center gap-2">
                   <span>{PERSONAL_INFO.headline}</span>
                 </p>
-                <p className="text-xs sm:text-sm text-[#c084fc] font-sans mt-0.5 font-semibold">
+                <p className="text-xs sm:text-sm text-[#94A3B8] font-sans mt-0.5 font-medium">
                   ({PERSONAL_INFO.headlineBn})
                 </p>
               </div>
 
-              {/* Bengali Introductory Summary */}
-              <p className={`text-sm sm:text-base text-[#CBD5E1] leading-relaxed font-sans max-w-2xl transition-all duration-700 ease-out delay-200 ${
+              {/* Bengali Introductory Summary in Cool Silver Gray */}
+              <p className={`text-sm sm:text-base text-[#94A3B8] leading-relaxed font-sans max-w-2xl transition-all duration-700 ease-out delay-200 ${
                 cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
               }`}>
                 {PERSONAL_INFO.aboutMeParagraphs[0]} {PERSONAL_INFO.aboutMeParagraphs[2]}
               </p>
 
-              {/* Quick Search Bar with Komla Orange Action */}
+              {/* Quick Search Bar with Graphite & Gold Accent */}
               <form 
                 onSubmit={handleSearchSubmit} 
                 className={`relative max-w-lg pt-1 transition-all duration-700 ease-out delay-250 ${
@@ -287,12 +294,12 @@ export const Hero: React.FC = () => {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="অনুসন্ধান করুন: সিফরি, আইন শিক্ষা, মার্কেটিং, দক্ষতা..."
-                    className="w-full bg-[#0B0F19] border-2 border-[#1E2638] rounded-xl pl-10 pr-28 py-3 text-xs sm:text-sm text-[#E2E8F0] placeholder-stone-500 focus:outline-hidden focus:border-[#FA812F] focus:bg-[#070b13] transition-all"
+                    className="w-full bg-[#0B0C10] border border-[#1F242E] rounded-xl pl-10 pr-28 py-3 text-xs sm:text-sm text-[#F8FAFC] placeholder-stone-500 focus:outline-hidden focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/30 transition-all"
                   />
-                  <Search className="w-4 h-4 text-stone-400 absolute left-3.5 pointer-events-none" />
+                  <Search className="w-4 h-4 text-[#94A3B8] absolute left-3.5 pointer-events-none" />
                   <button
                     type="submit"
-                    className="absolute right-2 px-4 py-1.5 bg-[#FA812F] hover:bg-[#e07124] text-white text-xs font-bold rounded-lg transition-all shadow-[0_0_15px_rgba(250,129,47,0.3)] cursor-pointer"
+                    className="absolute right-2 px-4 py-1.5 bg-[#D4AF37] hover:bg-[#E5C07B] text-[#0B0C10] text-xs font-bold rounded-lg transition-all shadow-[0_0_15px_rgba(212,175,55,0.25)] cursor-pointer"
                   >
                     খুঁজুন
                   </button>
@@ -303,15 +310,11 @@ export const Hero: React.FC = () => {
               <div className={`flex flex-wrap gap-2 pt-1 transition-all duration-700 ease-out delay-300 ${
                 cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
               }`}>
-                {quickTopics.map((topic, i) => (
+                {quickTopics.map((topic) => (
                   <button
                     key={topic.label}
                     onClick={() => navigateTo(topic.path, topic.targetId)}
-                    className={`text-xs font-bold px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
-                      i % 2 === 0
-                        ? 'bg-[#FA812F]/10 hover:bg-[#FA812F]/20 text-[#FA812F] border-[#FA812F]/30'
-                        : 'bg-[#7B2CBF]/15 hover:bg-[#7B2CBF]/25 text-[#c084fc] border-[#7B2CBF]/40'
-                    }`}
+                    className="text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#1F242E] bg-[#0B0C10] text-[#94A3B8] hover:text-[#D4AF37] hover:border-[#D4AF37]/50 transition-all cursor-pointer"
                   >
                     {topic.label}
                   </button>
@@ -320,24 +323,24 @@ export const Hero: React.FC = () => {
 
             </div>
 
-            {/* Right Column: 3 Key Pillars of Identity */}
+            {/* Right Column: 3 Key Pillars of Identity in Deep Obsidian Boxes */}
             <div className="lg:col-span-4 space-y-4">
               
               {/* Role 1: CEO & Founder at SIFRI */}
               <div 
                 onClick={(e) => navigateTo('/sifri/', 'sifri', e)}
-                className={`bg-[#0B0F19] p-5 rounded-2xl border-2 border-[#1E2638] hover:border-[#FA812F] transition-all duration-700 ease-out delay-200 cursor-pointer group shadow-2xs ${
+                className={`bg-[#0B0C10] p-5 rounded-2xl border border-[#1F242E] hover:border-[#D4AF37] transition-all duration-700 ease-out delay-200 cursor-pointer group shadow-2xs ${
                   cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#FA812F] text-white flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(250,129,47,0.3)] font-bold">
-                      <ShoppingBag className="w-5 h-5" />
+                    <div className="w-10 h-10 rounded-xl bg-[#D4AF37] text-[#0B0C10] flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(212,175,55,0.25)] font-bold">
+                      <ShoppingBag className="w-5 h-5 text-[#0B0C10]" />
                     </div>
                     <div>
-                      <span className="text-[11px] font-mono text-[#FA812F] uppercase tracking-wider block font-bold">বর্তমান দায়িত্ব &middot; {PERSONAL_INFO.businessJourneyStartYear} থেকে</span>
-                      <h3 className="text-sm font-bold text-[#E2E8F0] group-hover:text-[#FA812F] transition-colors">CEO &amp; Founder — SIFRI</h3>
+                      <span className="text-[11px] font-mono text-[#D4AF37] uppercase tracking-wider block font-bold">বর্তমান দায়িত্ব &middot; {PERSONAL_INFO.businessJourneyStartYear} থেকে</span>
+                      <h3 className="text-sm font-bold text-[#F8FAFC] group-hover:text-[#D4AF37] transition-colors">CEO &amp; Founder — SIFRI</h3>
                     </div>
                   </div>
                 </div>
@@ -349,17 +352,17 @@ export const Hero: React.FC = () => {
               {/* Role 2: Law Student — 1st Year */}
               <div 
                 onClick={(e) => navigateTo('/education/', 'education', e)}
-                className={`bg-[#0B0F19] p-5 rounded-2xl border-2 border-[#1E2638] hover:border-[#7B2CBF] transition-all duration-700 ease-out delay-300 cursor-pointer group shadow-2xs ${
+                className={`bg-[#0B0C10] p-5 rounded-2xl border border-[#1F242E] hover:border-[#F59E0B] transition-all duration-700 ease-out delay-300 cursor-pointer group shadow-2xs ${
                   cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-xl bg-[#7B2CBF] text-white flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(123,44,191,0.3)]">
-                    <Scale className="w-5 h-5" />
+                  <div className="w-10 h-10 rounded-xl bg-[#13161C] border border-[#1F242E] text-[#F59E0B] flex items-center justify-center group-hover:scale-105 transition-transform group-hover:border-[#F59E0B]">
+                    <Scale className="w-5 h-5 text-[#F59E0B]" />
                   </div>
                   <div>
-                    <span className="text-[11px] font-mono text-[#c084fc] uppercase tracking-wider block font-bold">শিক্ষাজীবন &middot; ১ম বর্ষ</span>
-                    <h3 className="text-sm font-bold text-[#E2E8F0] group-hover:text-[#c084fc] transition-colors">Bachelor of Laws — LL.B.</h3>
+                    <span className="text-[11px] font-mono text-[#F59E0B] uppercase tracking-wider block font-bold">শিক্ষাজীবন &middot; ১ম বর্ষ</span>
+                    <h3 className="text-sm font-bold text-[#F8FAFC] group-hover:text-[#F59E0B] transition-colors">Bachelor of Laws — LL.B.</h3>
                   </div>
                 </div>
                 <p className="text-xs text-[#94A3B8] leading-relaxed font-sans">
@@ -368,10 +371,10 @@ export const Hero: React.FC = () => {
               </div>
 
               {/* Role 3: Fast Contact Links */}
-              <div className={`bg-[#0B0F19] border-2 border-[#1E2638] text-white p-5 rounded-2xl shadow-sm space-y-3 transition-all duration-700 ease-out delay-400 ${
+              <div className={`bg-[#0B0C10] border border-[#1F242E] text-white p-5 rounded-2xl shadow-sm space-y-3 transition-all duration-700 ease-out delay-400 ${
                 cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}>
-                <div className="text-xs font-mono text-[#FA812F] uppercase tracking-wider font-bold">
+                <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-wider font-bold">
                   সরাসরি যোগাযোগ &middot; Quick Connect
                 </div>
                 <div className="flex items-center justify-between gap-2">
@@ -379,16 +382,16 @@ export const Hero: React.FC = () => {
                     href={PERSONAL_INFO.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-bold rounded-xl transition-colors shadow-xs"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2.5 bg-[#D4AF37] hover:bg-[#E5C07B] text-[#0B0C10] text-xs font-bold rounded-xl transition-all shadow-[0_0_15px_rgba(212,175,55,0.2)]"
                   >
-                    <MessageCircle className="w-4 h-4" />
+                    <MessageCircle className="w-4 h-4 text-[#0B0C10]" />
                     <span>WhatsApp</span>
                   </a>
                   <a
                     href={`tel:${PERSONAL_INFO.phone1}`}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2.5 bg-[#161B26] hover:bg-[#1E2638] text-[#E2E8F0] text-xs font-semibold rounded-xl transition-colors border border-[#1E2638]"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2.5 bg-[#13161C] hover:bg-[#1a1f29] text-[#F8FAFC] text-xs font-semibold rounded-xl transition-colors border border-[#1F242E] hover:border-[#D4AF37]"
                   >
-                    <Phone className="w-4 h-4 text-[#FA812F]" />
+                    <Phone className="w-4 h-4 text-[#D4AF37]" />
                     <span>{PERSONAL_INFO.phone1}</span>
                   </a>
                 </div>

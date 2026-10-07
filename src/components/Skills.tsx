@@ -139,23 +139,23 @@ export const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-24 bg-[#FAF8F5] dark:bg-[#0b0f17] border-t border-orange-100/70 dark:border-stone-800/80 transition-colors duration-300">
+    <section id="skills" className="py-24 bg-[#0B0C10] border-t border-[#1F242E] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4 scroll-reveal">
           <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-[#FA812F] font-semibold block mb-1">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-semibold block mb-1">
               ০৫. সার্টিফিকেশন ও বিশেষ দক্ষতা &middot; Certifications &amp; Skills
             </span>
-            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#F8FAFC] tracking-tight">
               Certifications &amp; Skills
             </h2>
-            <p className="text-xs sm:text-sm text-[#FA812F] font-medium mt-1">
+            <p className="text-xs sm:text-sm text-[#D4AF37] font-medium mt-1">
               সার্টিফিকেশন, পেশাগত দক্ষতা ও বিশেষ পারদর্শিতা
             </p>
           </div>
-          <p className="text-sm text-stone-600 dark:text-stone-400 max-w-md font-sans">
+          <p className="text-sm text-[#94A3B8] max-w-md font-sans">
             ফটোশপ ও গ্রাফিক ডিজাইন, আধুনিক ডিজিটাল মার্কেটিং, অ্যাকোস্টিক গিটার বাদন এবং আইনি ও ব্যবসায়িক গবেষণার সমন্বিত ক্রেডেনশিয়ালস।
           </p>
         </div>

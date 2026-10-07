@@ -105,20 +105,20 @@ export const Articles: React.FC = () => {
   };
 
   return (
-    <section id="articles" className="py-20 bg-[#FAF8F5] dark:bg-[#0b0f17] transition-colors duration-300 relative">
+    <section id="articles" className="py-20 bg-[#0B0C10] transition-colors duration-300 relative border-t border-[#1F242E]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ================= SECTION HEADER ================= */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 scroll-reveal">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100/80 dark:bg-orange-950/60 border border-orange-200 dark:border-orange-900/60 text-[#c2410c] dark:text-orange-300 text-xs font-bold mb-3">
-              <BookOpen className="w-3.5 h-3.5 text-[#FA812F]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-bold mb-3">
+              <BookOpen className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>প্রবন্ধ, বিশ্লেষণ ও দৃষ্টিভঙ্গি &middot; Articles &amp; Insights</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#F8FAFC] tracking-tight">
               লেখালেখি ও চিন্তাভাবনা
             </h2>
-            <p className="text-xs sm:text-sm text-[#FA812F] font-semibold mt-1">
+            <p className="text-xs sm:text-sm text-[#D4AF37] font-semibold mt-1">
               আইন, ই-কমার্স ব্র্যান্ডিং, ডিজিটাল মার্কেটিং ও মননশীলতার গভীর বিশ্লেষণ
             </p>
           </div>
@@ -130,9 +130,9 @@ export const Articles: React.FC = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="আর্টিকেল অনুসন্ধান করুন..."
-              className="w-full bg-white dark:bg-[#131926] border-2 border-stone-200 dark:border-stone-800 rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-stone-900 dark:text-stone-100 placeholder-stone-400 focus:outline-hidden focus:border-[#FA812F] transition-all shadow-2xs"
+              className="w-full bg-[#13161C] border border-[#1F242E] rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-[#F8FAFC] placeholder-stone-500 focus:outline-hidden focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/30 transition-all shadow-xl"
             />
-            <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-3.5 pointer-events-none" />
+            <Search className="w-4 h-4 text-[#94A3B8] absolute left-3.5 top-3.5 pointer-events-none" />
             {searchQuery && (
               <button 
                 onClick={() => setSearchQuery('')}

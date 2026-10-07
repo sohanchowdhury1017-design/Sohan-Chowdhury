@@ -10,13 +10,13 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#0c111c] dark:bg-[#070a10] text-stone-300 relative border-t border-sky-950/70 font-sans transition-colors duration-300">
-      {/* Top Stripe in Signature Komla Orange */}
-      <div className="h-[3px] bg-[#FA812F]" />
+    <footer className="bg-[#0B0C10] text-[#94A3B8] relative border-t border-[#1F242E] font-sans transition-colors duration-300">
+      {/* Top Stripe in Champagne Gold */}
+      <div className="h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-80" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-stone-800 dark:border-stone-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#1F242E]">
           
           {/* Brand Info with Custom Hand-drawn S Icon & Bengali Profile */}
           <div className="md:col-span-5 space-y-3.5">
@@ -24,33 +24,33 @@ export const Footer: React.FC = () => {
               <img 
                 src={PERSONAL_INFO.siteIcon} 
                 alt="S" 
-                className="w-8 h-8 rounded-full object-cover border border-stone-700 shadow-xs"
+                className="w-8 h-8 rounded-full object-cover border border-[#1F242E] shadow-xs"
               />
-              <span className="text-base font-bold text-white tracking-tight uppercase font-sans">
+              <span className="text-base font-bold text-[#F8FAFC] tracking-tight uppercase font-sans">
                 {PERSONAL_INFO.fullName}
               </span>
             </div>
-            <p className="text-xs text-stone-400 leading-relaxed max-w-sm">
-              {PERSONAL_INFO.headlineBn}। CEO &amp; Founder — SIFRI (<a href={PERSONAL_INFO.sifriUrl} target="_blank" rel="noopener noreferrer" className="text-[#FA812F] hover:underline">sifribd.com</a>) এবং আইন শিক্ষার্থী (LL.B.)।
+            <p className="text-xs text-[#94A3B8] leading-relaxed max-w-sm">
+              {PERSONAL_INFO.headlineBn}। CEO &amp; Founder — SIFRI (<a href={PERSONAL_INFO.sifriUrl} target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] hover:underline font-semibold">sifribd.com</a>) এবং আইন শিক্ষার্থী (LL.B.)।
             </p>
-            <div className="text-xs font-mono text-stone-500">
-              অফিসিয়াল ডোমেইন: <span className="text-stone-300">{PERSONAL_INFO.domain}</span>
+            <div className="text-xs font-mono text-[#94A3B8]">
+              অফিসিয়াল ডোমেইন: <span className="text-[#F8FAFC]">{PERSONAL_INFO.domain}</span>
             </div>
           </div>
 
           {/* Quick Nav in Bengali */}
           <div className="md:col-span-3 space-y-2.5 text-xs">
-            <div className="font-mono uppercase tracking-wider text-stone-400 font-semibold mb-3">
+            <div className="font-mono uppercase tracking-wider text-[#D4AF37] font-semibold mb-3">
               ন্যাভিগেশন &middot; Navigation
             </div>
             <ul className="space-y-2">
-              <li><a href="/" onClick={(e) => navigateTo('/', 'home', e)} className="hover:text-white transition-colors cursor-pointer">হোম (Home)</a></li>
-              <li><a href="/about/" onClick={(e) => navigateTo('/about/', 'about', e)} className="hover:text-white transition-colors cursor-pointer">আমার সম্পর্কে (About Me)</a></li>
-              <li><a href="/sifri/" onClick={(e) => navigateTo('/sifri/', 'sifri', e)} className="hover:text-white transition-colors cursor-pointer">সিফরি (SIFRI)</a></li>
-              <li><a href="/education/" onClick={(e) => navigateTo('/education/', 'education', e)} className="hover:text-white transition-colors cursor-pointer">শিক্ষাজীবন (LL.B.)</a></li>
-              <li><a href="/skills/" onClick={(e) => navigateTo('/skills/', 'skills', e)} className="hover:text-white transition-colors cursor-pointer">দক্ষতা ও কাজের ক্ষেত্র (Skills)</a></li>
-              <li><a href="/contact/" onClick={(e) => navigateTo('/contact/', 'contact', e)} className="hover:text-white transition-colors cursor-pointer">যোগাযোগ (Contact)</a></li>
-              <li className="pt-1 border-t border-stone-800"><a href="/writing/" onClick={(e) => navigateTo('/writing/', 'writing', e)} className="text-stone-400 hover:text-[#FA812F] transition-colors cursor-pointer inline-flex items-center gap-1.5"><span>প্রবন্ধ ও লেখালেখি (Articles &amp; Insights)</span><ArrowUpRight className="w-3 h-3 text-stone-500" /></a></li>
+              <li><a href="/" onClick={(e) => navigateTo('/', 'home', e)} className="hover:text-[#D4AF37] transition-colors cursor-pointer">হোম (Home)</a></li>
+              <li><a href="/about/" onClick={(e) => navigateTo('/about/', 'about', e)} className="hover:text-[#D4AF37] transition-colors cursor-pointer">আমার সম্পর্কে (About Me)</a></li>
+              <li><a href="/sifri/" onClick={(e) => navigateTo('/sifri/', 'sifri', e)} className="hover:text-[#D4AF37] transition-colors cursor-pointer">সিফরি (SIFRI)</a></li>
+              <li><a href="/education/" onClick={(e) => navigateTo('/education/', 'education', e)} className="hover:text-[#D4AF37] transition-colors cursor-pointer">শিক্ষাজীবন (LL.B.)</a></li>
+              <li><a href="/skills/" onClick={(e) => navigateTo('/skills/', 'skills', e)} className="hover:text-[#D4AF37] transition-colors cursor-pointer">দক্ষতা ও কাজের ক্ষেত্র (Skills)</a></li>
+              <li><a href="/contact/" onClick={(e) => navigateTo('/contact/', 'contact', e)} className="hover:text-[#D4AF37] transition-colors cursor-pointer">যোগাযোগ (Contact)</a></li>
+              <li className="pt-1 border-t border-[#1F242E]"><a href="/writing/" onClick={(e) => navigateTo('/writing/', 'writing', e)} className="text-[#94A3B8] hover:text-[#D4AF37] transition-colors cursor-pointer inline-flex items-center gap-1.5"><span>প্রবন্ধ ও লেখালেখি (Articles &amp; Insights)</span><ArrowUpRight className="w-3 h-3 text-[#D4AF37]" /></a></li>
             </ul>
           </div>
 

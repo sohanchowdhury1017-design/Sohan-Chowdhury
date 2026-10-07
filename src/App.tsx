@@ -34,8 +34,8 @@ export default function App() {
   const currentPage = useCurrentPage();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0B0F19] text-[#E2E8F0] selection:bg-[#00F5D4] selection:text-[#0B0F19] font-sans transition-colors duration-300">
-      {/* Top Thin Luxury Scroll Progress Bar */}
+    <div className="min-h-screen flex flex-col bg-[#0B0C10] text-[#F8FAFC] selection:bg-[#D4AF37] selection:text-[#0B0C10] font-sans transition-colors duration-300">
+      {/* Top Thin Luxury Scroll Progress Bar in Champagne Gold */}
       <ScrollProgressBar />
 
       {/* Top Navbar */}
