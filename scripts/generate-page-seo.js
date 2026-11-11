@@ -7,17 +7,17 @@ const OG_BANNER = 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1794427655/
 
 const PAGES = {
   about: {
-    title: 'About N.B.N Sohan Chowdhury | Entrepreneur & Law Scholar',
-    description: 'Discover the background, professional vision, leadership mindset, and creative acoustic guitar artistry of N.B.N Sohan Chowdhury.',
+    title: 'About Sohan Chowdhury (Nafi Chowdhury / NBN Sohan) | Biography',
+    description: 'Discover the background, leadership vision, education, and creative journey of Sohan Chowdhury (known as Nafi, Nafi Chowdhury, NBN Sohan Chowdhury).',
     canonical: `${SITE_URL}/about/`,
-    keywords: 'About N.B.N Sohan Chowdhury, Sohan Chowdhury Biography, Entrepreneur Profile, Law Student Profile, SIFRI Founder, Acoustic Guitar Artistry',
+    keywords: 'sohan, sohan chowdhury, nafi, nafi chowdhury, nbn sohan chowdhury, About Sohan Chowdhury, About Nafi Chowdhury, N.B.N Sohan Chowdhury, SIFRI Founder',
     ogType: 'profile'
   },
   contact: {
-    title: 'Contact N.B.N Sohan Chowdhury | Direct Reach & Inquiries',
-    description: 'Get in touch with N.B.N Sohan Chowdhury for business partnerships, brand marketing consultancy, legal inquiries, or direct collaboration.',
+    title: 'Contact Sohan Chowdhury (Nafi / NBN Sohan) | Direct Inquiries',
+    description: 'Get in touch with Sohan Chowdhury (Nafi / Nafi Chowdhury / NBN Sohan) for business partnerships, brand marketing consultancy, or direct reach.',
     canonical: `${SITE_URL}/contact/`,
-    keywords: 'Contact Sohan Chowdhury, N.B.N Sohan Chowdhury Phone, Sohan Chowdhury Email, SIFRI Business Inquiries, Dhaka Entrepreneur Contact',
+    keywords: 'sohan, sohan chowdhury, nafi, nafi chowdhury, Contact Sohan Chowdhury, N.B.N Sohan Chowdhury Phone, Sohan Chowdhury Email, SIFRI Business Inquiries',
     ogType: 'website'
   },
   education: {

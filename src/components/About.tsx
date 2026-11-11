@@ -241,7 +241,8 @@ export const About: React.FC = () => {
                 <div className="relative shrink-0">
                   <img
                     src={sohanPortraitImg}
-                    alt={PERSONAL_INFO.fullName}
+                    alt="Sohan - Nafi Chowdhury (Sohan Chowdhury / NBN Sohan Chowdhury) Official Portrait Photo"
+                    title="Sohan - Nafi Chowdhury (Sohan Chowdhury / NBN Sohan)"
                     className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover object-top border-2 border-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.25)]"
                   />
                   <span className="absolute -bottom-1 -right-1 px-2 py-0.5 rounded-full bg-[#D4AF37] border-2 border-[#0B0C10] text-[10px] text-[#0B0C10] font-bold flex items-center gap-1 shadow-md">
@@ -254,7 +255,7 @@ export const About: React.FC = () => {
                     অফিসিয়াল প্রোফাইল ছবি
                   </div>
                   <h3 className="font-serif font-bold text-base text-[#F8FAFC] truncate">{PERSONAL_INFO.fullName}</h3>
-                  <p className="text-xs font-mono text-[#D4AF37] font-semibold">{PERSONAL_INFO.preferredCall}</p>
+                  <p className="text-xs font-mono text-[#D4AF37] font-semibold">{PERSONAL_INFO.preferredCall} &middot; ডাকনাম: নাফী</p>
                   <p className="text-xs text-[#94A3B8] mt-1">{PERSONAL_INFO.currentRole}</p>
                 </div>
               </div>
@@ -269,6 +270,11 @@ export const About: React.FC = () => {
                 <div className="flex items-start justify-between py-1.5 border-b border-[#1F242E]">
                   <dt className="text-[#94A3B8] font-medium">পরিচিত নাম (Known As)</dt>
                   <dd className="font-mono font-bold text-[#D4AF37] text-right">{PERSONAL_INFO.preferredCall}</dd>
+                </div>
+
+                <div className="flex items-start justify-between py-1.5 border-b border-[#1F242E]">
+                  <dt className="text-[#94A3B8] font-medium">ডাকনাম ও সাধারণ নাম</dt>
+                  <dd className="font-mono text-xs text-[#D4AF37] text-right">নাফী / নাফী চৌধুরী / সোহান (Nafi / Sohan)</dd>
                 </div>
 
                 <div className="flex items-start justify-between py-2 border-b border-[#1F242E]">

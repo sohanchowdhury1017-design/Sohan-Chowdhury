@@ -334,11 +334,11 @@ export const Hero: React.FC = () => {
             <div className="lg:col-span-5 flex flex-col justify-between">
               <div 
                 className="relative rounded-3xl overflow-hidden border-2 border-[#D4AF37] shadow-[0_0_35px_rgba(212,175,55,0.25)] bg-[#0B0C10] group aspect-[4/5] sm:aspect-square lg:aspect-[4/5] w-full"
-                title="NBN Sohan (N.B.N Sohan Chowdhury) - Official Portrait"
+                title="Sohan - Nafi Chowdhury (Sohan Chowdhury / NBN Sohan Chowdhury) - Official Portrait"
               >
                 <img
                   src={sohanOfficialPortraitImg}
-                  alt={PERSONAL_INFO.fullName}
+                  alt="Sohan - Nafi Chowdhury (Sohan Chowdhury / NBN Sohan Chowdhury) Official Portrait Photo"
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 
@@ -349,7 +349,7 @@ export const Hero: React.FC = () => {
                 <div className="absolute top-4 left-4 flex items-center gap-2">
                   <span className="px-3 py-1 rounded-full bg-[#0B0C10]/85 backdrop-blur-md border border-[#D4AF37]/50 text-[#D4AF37] font-mono text-xs font-bold shadow-md flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
-                    <span>OFFICIAL PORTFOLIO</span>
+                    <span>OFFICIAL PORTRAIT</span>
                   </span>
                 </div>
 
@@ -360,7 +360,7 @@ export const Hero: React.FC = () => {
                       {PERSONAL_INFO.fullName}
                     </h3>
                     <p className="text-xs font-mono text-[#D4AF37] font-semibold">
-                      {PERSONAL_INFO.preferredCall} &middot; {PERSONAL_INFO.workingCategory}
+                      ডাকনাম: নাফী / সোহান &middot; {PERSONAL_INFO.preferredCall}
                     </p>
                   </div>
                   <div className="w-8 h-8 rounded-full bg-[#D4AF37] text-[#0B0C10] flex items-center justify-center font-bold text-sm shadow-[0_0_15px_rgba(212,175,55,0.4)]">
@@ -373,23 +373,27 @@ export const Hero: React.FC = () => {
             {/* Right Column (7 Cols on LG): Executive Title, Badges, Search & Primary Roles */}
             <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
               
-              {/* Top Row: Direct Search Keywords Tag */}
+              {/* Top Row: Direct Search Keywords Tag (Sohan, Sohan Chowdhury, Nafi, Nafi Chowdhury, NBN Sohan) */}
               <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-[#94A3B8]">
                 <span className="px-3 py-1 rounded-full bg-[#0B0C10] border border-[#1F242E] text-[#D4AF37] font-semibold">
                   Google Search Verified
                 </span>
                 <span className="text-stone-500">·</span>
-                <span>nbn sohan</span>
+                <span className="text-[#F8FAFC]">sohan</span>
                 <span className="text-[#D4AF37]">·</span>
-                <span>n b n sohan</span>
+                <span className="text-[#F8FAFC]">sohan chowdhury</span>
                 <span className="text-[#D4AF37]">·</span>
+                <span className="text-[#D4AF37] font-bold">nafi</span>
+                <span className="text-[#D4AF37]">·</span>
+                <span className="text-[#D4AF37] font-bold">nafi chowdhury</span>
+                <span className="text-stone-500">·</span>
                 <span>nbn sohan chowdhury</span>
               </div>
 
               {/* Title & Headline in Platinum White & Champagne Gold */}
               <div className="space-y-2">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F8FAFC] tracking-tight leading-tight">
-                  NBN Sohan <span className="text-xl sm:text-2xl lg:text-3xl font-sans font-medium text-[#94A3B8]">({PERSONAL_INFO.fullName})</span>
+                  Sohan Chowdhury <span className="text-xl sm:text-2xl lg:text-3xl font-sans font-medium text-[#94A3B8]">(Nafi / NBN Sohan)</span>
                 </h1>
                 <p className="text-base sm:text-xl font-bold text-[#D4AF37] font-sans">
                   {PERSONAL_INFO.headline}
