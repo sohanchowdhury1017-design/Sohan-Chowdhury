@@ -71,21 +71,21 @@ export const PERSONAL_INFO = {
   sifriUrl: 'https://sifribd.com',
   sifriDisplayUrl: 'sifribd.com',
   coverPhoto: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1794427655/89515189-6905-4c06-9a49-17aedba6e429.png',
-  coverPhotoLocal: '/assets/banner_new_1.png',
+  coverPhotoLocal: '/assets/banner_new_1_opt.jpg',
   coverPhoto2: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1794428112/2bdb4d24-18ba-4cba-bfbd-f506c16aa21c.png',
-  coverPhoto2Local: '/assets/banner_new_2.png',
+  coverPhoto2Local: '/assets/banner_new_2_opt.jpg',
   bannerSlides: [
     {
       id: 1,
       image: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1794427655/89515189-6905-4c06-9a49-17aedba6e429.png',
-      fallback: '/assets/banner_new_1.png',
+      fallback: '/assets/banner_new_1_opt.jpg',
       alt: 'N.B.N Sohan Chowdhury - Stage Keynote & Leadership Vision Banner',
       title: 'Visionary Leadership',
     },
     {
       id: 2,
       image: 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1794428112/2bdb4d24-18ba-4cba-bfbd-f506c16aa21c.png',
-      fallback: '/assets/banner_new_2.png',
+      fallback: '/assets/banner_new_2_opt.jpg',
       alt: 'Sohan Chowdhury - Official Brand Banner',
       title: 'Official Executive Brand',
     }

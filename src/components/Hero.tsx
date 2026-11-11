@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, ArrowRight, ArrowUpRight, MessageCircle, Phone, Briefcase, Scale, ShoppingBag, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, ArrowRight, ArrowUpRight, MessageCircle, Phone, Briefcase, Scale, ShoppingBag, Sparkles, ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import sohanBanner1Img from '../assets/images/banner_new_1.png';
-import sohanBanner2Img from '../assets/images/banner_new_2.png';
+import sohanBanner1Img from '../assets/images/banner_new_1_opt.jpg';
+import sohanBanner2Img from '../assets/images/banner_new_2_opt.jpg';
 import sohanOfficialPortraitImg from '../assets/images/sohan_official_portrait.jpg';
 import sohanGuitarAvatarImg from '../assets/images/sohan_avatar.jpg';
 import { navigateTo } from '../utils/navigation';
@@ -11,10 +11,11 @@ export const Hero: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
 
-  // Gentle scroll-triggered and entry fade-in animation states
-  const [bannerInView, setBannerInView] = useState(false);
-  const [cardInView, setCardInView] = useState(false);
+  // Instantly visible so elements are never blank or hidden
+  const [bannerInView, setBannerInView] = useState(true);
+  const [cardInView, setCardInView] = useState(true);
   const bannerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -120,10 +121,10 @@ export const Hero: React.FC = () => {
     <section id="home" className="relative pt-6 pb-16 bg-[#0B0C10] transition-colors duration-300 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
-        {/* ================= OFFICIAL CLOUDINARY BRAND BANNER SLIDER WITH ROTATING BORDER BEAM ================= */}
+        {/* ================= COMPACT LUXURY BRAND BANNER SLIDER WITH ROTATING BORDER BEAM ================= */}
         <div 
           ref={bannerRef}
-          className={`relative p-[2px] rounded-2xl sm:rounded-3xl overflow-hidden mb-8 sm:mb-12 shadow-2xl group transition-all duration-700 ease-out will-change-transform ${
+          className={`relative p-[2px] rounded-2xl sm:rounded-3xl overflow-hidden mb-6 sm:mb-8 shadow-2xl group transition-all duration-700 ease-out will-change-transform max-w-5xl mx-auto ${
             bannerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}
         >
@@ -136,9 +137,9 @@ export const Hero: React.FC = () => {
           {/* Layer 2: Focused Sharp Rotating Light Beam */}
           <div className="absolute inset-[-160%] animate-border-beam banner-glow-beam opacity-85 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
-          {/* Inner Content Container holding the interactive 3s auto slider */}
+          {/* Inner Content Container holding the interactive 3s auto slider - Complete Full Picture Display */}
           <div 
-            className="relative aspect-[16/9] sm:aspect-[21/9] lg:aspect-[2.2/1] w-full overflow-hidden rounded-[calc(1rem-2px)] sm:rounded-[calc(1.5rem-2px)] bg-[#0B0C10] flex items-center justify-center select-none"
+            className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[1.8/1] overflow-hidden rounded-[calc(1rem-2px)] sm:rounded-[calc(1.5rem-2px)] bg-[#0B0C10] flex items-center justify-center select-none"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
             onTouchStart={() => setIsPaused(true)}
@@ -150,20 +151,33 @@ export const Hero: React.FC = () => {
               return (
                 <div
                   key={slide.id}
-                  className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                  className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
                     isActive 
                       ? 'opacity-100 scale-100 pointer-events-auto z-10' 
                       : 'opacity-0 scale-[1.02] pointer-events-none z-0'
                   }`}
                 >
+                  {/* Subtle ambient blurred background glow using the banner's own colors */}
+                  <img
+                    src={slide.url}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = slide.fallback;
+                    }}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-25 scale-110 pointer-events-none"
+                  />
+
+                  {/* Main Full Uncropped Banner Picture (object-contain ensures 100% full image is visible) */}
                   <img
                     src={slide.url}
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).src = slide.fallback;
                     }}
                     alt={slide.alt}
-                    className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-700 ease-out"
+                    className="relative z-10 w-full h-full object-contain object-center group-hover:scale-[1.01] transition-transform duration-700 ease-out"
                   />
+
                   {/* Direct interactive click to explore */}
                   <a
                     href="/about/"
@@ -172,7 +186,7 @@ export const Hero: React.FC = () => {
                       navigateTo('/about/', 'about');
                     }}
                     aria-label={`Explore Portfolio - ${slide.badge}`}
-                    className="absolute inset-0 cursor-pointer"
+                    className="absolute inset-0 z-10 cursor-pointer"
                   >
                     <span className="sr-only">Explore Portfolio</span>
                   </a>
@@ -206,8 +220,23 @@ export const Hero: React.FC = () => {
               <ChevronRight className="w-5 h-5 text-[#F8FAFC]" />
             </button>
 
-            {/* Bottom Slider Dots */}
-            <div className="absolute bottom-2.5 sm:bottom-4 z-20 flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0B0C10]/85 backdrop-blur-md border border-[#1F242E] shadow-lg">
+            {/* Top Right: Full Picture Lightbox trigger button */}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setFullscreenImage(bannerSlides[currentSlide].url);
+              }}
+              title="সম্পূর্ণ ছবি জুম করে দেখুন (View Full Image)"
+              className="absolute top-2.5 right-2.5 sm:top-3.5 sm:right-3.5 z-20 px-2.5 py-1.5 rounded-full bg-[#0B0C10]/80 hover:bg-[#0B0C10] border border-[#1F242E] hover:border-[#D4AF37] text-stone-300 hover:text-[#D4AF37] text-[11px] font-mono flex items-center gap-1.5 shadow-lg transition-all duration-300 cursor-pointer backdrop-blur-md hover:scale-105 active:scale-95"
+            >
+              <Maximize2 className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <span className="hidden sm:inline">সম্পূর্ণ ছবি</span>
+              <span className="sm:hidden">Full</span>
+            </button>
+
+            {/* Bottom Slider Dots (Strictly centered at bottom) */}
+            <div className="absolute bottom-2.5 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0B0C10]/85 backdrop-blur-md border border-[#1F242E] shadow-lg">
               {bannerSlides.map((slide, idx) => (
                 <button
                   key={slide.id}
@@ -422,6 +451,51 @@ export const Hero: React.FC = () => {
         </div>
 
       </div>
+
+      {/* ================= FULL PICTURE LIGHTBOX MODAL (100% UNCROPPED VIEW) ================= */}
+      {fullscreenImage && (
+        <div 
+          role="dialog"
+          aria-modal="true"
+          aria-label="সম্পূর্ণ ব্যানার ছবি ভিউয়ার"
+          className="fixed inset-0 z-50 bg-[#0B0C10]/95 backdrop-blur-xl flex flex-col items-center justify-center p-4 sm:p-8 animate-fadeIn"
+          onClick={() => setFullscreenImage(null)}
+        >
+          {/* Close & Action Bar */}
+          <div className="w-full max-w-5xl flex items-center justify-between mb-3 px-2 z-10">
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#D4AF37] animate-pulse" />
+              <span className="text-xs sm:text-sm font-mono text-[#F8FAFC] font-semibold">
+                সম্পূর্ণ ব্যানার ও ব্র্যান্ড ডিজাইন (১০০% ফুল ভিউ)
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={() => setFullscreenImage(null)}
+              className="p-2 rounded-full bg-[#13161C] border border-[#1F242E] hover:border-[#D4AF37] text-[#F8FAFC] hover:text-[#D4AF37] transition-all cursor-pointer shadow-lg hover:scale-105"
+              aria-label="বন্ধ করুন"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Full Image Display Container with Luxury Gold Glow & Slate Border */}
+          <div 
+            className="relative max-w-5xl max-h-[85vh] w-full flex items-center justify-center rounded-2xl overflow-hidden border border-[#D4AF37]/50 shadow-[0_0_50px_rgba(212,175,55,0.25)] bg-[#0B0C10]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={fullscreenImage} 
+              alt="NBN Sohan Full Banner"
+              className="max-h-[82vh] w-auto max-w-full object-contain select-none"
+            />
+          </div>
+
+          <p className="mt-3 text-xs font-mono text-[#94A3B8] text-center">
+            স্ক্রিনে যেকোনো স্থানে ক্লিক করে বা উপরে ডানপাশের ক্লোজ বাটনে ক্লিক করে বন্ধ করতে পারবেন
+          </p>
+        </div>
+      )}
     </section>
   );
 };
