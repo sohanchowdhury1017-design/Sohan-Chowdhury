@@ -1,12 +1,12 @@
 import React from 'react';
-import { ArrowUpRight, ShoppingBag, Globe, Truck, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, ShoppingBag, Globe, Truck, ShieldCheck, CheckCircle2, Sparkles, TrendingUp } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const SifriSpotlight: React.FC = () => {
   const sifri = PERSONAL_INFO.sifriDetails;
 
   return (
-    <section id="sifri" className="py-24 bg-[#0B0C10] relative overflow-hidden border-t border-[#1F242E] transition-colors duration-300">
+    <section id="sifri" className="py-20 sm:py-24 bg-[#0B0C10] relative overflow-hidden border-t border-[#1F242E] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Header */}
@@ -15,7 +15,7 @@ export const SifriSpotlight: React.FC = () => {
             <div className="inline-flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-full bg-[#D4AF37]" />
               <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-semibold">
-                ০৩. বর্তমান পেশাগত দায়িত্ব &middot; Current Professional Role
+                ০২. বর্তমান ব্যবসায়িক ভূমিকা ও ভেঞ্চার &middot; Current Venture
               </span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#F8FAFC] tracking-tight">
@@ -40,7 +40,7 @@ export const SifriSpotlight: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
           
           {/* Main Venture Narrative Card */}
-          <div className="lg:col-span-7 bg-[#13161C] p-8 sm:p-10 rounded-2xl border border-[#1F242E] shadow-xl flex flex-col justify-between scroll-reveal-left transition-colors">
+          <div className="lg:col-span-7 bg-[#13161C] p-7 sm:p-9 rounded-2xl border border-[#1F242E] shadow-xl flex flex-col justify-between scroll-reveal-left transition-colors">
             <div>
               <div className="flex items-center gap-2 text-xs font-mono text-[#D4AF37] uppercase tracking-wider mb-3 font-semibold">
                 <ShoppingBag className="w-4 h-4 text-[#D4AF37]" />
@@ -56,24 +56,24 @@ export const SifriSpotlight: React.FC = () => {
               </p>
 
               {/* Tagline Card */}
-              <div className="border-l-4 border-[#D4AF37] pl-4 py-2 bg-[#0B0C10] rounded-r-lg mb-6 border border-[#1F242E]">
-                <span className="text-xs font-mono text-[#94A3B8] uppercase tracking-wider block mb-1">
+              <div className="border-l-4 border-[#D4AF37] pl-4 py-2.5 bg-[#0B0C10] rounded-r-lg mb-6 border border-[#1F242E]">
+                <span className="text-[11px] font-mono text-[#94A3B8] uppercase tracking-wider block mb-0.5">
                   ব্র্যান্ড স্লোগান &middot; Brand Tagline
                 </span>
-                <p className="text-stone-800 dark:text-stone-200 font-semibold text-sm sm:text-base">
+                <p className="text-[#F8FAFC] font-semibold text-sm sm:text-base">
                   &ldquo;{sifri.tagline}&rdquo;
                 </p>
               </div>
             </div>
 
             {/* Key Stats Bar */}
-            <div className="grid grid-cols-3 gap-3 pt-6 border-t border-stone-100 dark:border-stone-800">
+            <div className="grid grid-cols-3 gap-3 pt-6 border-t border-[#1F242E]">
               {sifri.stats.map((stat) => (
                 <div key={stat.label}>
-                  <div className="text-sm sm:text-base font-serif font-bold text-stone-900 dark:text-stone-100">
+                  <div className="text-sm sm:text-base font-serif font-bold text-[#F8FAFC]">
                     {stat.value}
                   </div>
-                  <div className="text-[11px] font-mono text-stone-500 dark:text-stone-400">
+                  <div className="text-[11px] font-mono text-[#94A3B8]">
                     {stat.label}
                   </div>
                 </div>
@@ -84,16 +84,16 @@ export const SifriSpotlight: React.FC = () => {
           {/* Right Column: Platform Destination & Direct Action */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6 scroll-reveal-right delay-100">
             
-            <div className="bg-stone-900 dark:bg-[#171512] text-white p-7 sm:p-8 rounded-2xl flex flex-col justify-between border dark:border-stone-800 shadow-xs relative overflow-hidden">
+            <div className="bg-[#13161C] text-[#F8FAFC] p-7 sm:p-8 rounded-2xl flex flex-col justify-between border border-[#1F242E] shadow-xl relative overflow-hidden">
               <div>
-                <div className="text-xs font-mono text-[#FA812F] uppercase tracking-wider mb-2 font-semibold flex items-center gap-1.5">
+                <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-wider mb-2 font-semibold flex items-center gap-1.5">
                   <Globe className="w-4 h-4" />
                   <span>অফিসিয়াল ই-কমার্স প্ল্যাটফর্ম</span>
                 </div>
-                <div className="text-2xl sm:text-3xl font-serif font-bold mb-3 text-white">
+                <div className="text-2xl sm:text-3xl font-serif font-bold mb-3 text-[#F8FAFC]">
                   sifribd.com
                 </div>
-                <p className="text-xs sm:text-sm text-stone-300 dark:text-stone-400 leading-relaxed mb-6 font-sans">
+                <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed mb-6 font-sans">
                   বাংলাদেশের ক্রেতাদের জন্য মানসম্মত ফ্যাশন ও লাইফস্টাইল পণ্যের নির্ভরযোগ্য অনলাইন শপিং অভিজ্ঞতা।
                 </p>
               </div>
@@ -103,7 +103,7 @@ export const SifriSpotlight: React.FC = () => {
                   href={sifri.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full px-5 py-3.5 bg-[#FA812F] hover:bg-[#e07124] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors shadow-xs group cursor-pointer"
+                  className="inline-flex items-center justify-center w-full px-5 py-3.5 bg-[#D4AF37] hover:bg-[#E5C07B] text-[#0B0C10] text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-[0_0_20px_rgba(212,175,55,0.25)] group cursor-pointer"
                 >
                   <span>সরাসরি স্টোরে যান (sifribd.com)</span>
                   <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -112,21 +112,21 @@ export const SifriSpotlight: React.FC = () => {
             </div>
 
             {/* Core Commitments */}
-            <div className="bg-white dark:bg-[#1a1815] p-6 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-xs space-y-3 transition-colors">
-              <span className="text-xs font-mono uppercase tracking-wider text-stone-400 dark:text-stone-500 font-semibold block mb-1">
-                অপারেশনাল অগ্রাধিকার
+            <div className="bg-[#13161C] p-6 rounded-2xl border border-[#1F242E] shadow-xl space-y-3 transition-colors">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#94A3B8] font-semibold block mb-1">
+                অপারেশনাল অগ্রাধিকার &middot; Key Commitments
               </span>
-              <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700 dark:text-stone-300">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+              <div className="flex items-center gap-3 text-xs sm:text-sm text-[#94A3B8]">
+                <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
                 <span>কোয়ালিটি ফার্স্ট ফ্যাশন ও লাইফস্টাইল সিলেকশন</span>
               </div>
-              <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700 dark:text-stone-300">
-                <Truck className="w-4 h-4 text-[#FA812F] shrink-0" />
-                <span>সারাদেশে ৬৪ জেলায় দ্রুত ও নিরাপদ ডেলিভারি</span>
+              <div className="flex items-center gap-3 text-xs sm:text-sm text-[#94A3B8]">
+                <Truck className="w-4 h-4 text-[#F59E0B] shrink-0" />
+                <span>সারাদেশে ৬৪ জেলায় দ্রুত ও নিরাপদ হোম ডেলিভারি</span>
               </div>
-              <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700 dark:text-stone-300">
-                <ShieldCheck className="w-4 h-4 text-[#2DA8D8] shrink-0" />
-                <span>স্বচ্ছ বিজনেস পলিসি ও বিশ্বস্ত কাস্টমার সাপোর্ট</span>
+              <div className="flex items-center gap-3 text-xs sm:text-sm text-[#94A3B8]">
+                <ShieldCheck className="w-4 h-4 text-[#D4AF37] shrink-0" />
+                <span>স্বচ্ছ বিজনেস পলিসি ও বিশ্বস্ত সার্বক্ষণিক কাস্টমার সাপোর্ট</span>
               </div>
             </div>
 
@@ -139,15 +139,15 @@ export const SifriSpotlight: React.FC = () => {
           {sifri.pillars.map((pillar, index) => (
             <div
               key={pillar.title}
-              className="bg-white dark:bg-[#1a1815] p-6 rounded-xl border border-stone-200 dark:border-stone-800 hover:border-[#FA812F] dark:hover:border-[#FA812F] hover:shadow-xs transition-all relative group"
+              className="bg-[#13161C] p-6 rounded-xl border border-[#1F242E] hover:border-[#D4AF37] hover:shadow-lg transition-all relative group"
             >
-              <div className="text-xs font-mono text-[#FA812F] font-bold mb-2">
+              <div className="text-xs font-mono text-[#D4AF37] font-bold mb-2">
                 ০{index + 1}
               </div>
-              <h4 className="text-base font-serif font-bold text-stone-900 dark:text-stone-100 mb-2 group-hover:text-[#FA812F] transition-colors">
+              <h4 className="text-base font-serif font-bold text-[#F8FAFC] mb-2 group-hover:text-[#D4AF37] transition-colors">
                 {pillar.title}
               </h4>
-              <p className="text-xs text-stone-600 dark:text-stone-400 leading-relaxed font-sans">
+              <p className="text-xs text-[#94A3B8] leading-relaxed font-sans">
                 {pillar.desc}
               </p>
             </div>

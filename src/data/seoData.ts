@@ -11,7 +11,8 @@ export interface PageSEO {
 }
 
 export const SITE_BASE_URL = 'https://sohans.site';
-export const DEFAULT_OG_IMAGE = 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1791128782/6f2545b3-fd9a-4079-bd24-577ae9b0cf31.jpg';
+export const DEFAULT_OG_IMAGE = 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1794294602/WhatsApp_Image_2026-11-10_at_1.08.57_PM.jpg';
+export const BANNER_OG_IMAGE = 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1794427655/89515189-6905-4c06-9a49-17aedba6e429.png';
 
 export const PAGE_SEO_CONFIG: Record<string, PageSEO> = {
   home: {

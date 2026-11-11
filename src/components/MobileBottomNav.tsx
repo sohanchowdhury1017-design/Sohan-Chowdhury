@@ -15,7 +15,7 @@ export const MobileBottomNav: React.FC = () => {
 
   const getRouteIcon = (sectionId: string, isActive: boolean) => {
     const iconClass = `w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 ${
-      isActive ? 'scale-110 text-[#FA812F]' : 'text-stone-500 dark:text-stone-400 group-hover:text-stone-800 dark:group-hover:text-stone-200'
+      isActive ? 'scale-110 text-[#D4AF37]' : 'text-[#94A3B8] group-hover:text-[#F8FAFC]'
     }`;
 
     switch (sectionId) {

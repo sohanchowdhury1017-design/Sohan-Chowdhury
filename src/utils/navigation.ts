@@ -114,13 +114,27 @@ export function getCurrentRouteKey(): string {
   return 'home';
 }
 
-export function navigateTo(path: string, _targetId?: string, event?: React.MouseEvent) {
+export function navigateTo(path: string, targetId?: string, event?: React.MouseEvent) {
   if (event) {
     event.preventDefault();
   }
 
   try {
     const targetPath = normalizePath(path);
+
+    // If target element exists on page (e.g. #about on the full home page)
+    if (targetId) {
+      const el = document.getElementById(targetId);
+      if (el) {
+        if (window.location.pathname !== targetPath && targetPath !== '/') {
+          window.history.pushState(null, '', targetPath);
+          window.dispatchEvent(new Event('app:navigate'));
+        }
+        el.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
+
     if (window.location.pathname !== targetPath) {
       window.history.pushState(null, '', targetPath);
       window.dispatchEvent(new Event('app:navigate'));

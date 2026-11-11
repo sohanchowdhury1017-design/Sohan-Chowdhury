@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, ArrowRight, ArrowUpRight, MessageCircle, Phone, Briefcase, Scale, ShoppingBag, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import sohanBannerImg from '../assets/images/sohan_banner.jpg';
-import sohanBanner2Img from '../assets/images/sohan_banner_2_opt.jpg';
+import sohanBanner1Img from '../assets/images/banner_new_1.png';
+import sohanBanner2Img from '../assets/images/banner_new_2.png';
+import sohanOfficialPortraitImg from '../assets/images/sohan_official_portrait.jpg';
+import sohanGuitarAvatarImg from '../assets/images/sohan_avatar.jpg';
 import { navigateTo } from '../utils/navigation';
 
 export const Hero: React.FC = () => {
@@ -62,16 +64,16 @@ export const Hero: React.FC = () => {
     {
       id: 1,
       url: PERSONAL_INFO.coverPhoto,
-      fallback: sohanBannerImg,
-      alt: 'N.B.N Sohan Chowdhury - Official Brand Banner 1',
-      badge: 'Official Brand Identity',
+      fallback: sohanBanner1Img,
+      alt: 'N.B.N Sohan Chowdhury - Stage Keynote & Leadership Vision Banner',
+      badge: 'Visionary Leadership',
     },
     {
       id: 2,
       url: PERSONAL_INFO.coverPhoto2,
       fallback: sohanBanner2Img,
-      alt: 'N.B.N Sohan Chowdhury - Official Brand Banner 2',
-      badge: 'Executive Vision & Leadership',
+      alt: 'Sohan Chowdhury - Official Brand Banner',
+      badge: 'Official Executive Brand',
     },
   ];
 
@@ -136,7 +138,7 @@ export const Hero: React.FC = () => {
 
           {/* Inner Content Container holding the interactive 3s auto slider */}
           <div 
-            className="relative aspect-[1024/346] w-full overflow-hidden rounded-[calc(1rem-2px)] sm:rounded-[calc(1.5rem-2px)] bg-[#0B0C10] flex items-center justify-center select-none"
+            className="relative aspect-[16/9] sm:aspect-[21/9] lg:aspect-[2.2/1] w-full overflow-hidden rounded-[calc(1rem-2px)] sm:rounded-[calc(1.5rem-2px)] bg-[#0B0C10] flex items-center justify-center select-none"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
             onTouchStart={() => setIsPaused(true)}
@@ -234,60 +236,134 @@ export const Hero: React.FC = () => {
           }`}
         >
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          {/* Modern Editorial 2-Column Showcase */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch relative z-10">
             
-            {/* Left Column: Bengali Identity, Tagline, Bio & Search */}
-            <div className="lg:col-span-8 space-y-6">
+            {/* Left Column (5 Cols on LG): Big, Stunning Official Portrait Showcase */}
+            <div className="lg:col-span-5 flex flex-col justify-between">
+              <div 
+                className="relative rounded-3xl overflow-hidden border-2 border-[#D4AF37] shadow-[0_0_35px_rgba(212,175,55,0.25)] bg-[#0B0C10] group aspect-[4/5] sm:aspect-square lg:aspect-[4/5] w-full"
+                title="NBN Sohan (N.B.N Sohan Chowdhury) - Official Portrait"
+              >
+                <img
+                  src={sohanOfficialPortraitImg}
+                  alt={PERSONAL_INFO.fullName}
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                
+                {/* Subtle Cinematic Vignette / Scrim */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C10] via-[#0B0C10]/20 to-transparent pointer-events-none" />
+
+                {/* Top Corner Official Badge */}
+                <div className="absolute top-4 left-4 flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full bg-[#0B0C10]/85 backdrop-blur-md border border-[#D4AF37]/50 text-[#D4AF37] font-mono text-xs font-bold shadow-md flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
+                    <span>OFFICIAL PORTFOLIO</span>
+                  </span>
+                </div>
+
+                {/* Bottom Overlay Label inside the photo */}
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-[#0B0C10]/80 backdrop-blur-md border border-[#1F242E] flex items-center justify-between">
+                  <div>
+                    <h3 className="font-serif font-bold text-base sm:text-lg text-[#F8FAFC]">
+                      {PERSONAL_INFO.fullName}
+                    </h3>
+                    <p className="text-xs font-mono text-[#D4AF37] font-semibold">
+                      {PERSONAL_INFO.preferredCall} &middot; {PERSONAL_INFO.workingCategory}
+                    </p>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-[#D4AF37] text-[#0B0C10] flex items-center justify-center font-bold text-sm shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+                    ✓
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column (7 Cols on LG): Executive Title, Badges, Search & Primary Roles */}
+            <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
               
-              {/* Status Badges in Champagne Gold & Amber Glow */}
-              <div className={`flex flex-wrap items-center gap-2 transition-all duration-700 ease-out delay-100 ${
-                cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-              }`}>
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-bold shadow-2xs">
-                  <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
-                  <span>অফিসিয়াল পোর্টফোলিও &middot; NBN Sohan</span>
+              {/* Top Row: Direct Search Keywords Tag */}
+              <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-[#94A3B8]">
+                <span className="px-3 py-1 rounded-full bg-[#0B0C10] border border-[#1F242E] text-[#D4AF37] font-semibold">
+                  Google Search Verified
                 </span>
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#F59E0B]/10 border border-[#F59E0B]/30 text-[#F59E0B] text-xs font-semibold">
-                  {PERSONAL_INFO.workingCategory}
-                </span>
-                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#0B0C10] border border-[#1F242E] text-[#94A3B8] text-[11px] font-mono" title="Search Keywords">
-                  <span>nbn sohan</span>
-                  <span className="text-[#D4AF37]">&bull;</span>
-                  <span>n b n sohan</span>
-                  <span className="text-[#D4AF37]">&bull;</span>
-                  <span>nbn sohan chowdhury</span>
-                </span>
+                <span className="text-stone-500">·</span>
+                <span>nbn sohan</span>
+                <span className="text-[#D4AF37]">·</span>
+                <span>n b n sohan</span>
+                <span className="text-[#D4AF37]">·</span>
+                <span>nbn sohan chowdhury</span>
               </div>
 
-              {/* Title & Tagline in Platinum White (Explicitly indexes NBN Sohan and N.B.N Sohan Chowdhury) */}
-              <div className={`transition-all duration-700 ease-out delay-150 ${
-                cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-              }`}>
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#F8FAFC] tracking-tight leading-tight">
-                  NBN Sohan <span className="text-xl sm:text-3xl lg:text-4xl font-sans font-medium text-[#94A3B8] block sm:inline">({PERSONAL_INFO.fullName})</span>
+              {/* Title & Headline in Platinum White & Champagne Gold */}
+              <div className="space-y-2">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F8FAFC] tracking-tight leading-tight">
+                  NBN Sohan <span className="text-xl sm:text-2xl lg:text-3xl font-sans font-medium text-[#94A3B8]">({PERSONAL_INFO.fullName})</span>
                 </h1>
-                <p className="text-base sm:text-xl font-bold text-[#D4AF37] mt-2 font-sans flex items-center gap-2">
-                  <span>{PERSONAL_INFO.headline}</span>
+                <p className="text-base sm:text-xl font-bold text-[#D4AF37] font-sans">
+                  {PERSONAL_INFO.headline}
                 </p>
-                <p className="text-xs sm:text-sm text-[#94A3B8] font-sans mt-0.5 font-medium">
+                <p className="text-xs sm:text-sm text-[#94A3B8] font-sans font-medium">
                   ({PERSONAL_INFO.headlineBn})
                 </p>
               </div>
 
               {/* Bengali Introductory Summary in Cool Silver Gray */}
-              <p className={`text-sm sm:text-base text-[#94A3B8] leading-relaxed font-sans max-w-2xl transition-all duration-700 ease-out delay-200 ${
-                cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-              }`}>
+              <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed font-sans">
                 {PERSONAL_INFO.aboutMeParagraphs[0]} {PERSONAL_INFO.aboutMeParagraphs[2]}
               </p>
 
+              {/* 2 Key Executive Cards: SIFRI CEO & Law Student */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+                {/* Role 1: CEO & Founder at SIFRI */}
+                <div 
+                  onClick={(e) => navigateTo('/sifri/', 'sifri', e)}
+                  className="bg-[#0B0C10] p-4 rounded-2xl border border-[#1F242E] hover:border-[#D4AF37] transition-all cursor-pointer group shadow-xs"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-9 h-9 rounded-xl bg-[#D4AF37] text-[#0B0C10] flex items-center justify-center font-bold shadow-[0_0_12px_rgba(212,175,55,0.25)] shrink-0">
+                      <ShoppingBag className="w-4 h-4 text-[#0B0C10]" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block font-bold">
+                        {PERSONAL_INFO.businessJourneyStartYear} সাল থেকে
+                      </span>
+                      <h4 className="text-xs sm:text-sm font-bold text-[#F8FAFC] group-hover:text-[#D4AF37] transition-colors">
+                        CEO &amp; Founder — SIFRI
+                      </h4>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-[#94A3B8] leading-relaxed">
+                    সফল ফ্যাশন ও লাইফস্টাইল ই-কমার্স প্ল্যাটফর্ম sifribd.com &rarr;
+                  </p>
+                </div>
+
+                {/* Role 2: Law Student — 1st Year */}
+                <div 
+                  onClick={(e) => navigateTo('/education/', 'education', e)}
+                  className="bg-[#0B0C10] p-4 rounded-2xl border border-[#1F242E] hover:border-[#F59E0B] transition-all cursor-pointer group shadow-xs"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-9 h-9 rounded-xl bg-[#13161C] border border-[#1F242E] text-[#F59E0B] flex items-center justify-center shrink-0">
+                      <Scale className="w-4 h-4 text-[#F59E0B]" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-mono text-[#F59E0B] uppercase tracking-wider block font-bold">
+                        আইন শিক্ষার্থী
+                      </span>
+                      <h4 className="text-xs sm:text-sm font-bold text-[#F8FAFC] group-hover:text-[#F59E0B] transition-colors">
+                        Bachelor of Laws (LL.B.)
+                      </h4>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-[#94A3B8] leading-relaxed">
+                    ১ম বর্ষ &middot; এসএসসি (নূরজাহানপুর) ও এইচএসসি (রংপুর) &rarr;
+                  </p>
+                </div>
+              </div>
+
               {/* Quick Search Bar with Graphite & Gold Accent */}
-              <form 
-                onSubmit={handleSearchSubmit} 
-                className={`relative max-w-lg pt-1 transition-all duration-700 ease-out delay-250 ${
-                  cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-                }`}
-              >
+              <form onSubmit={handleSearchSubmit} className="relative pt-1">
                 <div className="relative flex items-center">
                   <input
                     type="text"
@@ -306,92 +382,35 @@ export const Hero: React.FC = () => {
                 </div>
               </form>
 
-              {/* Quick Topic Chips */}
-              <div className={`flex flex-wrap gap-2 pt-1 transition-all duration-700 ease-out delay-300 ${
-                cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-              }`}>
-                {quickTopics.map((topic) => (
-                  <button
-                    key={topic.label}
-                    onClick={() => navigateTo(topic.path, topic.targetId)}
-                    className="text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#1F242E] bg-[#0B0C10] text-[#94A3B8] hover:text-[#D4AF37] hover:border-[#D4AF37]/50 transition-all cursor-pointer"
-                  >
-                    {topic.label}
-                  </button>
-                ))}
-              </div>
-
-            </div>
-
-            {/* Right Column: 3 Key Pillars of Identity in Deep Obsidian Boxes */}
-            <div className="lg:col-span-4 space-y-4">
-              
-              {/* Role 1: CEO & Founder at SIFRI */}
-              <div 
-                onClick={(e) => navigateTo('/sifri/', 'sifri', e)}
-                className={`bg-[#0B0C10] p-5 rounded-2xl border border-[#1F242E] hover:border-[#D4AF37] transition-all duration-700 ease-out delay-200 cursor-pointer group shadow-2xs ${
-                  cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#D4AF37] text-[#0B0C10] flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(212,175,55,0.25)] font-bold">
-                      <ShoppingBag className="w-5 h-5 text-[#0B0C10]" />
-                    </div>
-                    <div>
-                      <span className="text-[11px] font-mono text-[#D4AF37] uppercase tracking-wider block font-bold">বর্তমান দায়িত্ব &middot; {PERSONAL_INFO.businessJourneyStartYear} থেকে</span>
-                      <h3 className="text-sm font-bold text-[#F8FAFC] group-hover:text-[#D4AF37] transition-colors">CEO &amp; Founder — SIFRI</h3>
-                    </div>
-                  </div>
+              {/* Quick Topic Chips & Fast Contact CTA */}
+              <div className="flex flex-wrap items-center justify-between gap-3 pt-1 border-t border-[#1F242E]">
+                <div className="flex flex-wrap gap-2">
+                  {quickTopics.slice(0, 4).map((topic) => (
+                    <button
+                      key={topic.label}
+                      onClick={() => navigateTo(topic.path, topic.targetId)}
+                      className="text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#1F242E] bg-[#0B0C10] text-[#94A3B8] hover:text-[#D4AF37] hover:border-[#D4AF37]/50 transition-all cursor-pointer"
+                    >
+                      {topic.label}
+                    </button>
+                  ))}
                 </div>
-                <p className="text-xs text-[#94A3B8] leading-relaxed font-sans">
-                  ২০২১ সালে শুরু হয় ব্যবসায়িক পথচলা। ফ্যাশন ও লাইফস্টাইল ই-কমার্স প্ল্যাটফর্ম <strong>SIFRI</strong>-এর বিস্তারিত তথ্য দেখতে ক্লিক করুন →
-                </p>
-              </div>
 
-              {/* Role 2: Law Student — 1st Year */}
-              <div 
-                onClick={(e) => navigateTo('/education/', 'education', e)}
-                className={`bg-[#0B0C10] p-5 rounded-2xl border border-[#1F242E] hover:border-[#F59E0B] transition-all duration-700 ease-out delay-300 cursor-pointer group shadow-2xs ${
-                  cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-xl bg-[#13161C] border border-[#1F242E] text-[#F59E0B] flex items-center justify-center group-hover:scale-105 transition-transform group-hover:border-[#F59E0B]">
-                    <Scale className="w-5 h-5 text-[#F59E0B]" />
-                  </div>
-                  <div>
-                    <span className="text-[11px] font-mono text-[#F59E0B] uppercase tracking-wider block font-bold">শিক্ষাজীবন &middot; ১ম বর্ষ</span>
-                    <h3 className="text-sm font-bold text-[#F8FAFC] group-hover:text-[#F59E0B] transition-colors">Bachelor of Laws — LL.B.</h3>
-                  </div>
-                </div>
-                <p className="text-xs text-[#94A3B8] leading-relaxed font-sans">
-                  বর্তমানে LLB-এর ১ম বর্ষে অধ্যয়নরত। নূরজাহানপুর আরএমসি হাই স্কুল (SSC) ও রংপুর (HSC)-এর অ্যাকাডেমিক বিবরণ দেখতে ক্লিক করুন →
-                </p>
-              </div>
-
-              {/* Role 3: Fast Contact Links */}
-              <div className={`bg-[#0B0C10] border border-[#1F242E] text-white p-5 rounded-2xl shadow-sm space-y-3 transition-all duration-700 ease-out delay-400 ${
-                cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}>
-                <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-wider font-bold">
-                  সরাসরি যোগাযোগ &middot; Quick Connect
-                </div>
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
                   <a
                     href={PERSONAL_INFO.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2.5 bg-[#D4AF37] hover:bg-[#E5C07B] text-[#0B0C10] text-xs font-bold rounded-xl transition-all shadow-[0_0_15px_rgba(212,175,55,0.2)]"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#D4AF37] hover:bg-[#E5C07B] text-[#0B0C10] text-xs font-bold rounded-xl transition-all shadow-[0_0_15px_rgba(212,175,55,0.2)]"
                   >
-                    <MessageCircle className="w-4 h-4 text-[#0B0C10]" />
+                    <MessageCircle className="w-3.5 h-3.5 text-[#0B0C10]" />
                     <span>WhatsApp</span>
                   </a>
                   <a
                     href={`tel:${PERSONAL_INFO.phone1}`}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2.5 bg-[#13161C] hover:bg-[#1a1f29] text-[#F8FAFC] text-xs font-semibold rounded-xl transition-colors border border-[#1F242E] hover:border-[#D4AF37]"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-[#0B0C10] hover:bg-[#1a1f29] text-[#F8FAFC] text-xs font-semibold rounded-xl transition-colors border border-[#1F242E] hover:border-[#D4AF37]"
                   >
-                    <Phone className="w-4 h-4 text-[#D4AF37]" />
+                    <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
                     <span>{PERSONAL_INFO.phone1}</span>
                   </a>
                 </div>

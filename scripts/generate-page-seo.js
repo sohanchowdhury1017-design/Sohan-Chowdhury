@@ -2,7 +2,8 @@ import fs from 'fs';
 import path from 'path';
 
 const SITE_URL = 'https://sohans.site';
-const OG_IMAGE = 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1791128782/6f2545b3-fd9a-4079-bd24-577ae9b0cf31.jpg';
+const OG_IMAGE = 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1794294602/WhatsApp_Image_2026-11-10_at_1.08.57_PM.jpg';
+const OG_BANNER = 'https://res.cloudinary.com/b5z0n3sl/image/upload/v1794427655/89515189-6905-4c06-9a49-17aedba6e429.png';
 
 const PAGES = {
   about: {
@@ -122,15 +123,18 @@ for (const [pageKey, meta] of Object.entries(PAGES)) {
     `<meta name="twitter:description" content="${meta.description}" />`
   );
 
-  // Save to dist/{page}/index.html and {page}/index.html
+  // Save to dist/{page}/index.html, {page}/index.html, and public/{page}/index.html
   const distDir = path.resolve(`dist/${pageKey}`);
   const rootDir = path.resolve(pageKey);
+  const publicDir = path.resolve(`public/${pageKey}`);
 
   if (!fs.existsSync(distDir)) fs.mkdirSync(distDir, { recursive: true });
   if (!fs.existsSync(rootDir)) fs.mkdirSync(rootDir, { recursive: true });
+  if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
 
   fs.writeFileSync(path.join(distDir, 'index.html'), pageHtml, 'utf-8');
   fs.writeFileSync(path.join(rootDir, 'index.html'), pageHtml, 'utf-8');
+  fs.writeFileSync(path.join(publicDir, 'index.html'), pageHtml, 'utf-8');
 
   console.log(`Generated SEO meta tags for page: /${pageKey}/`);
 }

@@ -43,11 +43,18 @@ export default function App() {
 
       {/* Main Multi-Page Content Area */}
       <main className="flex-1">
-        {/* ================= PAGE 0: HOME PAGE (ONLY Hero + 5 Distinct Hub Buttons) ================= */}
+        {/* ================= PAGE 0: HOME PAGE (Complete Rich Sequential Stream) ================= */}
         {currentPage === 'home' && (
           <div className="animate-in fade-in duration-300">
             <Hero />
             <HomeNavigationCards />
+            <About />
+            <SifriSpotlight />
+            <Education />
+            <Skills />
+            <ProfessionalAreas />
+            <Articles />
+            <Contact />
           </div>
         )}
 

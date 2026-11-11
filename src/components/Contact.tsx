@@ -140,7 +140,7 @@ export const Contact: React.FC = () => {
                 <Mail className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span>ইমেইল &middot; Email</span>
               </span>
-              <div className="text-base sm:text-lg font-mono font-bold text-stone-900 dark:text-stone-100 break-all">
+              <div className="text-base sm:text-lg font-mono font-bold text-[#F8FAFC] break-all">
                 {PERSONAL_INFO.email}
               </div>
 
