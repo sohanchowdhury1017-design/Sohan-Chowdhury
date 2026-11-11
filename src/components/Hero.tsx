@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, ArrowRight, ArrowUpRight, MessageCircle, Phone, Briefcase, Scale, ShoppingBag, Sparkles, ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
+import { Search, ArrowRight, ArrowUpRight, MessageCircle, Phone, Briefcase, Scale, ShoppingBag, Sparkles, ChevronLeft, ChevronRight, Maximize2, X, Play, Pause } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import sohanBanner1Img from '../assets/images/banner_new_1_opt.jpg';
 import sohanBanner2Img from '../assets/images/banner_new_2_opt.jpg';
@@ -87,6 +87,25 @@ export const Hero: React.FC = () => {
     return () => clearInterval(interval);
   }, [isPaused, bannerSlides.length]);
 
+  const touchStartXRef = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartXRef.current === null) return;
+    const diff = touchStartXRef.current - e.changedTouches[0].clientX;
+    if (diff > 45) {
+      // Swiped left -> next slide
+      setCurrentSlide((prev) => (prev + 1) % bannerSlides.length);
+    } else if (diff < -45) {
+      // Swiped right -> prev slide
+      setCurrentSlide((prev) => (prev === 0 ? bannerSlides.length - 1 : prev - 1));
+    }
+    touchStartXRef.current = null;
+  };
+
   const quickTopics = [
     { label: 'আমার সম্পর্কে', path: '/about/', targetId: 'about' },
     { label: 'সিফরি (SIFRI)', path: '/sifri/', targetId: 'sifri' },
@@ -140,10 +159,8 @@ export const Hero: React.FC = () => {
           {/* Inner Content Container holding the interactive 3s auto slider - Complete Full Picture Display */}
           <div 
             className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[1.8/1] overflow-hidden rounded-[calc(1rem-2px)] sm:rounded-[calc(1.5rem-2px)] bg-[#0B0C10] flex items-center justify-center select-none"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            onTouchStart={() => setIsPaused(true)}
-            onTouchEnd={() => setIsPaused(false)}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
           >
             {/* Banner Slides */}
             {bannerSlides.map((slide, index) => {
@@ -175,49 +192,46 @@ export const Hero: React.FC = () => {
                       (e.currentTarget as HTMLImageElement).src = slide.fallback;
                     }}
                     alt={slide.alt}
-                    className="relative z-10 w-full h-full object-contain object-center group-hover:scale-[1.01] transition-transform duration-700 ease-out"
+                    className="relative z-10 w-full h-full object-contain object-center cursor-zoom-in group-hover:scale-[1.01] transition-transform duration-700 ease-out"
+                    onClick={() => setFullscreenImage(slide.url)}
+                    title="সম্পূর্ণ ছবি জুম করে দেখতে ক্লিক করুন"
                   />
 
-                  {/* Direct interactive click to explore */}
-                  <a
-                    href="/about/"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      navigateTo('/about/', 'about');
-                    }}
-                    aria-label={`Explore Portfolio - ${slide.badge}`}
-                    className="absolute inset-0 z-10 cursor-pointer"
-                  >
-                    <span className="sr-only">Explore Portfolio</span>
-                  </a>
+                  {/* Click overlay to open full high-definition picture */}
+                  <div
+                    onClick={() => setFullscreenImage(slide.url)}
+                    title="সম্পূর্ণ ছবি বড় করে দেখতে ক্লিক করুন"
+                    className="absolute inset-0 z-10 cursor-zoom-in"
+                  />
                 </div>
               );
             })}
 
-            {/* Left Chevron Button */}
+            {/* Top Left: Pause / Play Toggle Button (Always visible on mobile & desktop) */}
             <button
               type="button"
               onClick={(e) => {
                 e.stopPropagation();
-                setCurrentSlide((prev) => (prev === 0 ? bannerSlides.length - 1 : prev - 1));
+                setIsPaused((prev) => !prev);
               }}
-              aria-label="Previous Banner Slide"
-              className="absolute left-2 sm:left-4 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#0B0C10]/75 hover:bg-[#0B0C10] text-[#F8FAFC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer shadow-lg border border-[#1F242E]"
+              title={isPaused ? 'অটো-স্লাইড আবার চালু করুন' : 'অটো-স্লাইড পজ করুন'}
+              className={`absolute top-2.5 left-2.5 sm:top-3.5 sm:left-3.5 z-30 px-3 py-1.5 rounded-full border backdrop-blur-md text-[11px] font-mono flex items-center gap-1.5 shadow-xl transition-all duration-300 cursor-pointer active:scale-95 ${
+                isPaused
+                  ? 'bg-[#D4AF37] text-[#0B0C10] border-[#D4AF37] font-bold shadow-[0_0_15px_rgba(212,175,55,0.4)]'
+                  : 'bg-[#0B0C10]/85 hover:bg-[#0B0C10] text-[#F8FAFC] border-[#1F242E] hover:border-[#D4AF37]'
+              }`}
             >
-              <ChevronLeft className="w-5 h-5 text-[#F8FAFC]" />
-            </button>
-
-            {/* Right Chevron Button */}
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                setCurrentSlide((prev) => (prev + 1) % bannerSlides.length);
-              }}
-              aria-label="Next Banner Slide"
-              className="absolute right-2 sm:right-4 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#0B0C10]/75 hover:bg-[#0B0C10] text-[#F8FAFC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer shadow-lg border border-[#1F242E]"
-            >
-              <ChevronRight className="w-5 h-5 text-[#F8FAFC]" />
+              {isPaused ? (
+                <>
+                  <Play className="w-3.5 h-3.5 text-[#0B0C10] fill-[#0B0C10]" />
+                  <span>পজ করা (Resume)</span>
+                </>
+              ) : (
+                <>
+                  <Pause className="w-3.5 h-3.5 text-[#D4AF37] fill-[#D4AF37]" />
+                  <span>পজ (Pause)</span>
+                </>
+              )}
             </button>
 
             {/* Top Right: Full Picture Lightbox trigger button */}
@@ -228,31 +242,79 @@ export const Hero: React.FC = () => {
                 setFullscreenImage(bannerSlides[currentSlide].url);
               }}
               title="সম্পূর্ণ ছবি জুম করে দেখুন (View Full Image)"
-              className="absolute top-2.5 right-2.5 sm:top-3.5 sm:right-3.5 z-20 px-2.5 py-1.5 rounded-full bg-[#0B0C10]/80 hover:bg-[#0B0C10] border border-[#1F242E] hover:border-[#D4AF37] text-stone-300 hover:text-[#D4AF37] text-[11px] font-mono flex items-center gap-1.5 shadow-lg transition-all duration-300 cursor-pointer backdrop-blur-md hover:scale-105 active:scale-95"
+              className="absolute top-2.5 right-2.5 sm:top-3.5 sm:right-3.5 z-30 px-2.5 py-1.5 rounded-full bg-[#0B0C10]/85 hover:bg-[#0B0C10] border border-[#1F242E] hover:border-[#D4AF37] text-[#F8FAFC] hover:text-[#D4AF37] text-[11px] font-mono flex items-center gap-1.5 shadow-xl transition-all duration-300 cursor-pointer backdrop-blur-md hover:scale-105 active:scale-95"
             >
               <Maximize2 className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span className="hidden sm:inline">সম্পূর্ণ ছবি</span>
               <span className="sm:hidden">Full</span>
             </button>
 
-            {/* Bottom Slider Dots (Strictly centered at bottom) */}
-            <div className="absolute bottom-2.5 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0B0C10]/85 backdrop-blur-md border border-[#1F242E] shadow-lg">
-              {bannerSlides.map((slide, idx) => (
-                <button
-                  key={slide.id}
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setCurrentSlide(idx);
-                  }}
-                  aria-label={`Go to banner slide ${idx + 1}`}
-                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                    idx === currentSlide 
-                      ? 'w-6 bg-[#D4AF37] shadow-[0_0_12px_rgba(212,175,55,0.7)]' 
-                      : 'w-2 bg-white/40 hover:bg-white/80'
-                  }`}
-                />
-              ))}
+            {/* Left Chevron Button (Visible on mobile and desktop) */}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setCurrentSlide((prev) => (prev === 0 ? bannerSlides.length - 1 : prev - 1));
+              }}
+              aria-label="Previous Banner Slide"
+              className="absolute left-2 sm:left-4 z-30 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#0B0C10]/85 hover:bg-[#0B0C10] text-[#F8FAFC] flex items-center justify-center opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer shadow-xl border border-[#1F242E] hover:border-[#D4AF37]"
+            >
+              <ChevronLeft className="w-5 h-5 text-[#F8FAFC]" />
+            </button>
+
+            {/* Right Chevron Button (Visible on mobile and desktop) */}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setCurrentSlide((prev) => (prev + 1) % bannerSlides.length);
+              }}
+              aria-label="Next Banner Slide"
+              className="absolute right-2 sm:right-4 z-30 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#0B0C10]/85 hover:bg-[#0B0C10] text-[#F8FAFC] flex items-center justify-center opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer shadow-xl border border-[#1F242E] hover:border-[#D4AF37]"
+            >
+              <ChevronRight className="w-5 h-5 text-[#F8FAFC]" />
+            </button>
+
+            {/* Bottom Slider Navigation Bar with Play/Pause, Dots & Slide Count */}
+            <div className="absolute bottom-2.5 sm:bottom-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0B0C10]/90 backdrop-blur-md border border-[#1F242E] shadow-xl">
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsPaused((prev) => !prev);
+                }}
+                className="text-[#D4AF37] hover:text-[#E5C07B] p-0.5 cursor-pointer transition-transform active:scale-90"
+                title={isPaused ? 'চালু করুন' : 'পজ করুন'}
+              >
+                {isPaused ? <Play className="w-3.5 h-3.5 fill-[#D4AF37]" /> : <Pause className="w-3.5 h-3.5 fill-[#D4AF37]" />}
+              </button>
+              
+              <div className="w-[1px] h-3 bg-[#1F242E]" />
+
+              <div className="flex items-center gap-1.5">
+                {bannerSlides.map((slide, idx) => (
+                  <button
+                    key={slide.id}
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentSlide(idx);
+                    }}
+                    aria-label={`Go to banner slide ${idx + 1}`}
+                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                      idx === currentSlide 
+                        ? 'w-6 bg-[#D4AF37] shadow-[0_0_12px_rgba(212,175,55,0.7)]' 
+                        : 'w-2 bg-white/40 hover:bg-white/80'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <div className="w-[1px] h-3 bg-[#1F242E]" />
+
+              <span className="text-[10px] font-mono text-[#94A3B8]">
+                {currentSlide + 1}/{bannerSlides.length}
+              </span>
             </div>
           </div>
         </div>
